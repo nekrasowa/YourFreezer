@@ -4,6 +4,8 @@
   left: -50%;
   width: 200%;
   height: 200%;
+  z-index: -1;
+
 }
 
 .BackImg {
@@ -15,4 +17,17 @@
   margin: auto;
   min-width: 50%;
   min-height: 50%;
+  z-index: -1;
+}
+
+.Header {
+  font-size: 6.5em;
+  font-family: fantasy;
+  color: rgb(13, 3, 70);
+  position: relative;
+  z-index: 0;
+  margin: 0;
+  padding: 0;
+  top: -1.5rem;
+  left: 11rem;
 }
