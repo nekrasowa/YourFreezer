@@ -5,7 +5,6 @@ import backgroundImg from './freezer-img.jpg'
 function BackImg() {
   return (
     <div>
-      <p className='Header'>Your Freezer</p>
       <div className='Background'>  
         <img className='BackImg' src={backgroundImg} alt='BackImg'/>
       </div>
