@@ -21,13 +21,13 @@
 }
 
 .AppName {
-  font-size: 6rem;
+  font-size: 9vw;
   font-family: fantasy;
   color: rgb(58 148 178);
   grid-area: AppName;
 
-  padding-left: 20%;
   padding-right: 0;
+  margin-left: 20%;
   margin-top: -2%;
-  margin-bottom: 0;
+  margin-bottom: -4%;
 }
