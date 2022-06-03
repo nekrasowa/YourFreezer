@@ -1,0 +1,48 @@
+.BoxBtns {
+  grid-area: BoxBtns;
+}
+.GoodsListBtns {
+  flex-direction: row;
+  display: inline-flex;
+}
+
+.Insert, .Copy, .Delete {
+  top: 0;
+
+}
+
+.Insert {
+  height: auto;
+  flex-grow: 8;
+}
+
+#InsertBtn, #CopyBtn, #Delete {
+  background-position: center;
+  background-color: rgb(228, 217, 217);
+  background-repeat : no-repeat;
+  height: 75%;
+  border: none;
+  max-width: 50px;
+
+}
+#InsertBtn {
+  background-image: url('./icons/insert.svg');
+  width: 30%;
+}
+
+#CopyBtn {
+  background-image: url('./icons/copy.svg');
+  width: 100%;
+}
+#Delete {
+  background-image: url('./icons/delete.svg');
+  width: 100%;
+}
+.Copy {
+  flex-grow: 1;
+}
+
+.Delete {
+  flex-grow: 1;
+
+}
