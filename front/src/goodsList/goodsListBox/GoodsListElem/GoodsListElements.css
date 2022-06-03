@@ -1,0 +1,52 @@
+.BoxElements {
+  grid-area: BoxElements;
+}
+
+.listElement {
+  margin: 2%;
+  display: grid;
+  grid-template-areas: 'checkbox text edit delete';
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 7fr 1fr 1fr;
+
+  border: 1px solid black;
+
+}
+
+.element {
+  cursor: pointer;
+}
+
+.checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  
+  grid-area: checkbox;
+  position: relative;
+  margin: auto;
+  height: 2rem;
+  width: 2rem;
+}
+
+
+.text {
+  grid-area: text;
+
+}
+
+.icon {
+  margin: auto;
+  
+}
+
+.edit {
+  grid-area: edit;
+
+}
+
+.delete {
+  grid-area: delete;
+  
+}
+
