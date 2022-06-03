@@ -6,6 +6,10 @@ function GoodsListElements() {
   return (
       <div className='GoodsListElements'>
         <ListElement />
+        <ListElement />
+        <ListElement />
+        <ListElement />
+
       </div>
   )
 }
