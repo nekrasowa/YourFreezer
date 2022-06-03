@@ -44,13 +44,13 @@
 
 .icon {
   background-repeat: no-repeat;
-  width: 100%;
+  width: 70%;
   background-position: center center;
 }
 
 .edit {
   grid-area: edit;
-  background-image: url('./icons/edite.svg');
+  background-image: url('./icons/edit.svg');
 }
 
 .delete {
