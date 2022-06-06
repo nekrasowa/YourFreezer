@@ -1,7 +1,7 @@
 import React from 'react'
-import './goodsListInput.css'
+import './goodsListInput.scss'
 import InputText from './InputText'
-import InputRadioBtns from './InputRadioBtns'
+import InputNumber from './InputNumber'
 import InputAddBtn from './InputAddBtn'
 
 
@@ -10,7 +10,7 @@ function GoodsListInput() {
     <>
       <div className="GoodsListInput">
         <InputText />
-        <InputRadioBtns />
+        <InputNumber />
         <InputAddBtn />
       </div>
     </>

@@ -1,5 +1,5 @@
 import React from "react"
-import './App.css'
+import './App.scss'
 import BackImg  from "./background/background"
 import AppName from "./background/appName"
 import RegisterField from "./enterField/registerField/registerField"

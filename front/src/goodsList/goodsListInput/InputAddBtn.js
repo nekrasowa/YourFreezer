@@ -1,5 +1,5 @@
 import React from "react"
-import './goodsListInput.css'
+import './goodsListInput.scss'
 
 function InputAddBtn() {
   return (
