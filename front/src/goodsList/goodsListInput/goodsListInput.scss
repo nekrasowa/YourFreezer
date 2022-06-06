@@ -28,8 +28,8 @@
 }
 
 #listText {
-  width: 10rem;
-  box-shadow: inset 6px 5px 0px 0px #bfe165, inset -6px -5px 0px 0px #ad8d4d;
+  width: 9.5rem;
+  box-shadow: inset 3px 5px 0px 0px #bfe165, inset -3px -5px 0px 0px #ad8d4d;
   padding: 0 1rem;
   border-radius: 0.5rem;
   background: #f7ea63ba;
@@ -50,7 +50,7 @@
   grid-template-columns: repeat(2, 1fr); 
   
   width: 4.5rem;
-  box-shadow: inset 6px 5px 0px 0px #ad8d4d, inset -6px -5px 0px 0px #bfe165;
+  box-shadow: inset 3px 5px 0px 0px #ad8d4d, inset -3px -5px 0px 0px #bfe165;
   background: #f7ea63ba;
   color: #21580a;
   height: 3rem;
@@ -130,5 +130,18 @@ label {
 
 .InputAddBtn {
   grid-area: InputAddBtn;
+  height: 100%;
+  width: 100&;
+}
 
+#addBtn {
+  background-position: center;
+  background-repeat : no-repeat;
+  background-image: url('./add.svg');
+  background-color: rgba(0, 0, 0, 0);
+  height: 100%;
+  width: 100%;
+  border: none;
+  max-width: 50px;
+  margin: 0% 5% 0% 5%;
 }
