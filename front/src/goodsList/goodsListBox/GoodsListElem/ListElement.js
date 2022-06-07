@@ -6,8 +6,8 @@ function ListElement() {
   return (
     <>
       <div className='listElement' id='1'>
-        <input className='element checkbox'  name='1-check' value='no' type='checkbox' id='1-check' onclick='' />
-        <label className='element' for='1-check'></label>
+        <input className='element checkbox'  name='1-check' value='no' type='checkbox' id='1-check' onClick={null} />
+        <label className='element' htmlFor='1-check'></label>
         <p className='element text'>text</p>
         <div className='element icon edit'></div>
         <div className='element icon delete'></div>

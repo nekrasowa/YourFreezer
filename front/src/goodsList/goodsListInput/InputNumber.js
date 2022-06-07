@@ -6,7 +6,7 @@ function InputNumber() {
   return (
     <>
       <div className='InputNumber'>
-        <input id='inputNumber' type='text' placeholder='1.0'  maxlength='4'/>
+        <input id='inputNumber' type='text' placeholder='1.0'  maxLength='4'/>
         <InputRadioBtns />
       </div>
     </>

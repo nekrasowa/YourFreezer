@@ -5,10 +5,10 @@ function InputRadioBtns() {
   return (
     <>
       <div className='InputRadioBtns'>
-      <div class='container'>
+      <div className='container'>
         <form>
           <label>
-            <input type='radio' name='radio' checked/>
+            <input type='radio' name='radio' defaultChecked/>
             <span>kilo</span>
           </label>
           <label>
