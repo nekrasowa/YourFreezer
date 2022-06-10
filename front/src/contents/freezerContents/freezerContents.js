@@ -1,5 +1,5 @@
 import React from "react"
-import './freezerContents.css'
+import './FreezerContents.css'
 
 function FreezerContents() {
   return (

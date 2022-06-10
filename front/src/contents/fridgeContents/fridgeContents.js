@@ -1,5 +1,5 @@
 import React from "react"
-import './fridgeContents.css'
+import './FridgeContents.css'
 
 function FridgeContents() {
   return (

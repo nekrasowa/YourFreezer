@@ -1,5 +1,5 @@
 import React from 'react'
-import './registerField.css'
+import './RegisterField.css'
 
 function RegisterField() {
   return (

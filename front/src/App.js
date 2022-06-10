@@ -1,13 +1,13 @@
 import React from "react"
 import './App.scss'
-import BackImg  from "./background/background"
-import AppName from "./background/appName"
-import RegisterField from "./enterField/registerField/registerField"
-import AuthField from "./enterField/authField/authField"
-import FridgeContents from "./contents/fridgeContents/fridgeContents"
-import FreezerContents from "./contents/freezerContents/freezerContents"
-import GoodsListInput from "./goodsList/goodsListInput/goodsListInput"
-import GoodsListBox from "./goodsList/goodsListBox/goodsListBox"
+import BackImg  from "./Background/Background"
+import AppName from "./Background/AppName"
+import RegisterField from "./EnterField/RegisterField/RegisterField"
+import AuthField from "./EnterField/AuthField/AuthField"
+import FridgeContents from "./Contents/FridgeContents/FridgeContents"
+import FreezerContents from "./Contents/FreezerContents/FreezerContents"
+import GoodsListInput from "./GoodsList/GoodsListInput/GoodsListInput"
+import GoodsListBox from "./GoodsList/GoodsListBox/GoodsListBox"
 
 function App() {
   return (

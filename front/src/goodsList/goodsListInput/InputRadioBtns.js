@@ -1,5 +1,5 @@
 import React from 'react'
-import './goodsListInput.scss'
+import './GoodsListInput.scss'
 
 function InputRadioBtns() {
   return (

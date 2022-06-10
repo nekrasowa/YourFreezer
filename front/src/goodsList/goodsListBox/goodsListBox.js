@@ -1,6 +1,6 @@
 import React from "react"
-import './goodsListBox.css'
-import GoodsListBtns from ".//GoodsListBtns/GoodsListBtns"
+import './GoodsListBox.css'
+import GoodsListBtns from "./GoodsListBtns/GoodsListBtns"
 import GoodsListElements from "./GoodsListElem/GoodsListElements"
 
 

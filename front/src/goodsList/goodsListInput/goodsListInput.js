@@ -1,5 +1,5 @@
 import React from 'react'
-import './goodsListInput.scss'
+import './GoodsListInput.scss'
 import InputText from './InputText'
 import InputNumber from './InputNumber'
 import InputAddBtn from './InputAddBtn'

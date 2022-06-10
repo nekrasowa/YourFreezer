@@ -1,7 +1,7 @@
 import React from 'react'
-import './goodsListInput.scss'
+import './GoodsListInput.scss'
 import './add.svg'
-import GoodsListElements from '../goodsListBox/GoodsListElem/GoodsListElements.js'
+import GoodsListElements from '../GoodsListBox/GoodsListElem/GoodsListElements.js'
 
 function InputAddBtn() {
   return (
