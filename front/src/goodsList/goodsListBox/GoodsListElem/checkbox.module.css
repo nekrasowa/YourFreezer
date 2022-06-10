@@ -1,4 +1,3 @@
-
 .checkbox+label {
   grid-area: checkbox;
   margin: auto;
@@ -44,4 +43,9 @@
 
 .checkbox:disabled+label::before {
   background-color: #bfecd6;
+}
+
+#check1 {
+  opacity: 0;
+  display: none;
 }

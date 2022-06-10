@@ -16,7 +16,7 @@
   flex-grow: 8;
 }
 
-#InsertBtn, #CopyBtn, #Delete {
+#InsertBtn, #CopyBtn, #DeleteBtn {
   background-position: center;
   background-color: rgb(228, 217, 217);
   background-repeat : no-repeat;
@@ -34,7 +34,7 @@
   background-image: url('./icons/copy.svg');
   width: 100%;
 }
-#Delete {
+#DeleteBtn {
   background-image: url('./icons/delete.svg');
   width: 100%;
 }

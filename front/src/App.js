@@ -1,5 +1,5 @@
 import React from "react"
-import './App.scss'
+import styles from './App.module.scss'
 import BackImg  from "./Background/Background"
 import AppName from "./Background/AppName"
 import RegisterField from "./EnterField/RegisterField/RegisterField"
@@ -11,7 +11,7 @@ import GoodsListBox from "./GoodsList/GoodsListBox/GoodsListBox"
 
 function App() {
   return (
-    <div className="App">
+    <div className={`${styles.App}`}>
       <BackImg />
       <AppName />
       <RegisterField />

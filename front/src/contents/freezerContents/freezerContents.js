@@ -1,10 +1,10 @@
 import React from "react"
-import './FreezerContents.css'
+import styles from './FreezerContents.module.css'
 
 function FreezerContents() {
   return (
     <>
-      <div className="FreezerContents"></div>
+      <div className={`${styles.FreezerContents}`}></div>
     </>
   )
 }

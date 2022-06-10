@@ -1,5 +1,5 @@
 import React from 'react'
-import './GoodsListBtns.css'
+import styles from './GoodsListBtns.module.css'
 import Insert from "./Insert"
 import Copy from "./Copy"
 import Delete from "./Delete"
@@ -7,7 +7,7 @@ import Delete from "./Delete"
 
 function GoodsListBtns() {
   return (
-      <div className='GoodsListBtns'> 
+      <div className={`${styles.GoodsListBtns}`}> 
         <Insert />
         <Copy />
         <Delete />

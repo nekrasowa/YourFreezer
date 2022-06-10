@@ -1,11 +1,11 @@
 import React from 'react'
-import './GoodsListInput.scss'
+import styles from './GoodsListInput.module.scss'
 
 function InputRadioBtns() {
   return (
     <>
-      <div className='InputRadioBtns'>
-      <div className='container'>
+      <div className={`${styles.InputRadioBtns}`}>
+      <div className={`${styles.container}`}>
         <form>
           <label>
             <input type='radio' name='radio' defaultChecked/>

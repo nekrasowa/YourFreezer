@@ -1,16 +1,22 @@
 import React from "react"
-import './GoodsListElements.css'
-import './checkbox.css'
+import styles from './GoodsListElements.module.css'
+import check from './checkbox.module.css'
 
 function ListElement() {
   return (
     <>
-      <div className='listElement' id='1'>
-        <input className='element checkbox'  name='1-check' value='no' type='checkbox' id='1-check' onClick={null} />
-        <label className='element' htmlFor='1-check'></label>
-        <p className='element text'>text</p>
-        <div className='element icon edit'></div>
-        <div className='element icon delete'></div>
+      <div className={`${styles.ListElement}`} id='1'>
+        <input className={`${styles.element} ${check.checkbox}`} 
+          name='check1' 
+          value='no' 
+          type='checkbox' 
+          id={`${check.check1}`} 
+          onClick={null}           
+        />
+        <label className={`${styles.element}`} htmlFor={`${check.check1}`}></label>
+        <p className={`${styles.element} ${styles.text}`}>text</p>
+        <div className={`${styles.element} ${styles.icon} ${styles.edit}`}></div>
+        <div className={`${styles.element} ${styles.icon} ${styles.delete}`}></div>
       </div>
     </>
   )

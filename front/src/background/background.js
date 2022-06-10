@@ -1,12 +1,12 @@
 import React from 'react'
-import './Background.css'
+import styles from './Background.module.css'
 import backgroundImg from './freezer-img.jpg'
 
 function BackImg() {
   return (
     <div>
-      <div className='Background'>  
-        <img className='BackImg' src={backgroundImg} alt='BackImg'/>
+      <div className={`${styles.Background}`}>  
+        <img className={`${styles.BackImg}`} src={backgroundImg} alt='BackImg'/>
       </div>
     </div>
   )

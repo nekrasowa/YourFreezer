@@ -1,10 +1,10 @@
 import React from "react"
-import './AuthField.css'
+import styles from'./AuthField.module.css'
 
 function AuthField() {
   return (
     <>
-      <div className="AuthField"></div>
+      <div className={`${styles.AuthField}`}></div>
     </>
   )
 }

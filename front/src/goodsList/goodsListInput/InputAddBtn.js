@@ -1,13 +1,13 @@
 import React from 'react'
-import './GoodsListInput.scss'
+import styles from './GoodsListInput.module.scss'
 import './add.svg'
 import GoodsListElements from '../GoodsListBox/GoodsListElem/GoodsListElements.js'
 
 function InputAddBtn() {
   return (
     <>
-      <div className="InputAddBtn">
-        <button type='button' id='addBtn' onClick={GoodsListElements}></button>
+      <div className={`${styles.InputAddBtn}`}>
+        <button type='button' id={`${styles.addBtn}`} onClick={GoodsListElements}></button>
       </div>
     </>
   )

@@ -1,10 +1,10 @@
 import React from 'react'
-import './GoodsListBtns.css'
+import styles from './GoodsListBtns.module.css'
 
 function Delete() {
   return (        
-    <div className='Delete'>
-      <button type='button' id='Delete'></button>
+    <div className={`${styles.Delete}`}>
+      <button type='button' id={`${styles.DeleteBtn}`}></button>
     </div>
   )
 }

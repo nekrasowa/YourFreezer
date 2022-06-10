@@ -1,10 +1,10 @@
 import React from 'react'
-import './GoodsListElements.css'
+import styles from './GoodsListElements.module.css'
 import ListElement from './ListElement'
 
 function GoodsListElements() {
   return (
-      <div className='GoodsListElements'>
+      <div className={`${styles.BoxElements}`}>
         <ListElement />
         <ListElement />
         <ListElement />

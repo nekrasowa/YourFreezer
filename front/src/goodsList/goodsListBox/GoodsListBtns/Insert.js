@@ -1,10 +1,10 @@
 import React from 'react'
-import './GoodsListBtns.css'
+import styles from './GoodsListBtns.module.css'
 
 function Insert() {
   return (        
-    <div className='Insert'>
-      <button type='button' id='InsertBtn'></button>
+    <div className={`${styles.Insert}`}>
+      <button type='button' id={`${styles.InsertBtn}`}></button>
     </div>  
     )
 }

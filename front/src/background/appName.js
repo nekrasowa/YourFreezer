@@ -1,9 +1,9 @@
 import React from 'react'
-import './Background.css'
+import styles from './Background.module.css'
 
 function AppName() {
   return (
-      <p className='AppName'>Your Freezer</p>
+      <p className={`${styles.AppName}`}>Your Freezer</p>
   )
 }
 

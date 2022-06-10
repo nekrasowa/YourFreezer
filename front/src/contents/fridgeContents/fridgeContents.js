@@ -1,10 +1,10 @@
 import React from "react"
-import './FridgeContents.css'
+import styles from './FridgeContents.module.css'
 
 function FridgeContents() {
   return (
     <>
-      <div className="FridgeContents"></div>
+      <div className={`${styles.FridgeContents}`}></div>
     </>
   )
 }

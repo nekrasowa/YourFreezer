@@ -2,7 +2,7 @@
   grid-area: BoxElements;
 }
 
-.listElement {
+.ListElement {
   margin: 2%;
   display: grid;
   grid-template-areas: 'checkbox text edit delete';

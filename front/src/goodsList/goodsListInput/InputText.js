@@ -1,11 +1,11 @@
 import React from "react"
-import './GoodsListInput.scss'
+import styles from './GoodsListInput.module.scss'
 
 function InputText() {
   return (
     <>
-      <div className='InputText'>
-        <input id='listText' type='text' autoFocus placeholder='Add goods'/>
+      <div className={`${styles.InputText}`}>
+        <input id={`${styles.listText}`} type='text' autoFocus placeholder='Add goods'/>
       </div>
     </>
   )

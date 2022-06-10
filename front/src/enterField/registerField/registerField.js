@@ -1,9 +1,9 @@
 import React from 'react'
-import './RegisterField.css'
+import styles from'./RegisterField.module.css'
 
 function RegisterField() {
   return (
-    <div className='RegisterField'>  
+    <div className={`${styles.RegisterField}`}>  
     </div>
   )
 }

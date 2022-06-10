@@ -1,10 +1,10 @@
 import React from 'react'
-import './GoodsListBtns.css'
+import styles from './GoodsListBtns.module.css'
 
 function Copy() {
   return (        
-    <div className='Copy'>
-      <button type='button' id='CopyBtn'></button>
+    <div className={`${styles.Copy}`}>
+      <button type='button' id={`${styles.CopyBtn}`}></button>
     </div>  
     )
 }
