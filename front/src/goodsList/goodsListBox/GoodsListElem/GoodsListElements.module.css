@@ -15,6 +15,7 @@
 
 .element {
   cursor: pointer;
+  padding: 0 0 0 5%;
 }
 
 .checkbox {
@@ -38,7 +39,7 @@
   font-family: fantasy;
   color: rgb(17,17,17);
   text-decoration: none;
-  text-shadow: 3px;
+  vertical-align: middle;
 
 }
 

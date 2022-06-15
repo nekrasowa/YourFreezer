@@ -44,8 +44,3 @@
 .checkbox:disabled+label::before {
   background-color: #bfecd6;
 }
-
-#check1 {
-  opacity: 0;
-  display: none;
-}
