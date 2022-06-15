@@ -8,3 +8,5 @@ const goods = [
     text: 'apple'
   }
 ]
+
+export default goods

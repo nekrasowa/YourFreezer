@@ -4,9 +4,10 @@ import check from './checkbox.module.css'
 
 function ListElement(props) {
 
-  const id = props.goods.id ? props.goods.id : Date.now() 
-  const text = props.goods.text 
-// через map
+  const id = props.id ? props.id : Date.now() 
+  const text = props.text 
+  
+
   return (
     <>
       <div className={`${styles.ListElement}`} id={id}>
