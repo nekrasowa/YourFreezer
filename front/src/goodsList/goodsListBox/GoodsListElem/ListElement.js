@@ -2,10 +2,14 @@ import React from "react"
 import styles from './GoodsListElements.module.css'
 import check from './checkbox.module.css'
 
-function ListElement() {
+function ListElement(props) {
+
+  const id = props.goods.id ? props.goods.id : Date.now() 
+  const text = props.goods.text 
+// через map
   return (
     <>
-      <div className={`${styles.ListElement}`} id='1'>
+      <div className={`${styles.ListElement}`} id={id}>
         <input className={`${styles.element} ${check.checkbox}`} 
           name='check1' 
           value='no' 
@@ -14,7 +18,7 @@ function ListElement() {
           onClick={null}           
         />
         <label className={`${styles.element}`} htmlFor={`${check.check1}`}></label>
-        <p className={`${styles.element} ${styles.text}`}>text</p>
+        <p className={`${styles.element} ${styles.text}`}>{text}</p>
         <div className={`${styles.element} ${styles.icon} ${styles.edit}`}></div>
         <div className={`${styles.element} ${styles.icon} ${styles.delete}`}></div>
       </div>

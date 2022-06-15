@@ -7,7 +7,10 @@ function InputAddBtn() {
   return (
     <>
       <div className={`${styles.InputAddBtn}`}>
-        <button type='button' id={`${styles.addBtn}`} onClick={GoodsListElements}></button>
+        <button 
+          type='button' 
+          id={`${styles.addBtn}`} 
+          onClick={GoodsListElements}></button>
       </div>
     </>
   )

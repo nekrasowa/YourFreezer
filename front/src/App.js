@@ -9,7 +9,7 @@ import FreezerContents from "./Contents/FreezerContents/FreezerContents"
 import GoodsListInput from "./GoodsList/GoodsListInput/GoodsListInput"
 import GoodsListBox from "./GoodsList/GoodsListBox/GoodsListBox"
 
-function App() {
+function App(props) {
   return (
     <div className={`${styles.App}`}>
       <BackImg />
@@ -19,7 +19,7 @@ function App() {
       <FridgeContents />
       <FreezerContents />
       <GoodsListInput />
-      <GoodsListBox />
+      <GoodsListBox goods={props.goods}/>
     </div>
   )
 }

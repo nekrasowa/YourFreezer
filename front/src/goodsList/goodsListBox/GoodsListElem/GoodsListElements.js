@@ -2,13 +2,11 @@ import React from 'react'
 import styles from './GoodsListElements.module.css'
 import ListElement from './ListElement'
 
-function GoodsListElements() {
+function GoodsListElements(props) {
   return (
       <div className={`${styles.BoxElements}`}>
-        <ListElement />
-        <ListElement />
-        <ListElement />
-        <ListElement />
+        <ListElement goods={props.goods}/>
+        
 
       </div>
   )

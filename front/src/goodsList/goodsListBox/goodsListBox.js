@@ -4,12 +4,12 @@ import GoodsListBtns from "./GoodsListBtns/GoodsListBtns"
 import GoodsListElements from "./GoodsListElem/GoodsListElements"
 
 
-function GoodsListBox() {
+function GoodsListBox(props) {
   return (
     <>
       <div className={`${styles.GoodsListBox}`}>
         <GoodsListBtns />
-        <GoodsListElements />
+        <GoodsListElements goods={props.goods}/>
       </div>
     </>
   )
