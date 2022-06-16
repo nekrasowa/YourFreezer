@@ -9,7 +9,7 @@ function GoodsListElements(props) {
 }
 
   const listElements = props.goods
-    .map(g => <ListElement id={g.id} text={g.text}  key={getRandomArbitrary(1, 1000)}/>)
+    .map(g => <ListElement id={g.id} text={g.text}  key={getRandomArbitrary(1, 1000)} deleteElementOfList={props.deleteElementOfList}/>)
 
   return (
       <div className={`${styles.BoxElements}`}>

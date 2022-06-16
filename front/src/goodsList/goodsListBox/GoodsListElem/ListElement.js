@@ -1,9 +1,9 @@
-import React from "react"
+import React  from 'react'
+import BtnDelete from './LEBtnDelete'
 import styles from './GoodsListElements.module.css'
 import check from './checkbox.module.css'
 
 function ListElement(props) {
-
   const id = props.id ? props.id : Date.now() 
   const text = props.text 
   
@@ -11,8 +11,12 @@ function ListElement(props) {
 
   return (
     <>
-      <div className={`${styles.ListElement}`} id={id}>
-        <input className={`${styles.element} ${check.checkbox}`} 
+      <div 
+        className={`${styles.ListElement}`} 
+        id={id} 
+        >
+        <input 
+          className={`${styles.element} ${check.checkbox}`} 
           name={`check${id}`} 
           value='no' 
           type='checkbox' 
@@ -23,7 +27,7 @@ function ListElement(props) {
         <label className={`${styles.element}`} htmlFor={`${check.check}${id}`}></label>
         <p className={`${styles.element} ${styles.text}`}>{text}</p>
         <div className={`${styles.element} ${styles.icon} ${styles.edit}`}></div>
-        <div className={`${styles.element} ${styles.icon} ${styles.delete}`}></div>
+      <BtnDelete parentId={id} deleteElementOfList={props.deleteElementOfList}/> 
       </div>
     </>
   )

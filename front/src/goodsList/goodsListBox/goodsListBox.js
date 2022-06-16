@@ -9,7 +9,7 @@ function GoodsListBox(props) {
     <>
       <div className={`${styles.GoodsListBox}`}>
         <GoodsListBtns />
-        <GoodsListElements goods={props.goods}/>
+        <GoodsListElements goods={props.goods} deleteElementOfList={props.deleteElementOfList}/>
       </div>
     </>
   )
