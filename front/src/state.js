@@ -6,8 +6,18 @@ export const goods = [
   
 ]
 
-export const deleteElementOfList = (id) => {
+export function deleteElementFromList(id) {
   console.log('[elementOfGoods]:', id)
+
+  const findId = (elem) => elem.id = id
+
+  const indexOfGoods = goods.findIndex(findId)
+  console.log('[indexOfGoods]:', indexOfGoods)
+  
+  goods.splice(indexOfGoods, 1)
+
+  console.log('[goods]:', goods)
+
 }
 
 

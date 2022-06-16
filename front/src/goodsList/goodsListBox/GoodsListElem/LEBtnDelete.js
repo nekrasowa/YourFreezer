@@ -3,9 +3,9 @@ import styles from './GoodsListElements.module.css'
 
 function BtnDelete(props) {
   function deleteElement() {
-    props.deleteElementOfList(props.parentsID)
+    props.deleteElementFromList(props.parentsId)
 
-    console.log('[parentsId]:', props.parentsID)
+    console.log('[parentsId]:', props.parentsId)
   }
   return (
     <div 

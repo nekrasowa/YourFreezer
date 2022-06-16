@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
-import { goods, deleteElementOfList } from './state'
+import { goods, deleteElementFromList } from './state'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
-    <App goods={goods} deleteElementOfList={deleteElementOfList}/>
+    <App goods={goods} deleteElementFromList={deleteElementFromList}/>
   </React.StrictMode>
 )

@@ -27,7 +27,7 @@ function ListElement(props) {
         <label className={`${styles.element}`} htmlFor={`${check.check}${id}`}></label>
         <p className={`${styles.element} ${styles.text}`}>{text}</p>
         <div className={`${styles.element} ${styles.icon} ${styles.edit}`}></div>
-      <BtnDelete parentId={id} deleteElementOfList={props.deleteElementOfList}/> 
+      <BtnDelete parentsId={id} deleteElementFromList={props.deleteElementFromList}/> 
       </div>
     </>
   )
