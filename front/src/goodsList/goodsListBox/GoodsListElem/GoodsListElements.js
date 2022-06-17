@@ -14,7 +14,7 @@ function GoodsListElements(props) {
           text={g.text} 
           isChecked={g.isChecked} 
           key={getRandomArbitrary(1, 1000)} 
-          deleteElementFromList={props.deleteElementFromList}/>)
+          listMetods={props.listMetods}/>)
 
   return (
       <div className={`${styles.BoxElements}`}>

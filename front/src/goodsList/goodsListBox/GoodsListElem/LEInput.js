@@ -4,9 +4,15 @@ import check from './checkbox.module.css'
 
 
 function InputCheckbox(props) {
+  const checkboxStyle = {opacity: 0, display: 'none'}
+
   const id = props.parentsId
   const isChecked = props.isChecked
-  const checkboxStyle = {opacity: 0, display: 'none'}
+  const checkHandler = props.check
+
+  function inputHandler() {
+    checkHandler(id)
+  }
 
   return (
     <>
@@ -18,7 +24,7 @@ function InputCheckbox(props) {
         id={`check${id}`} 
         style={checkboxStyle}
         onClick={null}
-        onChange={null}
+        onChange={inputHandler}
         checked={isChecked}
         />
       <label 
