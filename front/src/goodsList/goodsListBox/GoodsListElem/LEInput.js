@@ -7,7 +7,7 @@ function InputCheckbox(props) {
   const id = props.parentsId
   const isChecked = props.isChecked
   const checkboxStyle = {opacity: 0, display: 'none'}
-  
+
   return (
     <>
       <input 
@@ -24,6 +24,8 @@ function InputCheckbox(props) {
       <label 
         className={`${styles.element}`} 
         htmlFor={`check${id}`}
+        checked={isChecked}
+
         >
       </label>
      </>   
