@@ -30,6 +30,10 @@
   width: 2rem;
 }
 
+.wasChecked {
+  text-decoration: line-through;
+} 
+
 .text {
   grid-area: text;
   margin: auto 0;
@@ -42,6 +46,10 @@
   vertical-align: middle;
 
 }
+
+.wasChecked {
+  text-decoration: line-through;
+} 
 
 .icon {
   background-repeat: no-repeat;

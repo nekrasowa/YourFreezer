@@ -1,24 +1,25 @@
 import React  from 'react'
-import BtnDelete from './LEBtnDelete'
-import InputCheckbox from './LEInput'
+import BtnDelete from './LE-BtnDelete'
+import InputCheckbox from './LE-Input'
+import Pelement from './LE-Pelement'
+
 import styles from './GoodsListElements.module.css'
 
 function ListElement(props) {
+
   const id = props.id ? props.id : Date.now() 
-  const text = props.text 
   return (
     <>
-      <div 
+      <div
         className={`${styles.ListElement}`} 
         id={id}>
         <InputCheckbox 
           parentsId={id} 
           isChecked={props.isChecked}
           check={props.listMetods.check}/>
-        <p 
-          className={`${styles.element} ${styles.text}`}>
-          {text}
-        </p>
+        <Pelement 
+          text={props.text} 
+          isChecked={props.isChecked}/>
         <div 
           className={`${styles.element} ${styles.icon} ${styles.edit}`}>
         </div>

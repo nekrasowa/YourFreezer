@@ -21,9 +21,9 @@ const findOfGoods = (parantsId, whatFind) => {
     return undefined
   }
  
-  return whatFind === 'index' ? 
-    goods.findIndex(findId) :
-    goods.find(findId)
+  return whatFind === 'index' 
+    ? goods.findIndex(findId)
+    : goods.find(findId)
 }
 
 
