@@ -7,12 +7,16 @@ export const goods = [
   {id: 4, text: 'pork', isChecked: true},
 ]
 
-export const listMetods = {
+export const metodList = {
   delete: deleteElementFromList,
   check: checkChangeHandler
 }
 
-const findOfGoods = (parantsId, whatFind) => {
+const findGoodById = (parantsId, opts = {}) => {
+  const {
+    isIndex = false,
+    isElement = false
+  } = opts || {}
 
   const findId = (elem) => {
     if (elem.id === parantsId) {
@@ -20,26 +24,31 @@ const findOfGoods = (parantsId, whatFind) => {
     }
     return undefined
   }
+
+  if (isIndex) {
+    return goods.findIndex(findId)
+  }
+  if (isElement) {
+    return goods.find(findId)
+  }
  
-  return whatFind === 'index' 
-    ? goods.findIndex(findId)
-    : goods.find(findId)
+  throw new Error('ERR_SOME_ERROR')
 }
 
 
 function deleteElementFromList(parantsId) {
   // console.log('[elementOfGoodsId]:', parantsId)
-  const index = findOfGoods(parantsId, 'index')
+  const index = findGoodById(parantsId, { isIndex: true })
   // console.log('[index]:', index)
   goods.splice(index, 1)
-  rerenderEntireTree(goods, listMetods)
+  rerenderEntireTree(goods, metodList)
 }
 
 function checkChangeHandler(parantsId) {
-  const elem = findOfGoods(parantsId, 'elem')
+  const elem = findGoodById(parantsId, { isElement: true })
   elem.isChecked = !elem.isChecked
 
-  rerenderEntireTree(goods, listMetods)
+  rerenderEntireTree(goods, metodList)
 }
 
 

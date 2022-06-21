@@ -1,4 +1,4 @@
-import { goods, listMetods } from './state'
+import { goods, metodList } from './state'
 import { rerenderEntireTree } from './render'
 
-rerenderEntireTree(goods, listMetods)
+rerenderEntireTree(goods, metodList)

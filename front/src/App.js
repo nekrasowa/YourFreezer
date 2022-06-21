@@ -19,7 +19,7 @@ function App(props) {
       <FridgeContents />
       <FreezerContents />
       <GoodsListInput />
-      <GoodsListBox goods={props.goods} listMetods={props.listMetods}/>
+      <GoodsListBox goods={props.goods} metodList={props.metodList}/>
     </div>
   )
 }

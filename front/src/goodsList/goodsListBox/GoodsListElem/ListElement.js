@@ -16,14 +16,14 @@ function ListElement(props) {
         <InputCheckbox 
           parentsId={id} 
           isChecked={props.isChecked}
-          check={props.listMetods.check}/>
+          check={props.metodList.check}/>
         <Pelement 
           text={props.text} 
           isChecked={props.isChecked}/>
         <div 
           className={`${styles.element} ${styles.icon} ${styles.edit}`}>
         </div>
-        <BtnDelete parentsId={id} delete={props.listMetods.delete}/> 
+        <BtnDelete parentsId={id} delete={props.metodList.delete}/> 
       </div>
     </>
   )

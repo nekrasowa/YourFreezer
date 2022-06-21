@@ -11,7 +11,7 @@ function GoodsListBox(props) {
         <GoodsListBtns />
         <GoodsListElements
           goods={props.goods} 
-          listMetods={props.listMetods}/>
+          metodList={props.metodList}/>
       </div>
     </>
   )
