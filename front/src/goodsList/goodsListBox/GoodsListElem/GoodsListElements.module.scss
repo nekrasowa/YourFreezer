@@ -49,9 +49,33 @@
 
 }
 
-.InputText {
-  
+.inputText {
+  grid-area: text;
+  margin: 0% 3% 0% 3%;
+
+  font-size: 100%;
+  font-family: fantasy;
+  color: rgb(17,17,17);
+  background: none;
+  border-radius: 0.5rem;
+  border-color: #f5ac41;
+
+  &:active {
+    border-color: #769645;
+
+  }
+  &:hover {
+    border-color: #4d4596;
+
+  }
+  &:focus-visible {
+    outline: none;
+    border-color: #459678;
+
+  }
+
 }
+
 
 .icon {
   background-repeat: no-repeat;

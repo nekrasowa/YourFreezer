@@ -5,7 +5,7 @@ import InputText from './LE-InputText'
 import BtnEdit from './LE-BtnEdit'
 import BtnTick from './LE-BtnTick'
 import Pelement from './LE-Pelement'
-import styles from './GoodsListElements.module.css'
+import styles from './GoodsListElements.module.scss'
 
 function ListElement(props) {
   const id = props.id ? props.id : Date.now() 
@@ -39,7 +39,7 @@ function ListElement(props) {
           parentsId={id} 
           isChecked={props.isChecked}
           check={props.metodList.check}/>
-        <ToView />
+        <ToModify />
         <BtnDelete parentsId={id} delete={props.metodList.delete}/> 
       </div>
     </>

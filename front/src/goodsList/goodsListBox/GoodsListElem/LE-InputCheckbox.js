@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './GoodsListElements.module.css'
+import styles from './GoodsListElements.module.scss'
 import check from './checkbox.module.css'
 
 function InputCheckbox(props) {

@@ -1,12 +1,13 @@
 import React from 'react'
-import styles from './GoodsListElements.module.css'
+import styles from './GoodsListElements.module.scss'
 
 function InputText(props) {
   
   return (
-    <div 
-      
-    ></div>
+    <input 
+      className={styles.inputText}
+
+    />
   )
 }
 
