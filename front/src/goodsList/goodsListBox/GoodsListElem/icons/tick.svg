@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 64 64" width="120%" height="110%">
+<radialGradient id="CI_iuYqyQyPDfdBrq7m0La" cx="33" cy="32" r="28.609" gradientUnits="userSpaceOnUse" spreadMethod="reflect">
+<stop offset="0" stop-color="#afeeff"/><stop offset=".193" stop-color="#bbf1ff"/><stop offset=".703" stop-color="#d7f8ff"/>
+<stop offset="1" stop-color="#e1faff"/></radialGradient>
+<linearGradient id="CI_iuYqyQyPDfdBrq7m0Lb" x1="32" x2="32" y1="14" y2="49.979" gradientUnits="userSpaceOnUse" spreadMethod="reflect">
+<stop offset="0" stop-color="#42d778"/><stop offset=".428" stop-color="#3dca76"/>
+<stop offset="1" stop-color="#34b171"/></linearGradient><path fill="rgb(44 101 21)" d="M51.964,15.036L25.482,41.518L12.036,28.036c-1.381-1.381-3.619-1.381-5,0l0,0 c-1.381,1.381-1.381,3.619,0,5l15.82,15.855c1.451,1.451,3.803,1.451,5.254,0l28.855-28.855c1.381-1.381,1.381-3.619,0-5l0,0 C55.584,13.655,53.345,13.655,51.964,15.036z"/></svg>

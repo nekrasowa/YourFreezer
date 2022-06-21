@@ -2,7 +2,6 @@ import React from 'react'
 import styles from './GoodsListElements.module.css'
 import check from './checkbox.module.css'
 
-
 function InputCheckbox(props) {
   const checkboxStyle = {opacity: 0, display: 'none'}
 
