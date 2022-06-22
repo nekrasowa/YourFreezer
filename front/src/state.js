@@ -7,14 +7,15 @@ export const state = {
     {id: 3, text: 'meat', isChecked: false},
     {id: 4, text: 'pork', isChecked: true},
   ],
-  inputText: ''
+  inputText: '',
+  wasClickedEdit: true
 }
 
 export const metodList = {
   delete: deleteElementFromList,
   check: checkChangeHandler,
-  // change: changeTextElement,
-  update: updateInputValue
+  update: updateInputValue,
+  showBody: showGoodBody,
 }
 
 const findGoodById = (parantsId, opts = {}) => {
@@ -39,29 +40,38 @@ const findGoodById = (parantsId, opts = {}) => {
  
   throw new Error('ERR_SOME_ERROR')
 }
-
 function deleteElementFromList(parantsId) {
   const index = findGoodById(parantsId, { isIndex: true })
   state.goods.splice(index, 1)
   rerenderEntireTree(state, metodList)
 }
-
 function checkChangeHandler(parantsId) {
   const elem = findGoodById(parantsId, { isElement: true })
   elem.isChecked = !elem.isChecked
 
   rerenderEntireTree(state, metodList)
 }
-
-// function changeTextElement(input) {
-//   console.log('[input]:', input)
-  
-//   return input
-// }
-
 function updateInputValue(newInput) {
   state.inputText = newInput
 
   rerenderEntireTree(state, metodList)
 }
-// console.log('[newText]:', newText)
+function showGoodBody(btn) {
+  console.log('[btn]:', btn)
+
+  if (btn === 'tick') {
+    state.wasClickedEdit = true
+  }
+  if (btn === 'edit') {
+    state.wasClickedEdit = false
+  }
+  if (!btn) {
+    throw new Error('ERR_SOME_ERROR')
+  }
+  console.log('[props]:', state.wasClickedEdit)
+  rerenderEntireTree(state, metodList)
+
+}
+
+console.log('[props]:', state.wasClickedEdit)
+

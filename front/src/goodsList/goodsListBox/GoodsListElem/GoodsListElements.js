@@ -14,6 +14,7 @@ function GoodsListElements(props) {
           isChecked={g.isChecked}
           key={getRandomArbitrary(1, 1000)}
           inputText={props.state.inputText}
+          wasClickedEdit={props.state.wasClickedEdit}
           metodList={props.metodList}/>
         )
   return (
