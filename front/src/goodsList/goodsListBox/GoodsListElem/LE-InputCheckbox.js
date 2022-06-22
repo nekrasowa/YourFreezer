@@ -4,7 +4,7 @@ import check from './checkbox.module.css'
 
 function InputCheckbox(props) {
   const checkboxStyle = {opacity: 0, display: 'none'}
-
+// console.log(props)
   const id = props.parentsId
   const isChecked = props.isChecked
   const checkHandler = props.check

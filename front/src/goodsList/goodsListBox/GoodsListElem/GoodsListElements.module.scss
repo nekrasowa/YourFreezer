@@ -30,12 +30,6 @@
   width: 2rem;
 }
 
-.wasChecked {
-  text-decoration: line-through;
-  color: #6b6b6bcc
-
-} 
-
 .text {
   grid-area: text;
   margin: auto 0;
@@ -48,6 +42,11 @@
   vertical-align: middle;
 
 }
+
+.wasChecked {
+  text-decoration: line-through;
+  color: #6b6b6bcc
+} 
 
 .inputText {
   grid-area: text;
@@ -73,9 +72,7 @@
     border-color: #459678;
 
   }
-
 }
-
 
 .icon {
   background-repeat: no-repeat;
