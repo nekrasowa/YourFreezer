@@ -10,6 +10,7 @@ import GoodsListInput from "./GoodsList/GoodsListInput/GoodsListInput"
 import GoodsListBox from "./GoodsList/GoodsListBox/GoodsListBox"
 
 function App(props) {
+
   return (
     <div className={`${styles.App}`}>
       <BackImg />
@@ -19,7 +20,7 @@ function App(props) {
       <FridgeContents />
       <FreezerContents />
       <GoodsListInput />
-      <GoodsListBox goods={props.goods} metodList={props.metodList}/>
+      <GoodsListBox state={props.state} metodList={props.metodList}/>
     </div>
   )
 }

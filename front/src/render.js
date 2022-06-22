@@ -4,10 +4,10 @@ import App from './App'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
-export const rerenderEntireTree = (goods, metodList) => {
+export const rerenderEntireTree = (state, metodList) => {
 
   root.render(
   <React.StrictMode>
-    <App goods={goods} metodList={metodList}/>
+    <App state={state} metodList={metodList}/>
   </React.StrictMode>
 )}

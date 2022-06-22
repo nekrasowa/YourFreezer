@@ -10,7 +10,7 @@ import styles from './GoodsListElements.module.scss'
 function ListElement(props) {
   const id = props.id ? props.id : Date.now() 
   
-  function ToView() {
+  function ToView(props) {
     return ( 
       <>
         <Pelement 
@@ -20,15 +20,35 @@ function ListElement(props) {
       </>
     )
   }
-  function ToModify() {
+  function ToModify(props) {
     return ( 
       <>
-        <InputText />
-        <BtnTick />
+        <InputText 
+          inputText={props.inputText}
+          metodList={props.metodList}/>
+        <BtnTick 
+          metodList={props.metodList}/>
       </>
     )
   }
-  
+
+  function ModifyOrView(props) {
+    if (true) {
+      return (
+        <>
+          <ToView 
+            text={props.text}
+            isChecked={props.isChecked}/>
+        </>)
+    }
+    return (
+      <>
+        <ToModify 
+          inputText={props.inputText}
+          metodList={props.metodList}/>
+      </>)
+    
+  }
 
   return (
     <>
@@ -39,7 +59,12 @@ function ListElement(props) {
           parentsId={id} 
           isChecked={props.isChecked}
           check={props.metodList.check}/>
-        <ToModify />
+        <ModifyOrView 
+          inputText={props.inputText}
+          metodList={props.metodList}
+          text={props.text}
+          isChecked={props.isChecked}
+        />
         <BtnDelete parentsId={id} delete={props.metodList.delete}/> 
       </div>
     </>

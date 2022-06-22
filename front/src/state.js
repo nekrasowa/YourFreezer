@@ -1,15 +1,20 @@
 import { rerenderEntireTree } from './render'
 
-export const goods = [
-  {id: 1, text: 'bananas', isChecked: false},
-  {id: 2, text: 'apple', isChecked: false},
-  {id: 3, text: 'meat', isChecked: false},
-  {id: 4, text: 'pork', isChecked: true},
-]
+export const state = {
+  goods: [
+    {id: 1, text: 'bananas', isChecked: false},
+    {id: 2, text: 'apple', isChecked: false},
+    {id: 3, text: 'meat', isChecked: false},
+    {id: 4, text: 'pork', isChecked: true},
+  ],
+  inputText: ''
+}
 
 export const metodList = {
   delete: deleteElementFromList,
-  check: checkChangeHandler
+  check: checkChangeHandler,
+  // change: changeTextElement,
+  update: updateInputValue
 }
 
 const findGoodById = (parantsId, opts = {}) => {
@@ -26,29 +31,37 @@ const findGoodById = (parantsId, opts = {}) => {
   }
 
   if (isIndex) {
-    return goods.findIndex(findId)
+    return state.goods.findIndex(findId)
   }
   if (isElement) {
-    return goods.find(findId)
+    return state.goods.find(findId)
   }
  
   throw new Error('ERR_SOME_ERROR')
 }
 
-
 function deleteElementFromList(parantsId) {
-  // console.log('[elementOfGoodsId]:', parantsId)
   const index = findGoodById(parantsId, { isIndex: true })
-  // console.log('[index]:', index)
-  goods.splice(index, 1)
-  rerenderEntireTree(goods, metodList)
+  state.goods.splice(index, 1)
+  rerenderEntireTree(state, metodList)
 }
 
 function checkChangeHandler(parantsId) {
   const elem = findGoodById(parantsId, { isElement: true })
   elem.isChecked = !elem.isChecked
 
-  rerenderEntireTree(goods, metodList)
+  rerenderEntireTree(state, metodList)
 }
 
+// function changeTextElement(input) {
+//   console.log('[input]:', input)
+  
+//   return input
+// }
 
+function updateInputValue(newInput) {
+  state.inputText = newInput
+
+  rerenderEntireTree(state, metodList)
+}
+// console.log('[newText]:', newText)

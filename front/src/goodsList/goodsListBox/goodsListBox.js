@@ -10,7 +10,7 @@ function GoodsListBox(props) {
       <div className={`${styles.GoodsListBox}`}>
         <GoodsListBtns />
         <GoodsListElements
-          goods={props.goods} 
+          state={props.state} 
           metodList={props.metodList}/>
       </div>
     </>
