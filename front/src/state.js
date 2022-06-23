@@ -2,14 +2,15 @@ import { rerenderEntireTree } from './render'
 
 export const state = {
   goods: [
-    {id: 1, text: 'bananas', isChecked: false},
-    {id: 2, text: 'apple', isChecked: false},
-    {id: 3, text: 'meat', isChecked: false},
-    {id: 4, text: 'pork', isChecked: true},
+    {id: 1, text: 'bananas', isChecked: false, wasClickedEdit: true},
+    {id: 2, text: 'apple', isChecked: false, wasClickedEdit: true},
+    {id: 3, text: 'meat', isChecked: false, wasClickedEdit: true},
+    {id: 4, text: 'pork', isChecked: true, wasClickedEdit: true},
   ],
   inputText: '',
-  wasClickedEdit: true
+  // wasClickedEdit: true
 }
+  console.log(state)
 
 export const metodList = {
   delete: deleteElementFromList,
@@ -56,12 +57,14 @@ function updateInputValue(newInput) {
 
   rerenderEntireTree(state, metodList)
 }
-function showGoodBody(btn) {
+function showGoodBody(btn, parantsId) {
+  const elem = findGoodById(parantsId, { isElement: true })
+
   if (btn === 'tick') {
-    state.wasClickedEdit = true
+    elem.wasClickedEdit = true
   }
   if (btn === 'edit') {
-    state.wasClickedEdit = false
+    elem.wasClickedEdit = false
   }
   if (!btn) {
     throw new Error('ERR_SOME_ERROR')

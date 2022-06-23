@@ -6,7 +6,6 @@ function InputText(props) {
   
   const onChangeHandler = () => {
     const value = newText.current.value
-    // props.metodList.change(value)
     props.metodList.update(value)
   }
 
@@ -16,6 +15,7 @@ function InputText(props) {
       ref={newText}
       value={props.inputText}
       onChange={onChangeHandler}
+      autoFocus
     />
   )
 }

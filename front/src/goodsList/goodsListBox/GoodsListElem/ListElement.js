@@ -15,18 +15,20 @@ function ListElement(props) {
       return (
         <>
           <ToView 
+            id={props.id}
             text={props.text}
             isChecked={props.isChecked}
-            showBody={props.showBody}
+            showBody={props.metodList.showBody}
             />
         </>)
     }
     return (
       <>
         <ToModify 
+          id={props.id}
           metodList={props.metodList}
           inputText={props.inputText}
-          showBody={props.showBody}
+          showBody={props.metodList.showBody}
         />
       </>)
   }
@@ -38,6 +40,7 @@ function ListElement(props) {
           text={props.text} 
           isChecked={props.isChecked}/>
         <BtnEdit 
+          id={props.id}
           showBody={props.showBody} />
       </>
     )
@@ -49,6 +52,7 @@ function ListElement(props) {
           inputText={props.inputText}
           metodList={props.metodList}/>
         <BtnTick 
+          id={props.id}
           showBody={props.showBody} />
       </>
     )
@@ -63,8 +67,8 @@ function ListElement(props) {
           isChecked={props.isChecked}
           check={props.metodList.check}/>
         <ModifyOrView 
+          id={id}
           inputText={props.inputText}
-          showBody={props.metodList.showBody}
           text={props.text}
           isChecked={props.isChecked}
           wasClickedEdit={props.wasClickedEdit}
