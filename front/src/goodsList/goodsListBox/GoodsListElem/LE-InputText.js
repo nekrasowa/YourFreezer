@@ -2,7 +2,6 @@ import React from 'react'
 import styles from './GoodsListElements.module.scss'
 
 function InputText(props) {
-  console.log(props)
   const newText = React.createRef()
   
   const onChangeHandler = () => {

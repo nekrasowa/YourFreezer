@@ -57,8 +57,6 @@ function updateInputValue(newInput) {
   rerenderEntireTree(state, metodList)
 }
 function showGoodBody(btn) {
-  console.log('[btn]:', btn)
-
   if (btn === 'tick') {
     state.wasClickedEdit = true
   }
@@ -68,10 +66,6 @@ function showGoodBody(btn) {
   if (!btn) {
     throw new Error('ERR_SOME_ERROR')
   }
-  console.log('[props]:', state.wasClickedEdit)
   rerenderEntireTree(state, metodList)
 
 }
-
-console.log('[props]:', state.wasClickedEdit)
-

@@ -8,12 +8,9 @@ import Pelement from './LE-Pelement'
 import styles from './GoodsListElements.module.scss'
 
 function ListElement(props) {
-  console.log('[props]:', props.wasClickedEdit)
-
   const id = props.id ? props.id : Date.now() 
 
   function ModifyOrView(props) {
-    console.log('[props.wasClickedEdit]:', props.wasClickedEdit)
     if (props.wasClickedEdit) {
       return (
         <>
@@ -27,6 +24,7 @@ function ListElement(props) {
     return (
       <>
         <ToModify 
+          metodList={props.metodList}
           inputText={props.inputText}
           showBody={props.showBody}
         />
@@ -70,6 +68,7 @@ function ListElement(props) {
           text={props.text}
           isChecked={props.isChecked}
           wasClickedEdit={props.wasClickedEdit}
+          metodList={props.metodList}
         />
         <BtnDelete parentsId={id} delete={props.metodList.delete}/> 
       </div>
