@@ -2,15 +2,12 @@ import { rerenderEntireTree } from './render'
 
 export const state = {
   goods: [
-    {id: 1, text: 'bananas', isChecked: false, wasClickedEdit: true},
-    {id: 2, text: 'apple', isChecked: false, wasClickedEdit: true},
-    {id: 3, text: 'meat', isChecked: false, wasClickedEdit: true},
-    {id: 4, text: 'pork', isChecked: true, wasClickedEdit: true},
+    {id: 1, text: 'bananas', isChecked: false, wasClickedEdit: true, inputText: ''},
+    {id: 2, text: 'apple', isChecked: false, wasClickedEdit: true, inputText: ''},
+    {id: 3, text: 'meat', isChecked: false, wasClickedEdit: true, inputText: ''},
+    {id: 4, text: 'pork', isChecked: true, wasClickedEdit: true, inputText: ''},
   ],
-  inputText: '',
-  // wasClickedEdit: true
 }
-  console.log(state)
 
 export const metodList = {
   delete: deleteElementFromList,
@@ -52,8 +49,9 @@ function checkChangeHandler(parantsId) {
 
   rerenderEntireTree(state, metodList)
 }
-function updateInputValue(newInput) {
-  state.inputText = newInput
+function updateInputValue(parantsId, newInput) {
+  const elem = findGoodById(parantsId, { isElement: true })
+  elem.inputText = newInput
 
   rerenderEntireTree(state, metodList)
 }

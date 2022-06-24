@@ -6,7 +6,10 @@ function InputNumber() {
   return (
     <>
       <div className={`${styles.InputNumber}`}>
-        <input id={`${styles.inputNumber}`} type='text' placeholder='1.0'  maxLength='4'/>
+        <input 
+            id={`${styles.inputNumber}`} 
+            type='text' placeholder='1.0'  
+            maxLength='4'/>
         <InputRadioBtns />
       </div>
     </>

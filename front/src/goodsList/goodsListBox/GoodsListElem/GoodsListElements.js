@@ -13,9 +13,9 @@ function GoodsListElements(props) {
           text={g.text}
           isChecked={g.isChecked}
           wasClickedEdit={g.wasClickedEdit}
-          key={getRandomArbitrary(1, 1000)}
-          inputText={props.state.inputText}
-          metodList={props.metodList}/>
+          inputText={g.inputText}
+          metodList={props.metodList}
+          key={getRandomArbitrary(1, 1000)}/>
         )
   return (
     <div className={`${styles.BoxElements}`}>

@@ -8,27 +8,27 @@ import Pelement from './LE-Pelement'
 import styles from './GoodsListElements.module.scss'
 
 function ListElement(props) {
+  console.log(props)
   const id = props.id ? props.id : Date.now() 
 
   function ModifyOrView(props) {
-    if (props.wasClickedEdit) {
+    if (props.props.wasClickedEdit) {
       return (
         <>
           <ToView 
-            id={props.id}
-            text={props.text}
-            isChecked={props.isChecked}
-            showBody={props.metodList.showBody}
+            id={props.props.id}
+            text={props.props.text}
+            isChecked={props.props.isChecked}
+            showBody={props.props.metodList.showBody}
             />
         </>)
     }
     return (
       <>
         <ToModify 
-          id={props.id}
-          metodList={props.metodList}
-          inputText={props.inputText}
-          showBody={props.metodList.showBody}
+          id={props.props.id}
+          inputText={props.props.inputText}
+          metodList={props.props.metodList}
         />
       </>)
   }
@@ -46,14 +46,17 @@ function ListElement(props) {
     )
   }
   function ToModify(props) {
+    console.log('[props]:', props)
+
     return ( 
       <>
         <InputText 
+          id={id}
           inputText={props.inputText}
           metodList={props.metodList}/>
         <BtnTick 
-          id={props.id}
-          showBody={props.showBody} />
+          id={id}
+          showBody={props.metodList.showBody} />
       </>
     )
   }
@@ -63,18 +66,16 @@ function ListElement(props) {
         className={`${styles.ListElement}`} 
         id={id}>
         <InputCheckbox 
-          parentsId={id} 
+          id={id} 
           isChecked={props.isChecked}
           check={props.metodList.check}/>
         <ModifyOrView 
-          id={id}
-          inputText={props.inputText}
-          text={props.text}
-          isChecked={props.isChecked}
-          wasClickedEdit={props.wasClickedEdit}
-          metodList={props.metodList}
+          props={props}
         />
-        <BtnDelete parentsId={id} delete={props.metodList.delete}/> 
+        <BtnDelete 
+          id={id} 
+          delete={props.metodList.delete}
+        /> 
       </div>
     </>
   )

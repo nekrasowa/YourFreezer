@@ -6,7 +6,7 @@ function InputText(props) {
   
   const onChangeHandler = () => {
     const value = newText.current.value
-    props.metodList.update(value)
+    props.metodList.update(props.id, value)
   }
 
   return (
