@@ -41,19 +41,21 @@ export const store = {
     if (action.type === 'DELETE') {
       const index = this._findGoodById(action.parantsId, { isIndex: true })
       this._state.goods.splice(index, 1)
-      rerenderEntireTree(this._state, this._getMethod)
+      rerenderEntireTree(store)
     }
     if (action.type === 'CHECK') {
+      console.log('[]', this)
+
       const elem = this._findGoodById(action.parantsId, { isElement: true })
       elem.isChecked = !elem.isChecked
   
-    rerenderEntireTree(this._state, this._getMethod)
+    rerenderEntireTree(store)
     }
     if (action.type === 'UPDATE') {
       const elem = this._findGoodById(action.parantsId, { isElement: true })
       elem.inputText = action.newInput
     
-      rerenderEntireTree(this._state, this._getMethod)
+      rerenderEntireTree(store)
     }
     if (action.type === 'SHOW-BODY') {
       const elem = this._findGoodById(action.parantsId, { isElement: true })
@@ -67,10 +69,12 @@ export const store = {
       if (!action.btn) {
         throw new Error('ERR_SOME_ERROR')
       }
-      rerenderEntireTree(this._state, this._getMethod)
+      rerenderEntireTree(store)
     }
     if (!action.type) {
       throw new Error('ERR_ACTION_TYPE_IS_NOT_DEFINED')
     }
   }
 }
+
+// window.store = store

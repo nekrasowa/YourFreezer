@@ -8,10 +8,12 @@ import Pelement from './LE-Pelement'
 import styles from './GoodsListElements.module.scss'
 
 function ListElement(props) {
-  console.log(props)
+
+  // console.log(props)
   const id = props.id ? props.id : Date.now() 
 
   function ModifyOrView(props) {
+
     if (props.props.wasClickedEdit) {
       return (
         <>
@@ -19,7 +21,7 @@ function ListElement(props) {
             id={props.props.id}
             text={props.props.text}
             isChecked={props.props.isChecked}
-            showBody={props.props.metodList.showBody}
+            dispatch={props.props.dispatch}
             />
         </>)
     }
@@ -28,7 +30,7 @@ function ListElement(props) {
         <ToModify 
           id={props.props.id}
           inputText={props.props.inputText}
-          metodList={props.props.metodList}
+          dispatch={props.props.dispatch}
         />
       </>)
   }
@@ -41,7 +43,7 @@ function ListElement(props) {
           isChecked={props.isChecked}/>
         <BtnEdit 
           id={props.id}
-          showBody={props.showBody} />
+          dispatch={props.dispatch} />
       </>
     )
   }
@@ -53,10 +55,10 @@ function ListElement(props) {
         <InputText 
           id={id}
           inputText={props.inputText}
-          metodList={props.metodList}/>
+          dispatch={props.dispatch}/>
         <BtnTick 
           id={id}
-          showBody={props.metodList.showBody} />
+          dispatch={props.dispatch} />
       </>
     )
   }
@@ -68,13 +70,13 @@ function ListElement(props) {
         <InputCheckbox 
           id={id} 
           isChecked={props.isChecked}
-          check={props.metodList.check}/>
+          dispatch={props.dispatch}/>
         <ModifyOrView 
           props={props}
         />
         <BtnDelete 
           id={id} 
-          delete={props.metodList.delete}
+          dispatch={props.dispatch}
         /> 
       </div>
     </>

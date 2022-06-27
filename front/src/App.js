@@ -20,7 +20,7 @@ function App(props) {
       <FridgeContents />
       <FreezerContents />
       <GoodsListInput />
-      <GoodsListBox state={props.state} metodList={props.metodList}/>
+      <GoodsListBox store={props.store} dispatch={props.dispatch}/>
     </div>
   )
 }

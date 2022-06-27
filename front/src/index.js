@@ -1,4 +1,4 @@
-import { state, metodList } from './state'
+import { store } from './store'
 import { rerenderEntireTree } from './render'
 
-rerenderEntireTree(state, metodList)
+rerenderEntireTree(store)

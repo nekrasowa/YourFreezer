@@ -3,19 +3,17 @@ import styles from './GoodsListElements.module.scss'
 import ListElement from './ListElement'
 
 function GoodsListElements(props) {
-  function getRandomArbitrary(min, max) {
-    return Math.random() * (max - min) + min;
-  }
+  const state = props.store.getState()
 
-  const listElements = props.state.goods
+  const listElements = state.goods
     .map(g => <ListElement
           id={g.id}
           text={g.text}
           isChecked={g.isChecked}
           wasClickedEdit={g.wasClickedEdit}
           inputText={g.inputText}
-          metodList={props.metodList}
-          key={getRandomArbitrary(1, 1000)}/>
+          dispatch={props.dispatch}
+          key={g.id}/>
         )
   return (
     <div className={`${styles.BoxElements}`}>

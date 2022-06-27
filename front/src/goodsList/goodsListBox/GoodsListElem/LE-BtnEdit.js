@@ -3,7 +3,12 @@ import styles from './GoodsListElements.module.scss'
 
 function BtnEdit(props) {
   const clickHandler = () => {
-    props.showBody('edit', props.id)
+    const action = {
+      type: 'SHOW-BODY',
+      parantsId: props.id,
+      btn: 'edit'
+    }
+    props.dispatch(action)
   }
   return (
     <div 

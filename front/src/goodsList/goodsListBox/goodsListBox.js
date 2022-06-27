@@ -10,8 +10,9 @@ function GoodsListBox(props) {
       <div className={`${styles.GoodsListBox}`}>
         <GoodsListBtns />
         <GoodsListElements
-          state={props.state} 
-          metodList={props.metodList}/>
+          store={props.store}
+          dispatch={props.dispatch}
+          />
       </div>
     </>
   )
