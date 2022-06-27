@@ -6,7 +6,12 @@ function InputText(props) {
   
   const onChangeHandler = () => {
     const value = newText.current.value
-    props.metodList.update(props.id, value)
+    const action = {
+      type: 'UPDATE',
+      newInput: value,
+      parantsId: props.id
+    }
+    props.dispatch(action)
   }
 
   return (

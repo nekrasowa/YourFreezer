@@ -62,9 +62,11 @@ export const store = {
   
       if (action.btn === 'tick') {
         elem.wasClickedEdit = true
+        elem.text = elem.inputText
       }
       if (action.btn === 'edit') {
         elem.wasClickedEdit = false
+        elem.inputText = elem.text
       }
       if (!action.btn) {
         throw new Error('ERR_SOME_ERROR')

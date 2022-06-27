@@ -42,14 +42,13 @@ function ListElement(props) {
           text={props.text} 
           isChecked={props.isChecked}/>
         <BtnEdit 
+          text={props.text}
           id={props.id}
           dispatch={props.dispatch} />
       </>
     )
   }
   function ToModify(props) {
-    console.log('[props]:', props)
-
     return ( 
       <>
         <InputText 
