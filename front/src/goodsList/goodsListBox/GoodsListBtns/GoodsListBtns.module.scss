@@ -24,7 +24,12 @@
   border: none;
   max-width: 50px;
 
+  &:active {
+    background-color: rgb(247 236 129);
+    height: 100%;
+  }
 }
+
 #InsertBtn {
   background-image: url('./icons/insert.svg');
   width: 30%;
@@ -38,8 +43,10 @@
   background-image: url('./icons/delete.svg');
   width: 100%;
 }
+
 .Copy {
   flex-grow: 1;
+  
 }
 
 .Delete {

@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './GoodsListBtns.module.css'
+import styles from './GoodsListBtns.module.scss'
 
 function Delete(props) {
   const clickHandler = () => {

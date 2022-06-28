@@ -8,7 +8,7 @@ export const store = {
       {id: 3, text: 'meat', isChecked: false, wasClickedEdit: true, inputText: ''},
       {id: 4, text: 'pork', isChecked: true, wasClickedEdit: true, inputText: ''},
     ],
-
+    copyText: '',
   },
   _findGoodById(parantsId, opts = {}) {
     const {
@@ -35,6 +35,14 @@ export const store = {
 
   getState() {
     return this._state
+  },
+
+  getList() {  
+    const state = this.getState()
+    const array = state.goods.map((g) => {
+      return g.text
+    })
+    return array.join(',\n')
   },
 
   dispatch(action) {
@@ -76,6 +84,10 @@ export const store = {
     if (action.type === 'DELETE-ALL') {
       const array = this.getState()
       array.goods.length = 0
+      rerenderEntireTree(store)
+    }
+    if (action.type === 'COPY') {
+      this._state.copyText = this.getList()
       rerenderEntireTree(store)
     }
     if (!action.type) {
