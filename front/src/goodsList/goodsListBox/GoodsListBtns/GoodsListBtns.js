@@ -5,13 +5,16 @@ import Copy from "./Copy"
 import Delete from "./Delete"
 
 
-function GoodsListBtns() {
+function GoodsListBtns(props) {
   return (
       <div className={`${styles.GoodsListBtns}`}> 
         <Insert />
-        <Copy />
-        <Delete />
-
+        <Copy 
+          dispatch={props.dispatch}
+        />
+        <Delete 
+          dispatch={props.dispatch}
+        />
       </div>
   )
 }

@@ -73,6 +73,11 @@ export const store = {
       }
       rerenderEntireTree(store)
     }
+    if (action.type === 'DELETE-ALL') {
+      const array = this.getState()
+      array.goods.length = 0
+      rerenderEntireTree(store)
+    }
     if (!action.type) {
       throw new Error('ERR_ACTION_TYPE_IS_NOT_DEFINED')
     }

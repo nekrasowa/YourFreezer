@@ -8,7 +8,9 @@ function GoodsListBox(props) {
   return (
     <>
       <div className={`${styles.GoodsListBox}`}>
-        <GoodsListBtns />
+        <GoodsListBtns 
+          dispatch={props.dispatch}
+        />
         <GoodsListElements
           store={props.store}
           dispatch={props.dispatch}
