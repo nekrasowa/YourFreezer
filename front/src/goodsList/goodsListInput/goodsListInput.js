@@ -5,13 +5,13 @@ import InputNumber from './InputNumber'
 import InputAddBtn from './InputAddBtn'
 
 
-function GoodsListInput() {
+function GoodsListInput(props) {
   return (
     <>
       <div className={`${styles.GoodsListInput}`}>
-        <InputText />
-        <InputNumber />
-        <InputAddBtn />
+        <InputText dispatch={props.dispatch}/>
+        <InputNumber dispatch={props.dispatch}/>
+        <InputAddBtn dispatch={props.dispatch}/>
       </div>
     </>
   )

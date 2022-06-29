@@ -19,7 +19,7 @@ function App(props) {
       <AuthField />
       <FridgeContents />
       <FreezerContents />
-      <GoodsListInput />
+      <GoodsListInput dispatch={props.dispatch}/>
       <GoodsListBox store={props.store} dispatch={props.dispatch}/>
     </div>
   )

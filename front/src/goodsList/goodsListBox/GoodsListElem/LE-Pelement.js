@@ -3,6 +3,7 @@ import styles from './GoodsListElements.module.scss'
 
 function Pelement(props) {
   let stylesOfP
+  const space = ' '
   props.isChecked 
     ? stylesOfP = `${styles.element} ${styles.text} ${styles.wasChecked}` 
     :stylesOfP = `${styles.element} ${styles.text}`
@@ -11,6 +12,10 @@ function Pelement(props) {
       <p 
         className={stylesOfP}>
         {props.text}
+        {space}
+        {props.number}
+        {space}
+        {props.unit}
       </p>
     )
 }

@@ -20,6 +20,8 @@ function ListElement(props) {
           <ToView 
             id={props.props.id}
             text={props.props.text}
+            number={props.props.number}
+            unit={props.props.unit}
             isChecked={props.props.isChecked}
             dispatch={props.props.dispatch}
             />
@@ -39,7 +41,9 @@ function ListElement(props) {
     return ( 
       <>
         <Pelement 
-          text={props.text} 
+          text={props.text}
+          number={props.number}
+          unit={props.unit}
           isChecked={props.isChecked}/>
         <BtnEdit 
           text={props.text}

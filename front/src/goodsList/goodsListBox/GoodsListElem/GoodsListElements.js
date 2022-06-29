@@ -9,6 +9,8 @@ function GoodsListElements(props) {
     .map(g => <ListElement
           id={g.id}
           text={g.text}
+          number={g.number}
+          unit={g.unit}
           isChecked={g.isChecked}
           wasClickedEdit={g.wasClickedEdit}
           inputText={g.inputText}
