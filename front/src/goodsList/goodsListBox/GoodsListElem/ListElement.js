@@ -69,7 +69,8 @@ function ListElement(props) {
     <>
       <div
         className={`${styles.ListElement}`} 
-        id={id}>
+        id={id}
+        key={id}>
         <InputCheckbox 
           id={id} 
           isChecked={props.isChecked}

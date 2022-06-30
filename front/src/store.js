@@ -3,10 +3,10 @@ import { rerenderEntireTree } from './render'
 export const store = {
   _state: {
     goods: [
-      {id: 1, text: 'bananas', number: 2, unit: 'kilo', isChecked: false, wasClickedEdit: true, inputText: ''},
-      {id: 2, text: 'apple', number: 5, unit: 'kilo', isChecked: false, wasClickedEdit: true, inputText: ''},
-      {id: 3, text: 'meat', number: 2, unit: 'pcs', isChecked: false, wasClickedEdit: true, inputText: ''},
-      {id: 4, text: 'pork', number: 6, unit: 'kilo', isChecked: true, wasClickedEdit: true, inputText: ''},
+      {id: 1, key: 1, text: 'bananas', number: 2, unit: 'kilo', isChecked: false, wasClickedEdit: true, inputText: ''},
+      {id: 2, key: 2, text: 'apple', number: 5, unit: 'kilo', isChecked: false, wasClickedEdit: true, inputText: ''},
+      {id: 3, key: 3, text: 'meat', number: 2, unit: 'pcs', isChecked: false, wasClickedEdit: true, inputText: ''},
+      {id: 4, key: 4, text: 'pork', number: 6, unit: 'kilo', isChecked: true, wasClickedEdit: true, inputText: ''},
     ],
     newGood: {text: '', number: '', unit: 'kilo'},
     copyText: '',
@@ -40,13 +40,17 @@ export const store = {
   getNewGood() {
     return this._state.newGood
   },
-
   getList() {  
     const state = this.getState()
     const array = state.goods.map((g) => {
       return g.text
     })
     return array.join(',\n')
+  },
+
+  generateId() {
+    const array = this.getState()
+    return array.goods.length+1
   },
 
   dispatch(action) {
@@ -108,6 +112,31 @@ export const store = {
       
       console.log(this.getNewGood())
     
+      rerenderEntireTree(store)
+    }
+    if (action.type === 'ADD') {
+      const newGood = this.getNewGood()
+      const id = this.generateId()
+      const text = newGood.text
+      const number = newGood.number
+      const unit = newGood.unit
+
+      const newElem = {
+        id: id, 
+        key: id,
+        text: text, 
+        number: number, 
+        unit: unit, 
+        isChecked: false, 
+        wasClickedEdit: true, 
+        inputText: ''
+      }
+      this._state.goods.push(newElem)
+      console.log(this._state.goods)
+      newGood.text = ''
+      newGood.number = ''
+      newGood.unit = 'kilo'
+
       rerenderEntireTree(store)
     }
     if (!action.type) {
