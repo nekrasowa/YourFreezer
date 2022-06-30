@@ -26,7 +26,7 @@ function InputNumber(props) {
             placeholder='1.0'  
             onChange={onChangeHandler}
             maxLength='4'/>
-        <InputRadioBtns />
+        <InputRadioBtns dispatch={props.dispatch}/>
       </div>
     </>
   )

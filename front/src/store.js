@@ -8,7 +8,7 @@ export const store = {
       {id: 3, text: 'meat', number: 2, unit: 'pcs', isChecked: false, wasClickedEdit: true, inputText: ''},
       {id: 4, text: 'pork', number: 6, unit: 'kilo', isChecked: true, wasClickedEdit: true, inputText: ''},
     ],
-    newGood: {text: '', number: '', unit: ''},
+    newGood: {text: '', number: '', unit: 'kilo'},
     copyText: '',
   },
   _findGoodById(parantsId, opts = {}) {
