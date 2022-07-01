@@ -9,8 +9,8 @@ function GoodsListInput(props) {
   return (
     <>
       <div className={`${styles.GoodsListInput}`}>
-        <InputText dispatch={props.dispatch}/>
-        <InputNumber dispatch={props.dispatch}/>
+        <InputText store={props.store} dispatch={props.dispatch}/>
+        <InputNumber store={props.store} dispatch={props.dispatch}/>
         <InputAddBtn dispatch={props.dispatch}/>
       </div>
     </>

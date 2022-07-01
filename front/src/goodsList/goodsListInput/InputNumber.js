@@ -5,6 +5,7 @@ import InputRadioBtns from './InputRadioBtns'
 function InputNumber(props) {
   const newText = React.createRef()
   const id = `${styles.inputNumber}`
+  const newGood = props.store.getNewGood()
   
   const onChangeHandler = () => {
     const value = newText.current.value
@@ -22,6 +23,7 @@ function InputNumber(props) {
         <input 
             ref={newText}
             id={id} 
+            value={newGood.number}
             type='text' 
             placeholder='1.0'  
             onChange={onChangeHandler}

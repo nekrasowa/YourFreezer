@@ -2,7 +2,6 @@ import React from 'react'
 import styles from './GoodsListInput.module.scss'
 
 function InputRadioBtns(props) {
-  console.log(props)
   const kiloChecked = React.createRef()
   const pcsChecked = React.createRef()
   const onChangeHandler = () => {

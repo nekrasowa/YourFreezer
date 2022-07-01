@@ -4,6 +4,7 @@ import styles from './GoodsListInput.module.scss'
 function InputText(props) {
   const newText = React.createRef()
   const id = `${styles.listText}`
+  const newGood = props.store.getNewGood()
   
   const onChangeHandler = () => {
     const value = newText.current.value
@@ -23,6 +24,7 @@ function InputText(props) {
           id={id} 
           ref={newText}
           type='text' 
+          value={newGood.text}
           autoFocus 
           placeholder='Add goods'
           onChange={onChangeHandler}

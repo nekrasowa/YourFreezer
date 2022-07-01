@@ -12,6 +12,7 @@ function InputText(props) {
       parantsId: props.id
     }
     props.dispatch(action)
+    
   }
 
   return (

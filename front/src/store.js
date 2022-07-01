@@ -3,12 +3,12 @@ import { rerenderEntireTree } from './render'
 export const store = {
   _state: {
     goods: [
-      {id: 1, key: 1, text: 'bananas', number: 2, unit: 'kilo', isChecked: false, wasClickedEdit: true, inputText: ''},
-      {id: 2, key: 2, text: 'apple', number: 5, unit: 'kilo', isChecked: false, wasClickedEdit: true, inputText: ''},
-      {id: 3, key: 3, text: 'meat', number: 2, unit: 'pcs', isChecked: false, wasClickedEdit: true, inputText: ''},
-      {id: 4, key: 4, text: 'pork', number: 6, unit: 'kilo', isChecked: true, wasClickedEdit: true, inputText: ''},
+      { id: 1, key: 1, text: 'bananas', number: 2, unit: 'kilo', isChecked: false, wasClickedEdit: true, inputText: '' },
+      { id: 2, key: 2, text: 'apple', number: 5, unit: 'kilo', isChecked: false, wasClickedEdit: true, inputText: '' },
+      { id: 3, key: 3, text: 'meat', number: 2, unit: 'pcs', isChecked: false, wasClickedEdit: true, inputText: '' },
+      { id: 4, key: 4, text: 'pork', number: 6, unit: 'kilo', isChecked: true, wasClickedEdit: true, inputText: '' },
     ],
-    newGood: {text: '', number: '', unit: 'kilo'},
+    newGood: { text: '', number: '', unit: 'kilo' },
     copyText: '',
   },
   _findGoodById(parantsId, opts = {}) {
@@ -16,21 +16,21 @@ export const store = {
       isIndex = false,
       isElement = false
     } = opts || {}
-  
+
     const findId = (elem) => {
       if (elem.id === parantsId) {
         return parantsId
       }
       return undefined
     }
-  
+
     if (isIndex) {
       return this._state.goods.findIndex(findId)
     }
     if (isElement) {
       return this._state.goods.find(findId)
     }
-   
+
     throw new Error('ERR_SOME_ERROR')
   },
 
@@ -40,7 +40,7 @@ export const store = {
   getNewGood() {
     return this._state.newGood
   },
-  getList() {  
+  getList() {
     const state = this.getState()
     const array = state.goods.map((g) => {
       return g.text
@@ -50,7 +50,7 @@ export const store = {
 
   generateId() {
     const array = this.getState()
-    return array.goods.length+1
+    return array.goods.length + 1
   },
 
   dispatch(action) {
@@ -64,18 +64,18 @@ export const store = {
 
       const elem = this._findGoodById(action.parantsId, { isElement: true })
       elem.isChecked = !elem.isChecked
-  
-    rerenderEntireTree(store)
+
+      rerenderEntireTree(store)
     }
     if (action.type === 'UPDATE') {
       const elem = this._findGoodById(action.parantsId, { isElement: true })
       elem.inputText = action.newInput
-    
+
       rerenderEntireTree(store)
     }
     if (action.type === 'SHOW-BODY') {
       const elem = this._findGoodById(action.parantsId, { isElement: true })
-  
+
       if (action.btn === 'tick') {
         elem.wasClickedEdit = true
         elem.text = elem.inputText
@@ -109,9 +109,7 @@ export const store = {
       if (action.subtype === 'UNIT') {
         elem.unit = action.newInput
       }
-      
-      console.log(this.getNewGood())
-    
+
       rerenderEntireTree(store)
     }
     if (action.type === 'ADD') {
@@ -122,23 +120,23 @@ export const store = {
       const unit = newGood.unit
 
       const newElem = {
-        id: id, 
+        id: id,
         key: id,
-        text: text, 
-        number: number, 
-        unit: unit, 
-        isChecked: false, 
-        wasClickedEdit: true, 
+        text: text,
+        number: number,
+        unit: unit,
+        isChecked: false,
+        wasClickedEdit: true,
         inputText: ''
       }
       this._state.goods.push(newElem)
-      console.log(this._state.goods)
-      newGood.text = ''
-      newGood.number = ''
-      newGood.unit = 'kilo'
+      this._state.newGood.text = ''
+      this._state.newGood.number = ''
+      this._state.newGood.unit = 'kilo'
 
       rerenderEntireTree(store)
     }
+
     if (!action.type) {
       throw new Error('ERR_ACTION_TYPE_IS_NOT_DEFINED')
     }
