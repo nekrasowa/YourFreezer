@@ -1,19 +1,17 @@
 import React  from 'react'
 import BtnDelete from './LE-BtnDelete'
 import InputCheckbox from './LE-InputCheckbox'
-import InputText from './LE-InputText'
+import ChangeInput from './LE-ChangeInput'
 import BtnEdit from './LE-BtnEdit'
 import BtnTick from './LE-BtnTick'
 import Pelement from './LE-Pelement'
 import styles from './GoodsListElements.module.scss'
 
 function ListElement(props) {
-
-  // console.log(props)
   const id = props.id ? props.id : Date.now() 
 
   function ModifyOrView(props) {
-
+    console.log('[propsModifyOrView]:', props)
     if (props.props.wasClickedEdit) {
       return (
         <>
@@ -31,7 +29,7 @@ function ListElement(props) {
       <>
         <ToModify 
           id={props.props.id}
-          inputText={props.props.inputText}
+          change={props.props.change}
           dispatch={props.props.dispatch}
         />
       </>)
@@ -53,11 +51,13 @@ function ListElement(props) {
     )
   }
   function ToModify(props) {
+console.log('[propsToModify]:', props)
+
     return ( 
       <>
-        <InputText 
+        <ChangeInput 
           id={id}
-          inputText={props.inputText}
+          change={props.change}
           dispatch={props.dispatch}/>
         <BtnTick 
           id={id}
@@ -74,7 +74,8 @@ function ListElement(props) {
         <InputCheckbox 
           id={id} 
           isChecked={props.isChecked}
-          dispatch={props.dispatch}/>
+          dispatch={props.dispatch}
+        />
         <ModifyOrView 
           props={props}
         />

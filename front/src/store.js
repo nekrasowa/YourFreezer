@@ -3,10 +3,10 @@ import { rerenderEntireTree } from './render'
 export const store = {
   _state: {
     goods: [
-      { id: 1, key: 1, text: 'bananas', number: 2, unit: 'kilo', isChecked: false, wasClickedEdit: true, inputText: '' },
-      { id: 2, key: 2, text: 'apple', number: 5, unit: 'kilo', isChecked: false, wasClickedEdit: true, inputText: '' },
-      { id: 3, key: 3, text: 'meat', number: 2, unit: 'pcs', isChecked: false, wasClickedEdit: true, inputText: '' },
-      { id: 4, key: 4, text: 'pork', number: 6, unit: 'kilo', isChecked: true, wasClickedEdit: true, inputText: '' },
+      { id: 1, key: 1, text: 'bananas', number: 2, unit: 'kilo', isChecked: false, wasClickedEdit: true, change: {inputText: '',  inputNumber: '', inputUnit: ''}},
+      { id: 2, key: 2, text: 'apple', number: 5, unit: 'kilo', isChecked: false, wasClickedEdit: true, change: {inputText: '',  inputNumber: '', inputUnit: ''} },
+      { id: 3, key: 3, text: 'meat', number: 2, unit: 'pcs', isChecked: false, wasClickedEdit: true, change: {inputText: '',  inputNumber: '', inputUnit: ''} },
+      { id: 4, key: 4, text: 'pork', number: 6, unit: 'kilo', isChecked: true, wasClickedEdit: true, change: {inputText: '',  inputNumber: '', inputUnit: ''} },
     ],
     newGood: { text: '', number: '', unit: 'kilo' },
     copyText: '',
@@ -67,9 +67,20 @@ export const store = {
 
       rerenderEntireTree(store)
     }
-    if (action.type === 'UPDATE') {
+    if (action.type === 'UPDATE-EDIT-INPUT') {
+      if (action.subtype === 'TEXT') {
       const elem = this._findGoodById(action.parantsId, { isElement: true })
-      elem.inputText = action.newInput
+      elem.change.inputText = action.newInput
+      }
+      if (action.subtype === 'NUMBER') {
+        const elem = this._findGoodById(action.parantsId, { isElement: true })
+        elem.change.inputNumber = action.newNumber
+      }
+      if (action.subtype === 'UNIT') {
+        const elem = this._findGoodById(action.parantsId, { isElement: true })
+        elem.change.inputUnit = action.newUnit
+      }
+console.log(this._state.goods.change)
 
       rerenderEntireTree(store)
     }
@@ -98,7 +109,7 @@ export const store = {
       this._state.copyText = this.getList()
       rerenderEntireTree(store)
     }
-    if (action.type === 'UPDATE-ADD_INPUT') {
+    if (action.type === 'UPDATE-ADD-INPUT') {
       const elem = this.getNewGood()
       if (action.subtype === 'TEXT') {
         elem.text = action.newInput
@@ -127,7 +138,9 @@ export const store = {
         unit: unit,
         isChecked: false,
         wasClickedEdit: true,
-        inputText: ''
+        change: { inputText: '',  
+                  inputNumber: '', 
+                  inputUnit: '' }
       }
       this._state.goods.push(newElem)
       this._state.newGood.text = ''

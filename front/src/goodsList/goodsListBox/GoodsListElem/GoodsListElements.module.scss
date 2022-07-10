@@ -48,32 +48,52 @@
   color: #6b6b6bcc
 } 
 
-.inputText {
+.changeInput {
   grid-area: text;
+  display: inline-flex;
   margin: 0% 4% 0% 7%;
   padding: 0% 0% 0% 1%;
+  background: none;
+  border-top: 3px #7e4d049d solid;
+  border-left: 3px #7e4d049d solid;
+  border-right: 3px #3e780481 solid;
+  border-bottom: 3px #3e780481 solid;
+
+  border-radius: 0.5rem;
+
+}
+
+.inputText, .inputNumber, .inputUnit {
   font-size: 130%;
   font-family: fantasy;
   color: rgb(17,17,17);
   background: none;
-  border-radius: 0.5rem;
-  border-color: #f5ac41;
+  border: none;
 
   &:active {
-    border-color: #769645;
-
+    background: #86a65674;
   }
   &:hover {
-    border-color: #4d4596;
-
+    background: #4d45965b;
   }
   &:focus-visible {
     outline: none;
-    border-color: #459678;
-
+    background: #4596785e;
   }
 }
+.inputText {
+  border-right: solid 2px #7e4d049d;
+  width: 55%;
+}
+.inputNumber {
+  border-right: solid 2px #7e4d049d;
+  width: 20%;
 
+}
+.inputUnit {
+  width: 25%;
+
+}
 .icon {
   background-repeat: no-repeat;
   width: 70%;

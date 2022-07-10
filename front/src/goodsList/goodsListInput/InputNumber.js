@@ -10,7 +10,7 @@ function InputNumber(props) {
   const onChangeHandler = () => {
     const value = newText.current.value
     const action = {
-      type: 'UPDATE-ADD_INPUT',
+      type: 'UPDATE-ADD-INPUT',
       subtype: 'NUMBER',
       newInput: value,
       parantsId: id

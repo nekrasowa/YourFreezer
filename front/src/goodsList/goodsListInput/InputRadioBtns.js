@@ -19,7 +19,7 @@ function InputRadioBtns(props) {
     }
 
     const action = {
-      type: 'UPDATE-ADD_INPUT',
+      type: 'UPDATE-ADD-INPUT',
       subtype: 'UNIT',
       newInput: isChecked()
     }

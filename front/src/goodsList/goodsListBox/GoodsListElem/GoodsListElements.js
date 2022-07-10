@@ -13,7 +13,7 @@ function GoodsListElements(props) {
           unit={g.unit}
           isChecked={g.isChecked}
           wasClickedEdit={g.wasClickedEdit}
-          inputText={g.inputText}
+          change={g.change}
           dispatch={props.dispatch}
           key={g.id}/>
         )
