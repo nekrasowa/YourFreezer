@@ -4,7 +4,6 @@ import InputText from './InputText'
 import InputNumber from './InputNumber'
 import InputAddBtn from './InputAddBtn'
 
-
 function GoodsListInput(props) {
   return (
     <>

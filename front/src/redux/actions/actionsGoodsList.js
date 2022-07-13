@@ -1,12 +1,12 @@
 import { 
-  DELETE_ONE, 
-  SHOW_BODY,
-  CHECK,
+  // DELETE_ONE, 
+  // SHOW_BODY,
+  // CHECK,
   COPY,
   DELETE_ALL,
-  INSERT,
+  // INSERT,
   ADD
- } from "./types";
+ } from "../types.js"
 
  export function deleteAllGoods() {
   return {
@@ -16,6 +16,13 @@ import {
 export function copyGoods() {
   return {
     type: COPY
+  }
+}
+
+export function addGood() {
+  return {
+    type: ADD
+
   }
 }
 

@@ -1,22 +1,48 @@
 const initialState = {
-  copyText: ''
+  goods: [],
 }
 
-export const copyListReducer = (state = initialState, action) => {
+export const addGoodReducer = (state = initialState, action) => {
   console.log('[action]:', action)
 
   switch(action.type) {
-    case 'COPY':
-
-      function getList() {
-        
-      }
-
+    case 'ADD':
       return {
-        ...state, 
-        copyText: getList(state)
+
       }
-    default: 
+    default:
       return state
-  } 
+  }
 }
+// export const copyListReducer = (state = initialState, action) => {
+//   console.log('[action]:', action)
+
+//   switch(action.type) {
+//     case 'COPY':
+
+//       function getList() {
+        
+//       }
+
+//       return {
+//         ...state, 
+//         copyText: getList(state)
+//       }
+//     default: 
+//       return state
+//   } 
+// }
+
+// export const deleteElementReducer = (state = initialState, action) => {
+//   console.log('[action]:', action)
+
+//   switch(action.type) {
+//     case 'DELETE':
+//       return {
+
+//       }
+//     default: 
+//       return state
+//   } 
+// }
+

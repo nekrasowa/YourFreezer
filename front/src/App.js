@@ -6,7 +6,7 @@ import RegisterField from "./EnterField/RegisterField/RegisterField"
 import AuthField from "./EnterField/AuthField/AuthField"
 import FridgeContents from "./Contents/FridgeContents/FridgeContents"
 import FreezerContents from "./Contents/FreezerContents/FreezerContents"
-import GoodsListInput from "./GoodsList/GoodsListInput/GoodsListInput"
+import GoodsListInput from "./GoodsList/GoodsListInput/GoodsListInput2"
 import GoodsListBox from "./GoodsList/GoodsListBox/GoodsListBox"
 
 function App(props) {
@@ -19,7 +19,8 @@ function App(props) {
       <AuthField />
       <FridgeContents />
       <FreezerContents />
-      <GoodsListInput store={props.store} dispatch={props.dispatch}/>
+      <GoodsListInput/>
+      {/* <GoodsListInput store={props.store} dispatch={props.dispatch}/> */}
       <GoodsListBox store={props.store} dispatch={props.dispatch}/>
     </div>
   )
