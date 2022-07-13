@@ -11,7 +11,6 @@ function ListElement(props) {
   const id = props.id ? props.id : Date.now() 
 
   function ModifyOrView(props) {
-    console.log('[propsModifyOrView]:', props)
     if (props.props.wasClickedEdit) {
       return (
         <>
@@ -51,7 +50,6 @@ function ListElement(props) {
     )
   }
   function ToModify(props) {
-console.log('[propsToModify]:', props)
 
     return ( 
       <>

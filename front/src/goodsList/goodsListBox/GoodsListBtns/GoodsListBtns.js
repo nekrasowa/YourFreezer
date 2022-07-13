@@ -1,9 +1,9 @@
 import React from 'react'
 import styles from './GoodsListBtns.module.scss'
-import Insert from "./Insert"
-import Copy from "./Copy"
-import Delete from "./Delete"
-
+import Insert from './Insert'
+import Copy from './Copy2'
+import Delete from './Delete'
+import store from '../../../redux/store'
 
 function GoodsListBtns(props) {
 
@@ -11,8 +11,7 @@ function GoodsListBtns(props) {
       <div className={`${styles.GoodsListBtns}`}> 
         <Insert />
         <Copy
-          copyText={props.copyText}
-          dispatch={props.dispatch}
+          store={store}
         />
         <Delete 
           dispatch={props.dispatch}
