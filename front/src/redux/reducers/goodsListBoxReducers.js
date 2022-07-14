@@ -14,6 +14,8 @@ export const addGoodReducer = (state = initialState, action) => {
       return state
   }
 }
+
+
 // export const copyListReducer = (state = initialState, action) => {
 //   console.log('[action]:', action)
 

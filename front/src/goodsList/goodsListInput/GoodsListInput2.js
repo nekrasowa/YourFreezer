@@ -52,10 +52,10 @@ function GoodsListInput(props) {
           />
         </div>
         <div className={`${styles.InputRadioBtns}`}>
-          <div className={`${styles.container}`}>
-            <form
-              onChange={handleInputUnit}
-            >
+          <div 
+            className={`${styles.container}`}
+            onChange={handleInputUnit}
+          >
               <label>
                 <input 
                   type='radio' 
@@ -73,7 +73,6 @@ function GoodsListInput(props) {
                 />
                 <span>pcs</span>
               </label>
-            </form>
           </div>
         </div>
         <input 
