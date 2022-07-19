@@ -39,6 +39,12 @@
   grid-template-columns: 5fr 1fr;
 }
 
+.ModifyBlock {
+  display: grid;
+  grid-template-areas: 'inputText inputNumber inputUnit';
+  grid-template-rows: 1fr;
+  grid-template-columns: 5fr 3fr 2fr;
+}
 
 .text {
   grid-area: text;
@@ -92,37 +98,23 @@
   }
 }
 
-.ModifyBlock {
-  display: grid;
-  grid-template-areas: 'inputText inputNumber inputUnit tick';
-  grid-template-rows: 1fr;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-}
-
 .inputText {
   grid-area: inputText;
 
   border-right: solid 2px #7e4d049d;
-  width: 90%;
+  width: 55%;
 }
 .inputNumber {
   grid-area: inputNumber;
 
   border-right: solid 2px #7e4d049d;
-  width: 90%;
+  width: 20%;
 }
 .inputUnit {
   grid-area: inputUnit;
 
-  width: 90%;
+  width: 25%;
 }
-.tick {
-  grid-area: tick;
-  background-image: url('./icons/tick.svg');
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
 .icon {
   background-repeat: no-repeat;
   width: 70%;
@@ -134,7 +126,10 @@
   background-image: url('./icons/edit.svg');
 }
 
-
+.tick {
+  grid-area: edit;
+  background-image: url('./icons/tick.svg');
+}
 
 .delete {
   grid-area: delete;
