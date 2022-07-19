@@ -5,9 +5,9 @@
 .ListElement {
   margin: 2%;
   display: grid;
-  grid-template-areas: 'checkbox text edit delete';
+  grid-template-areas: 'checkbox bodyOfElem delete';
   grid-template-rows: 1fr;
-  grid-template-columns: 1fr 7fr 1fr 1fr;
+  grid-template-columns: 1fr 6fr 1fr;
 
   /* border: 1px solid black; */
 
@@ -29,6 +29,16 @@
   height: 2rem;
   width: 2rem;
 }
+
+.BodyOfElem {
+  grid-area: bodyOfElem;
+
+  display: grid;
+  grid-template-areas: 'text edit';
+  grid-template-rows: 1fr;
+  grid-template-columns: 5fr 1fr;
+}
+
 
 .text {
   grid-area: text;
@@ -81,19 +91,38 @@
     background: #4596785e;
   }
 }
+
+.ModifyBlock {
+  display: grid;
+  grid-template-areas: 'inputText inputNumber inputUnit tick';
+  grid-template-rows: 1fr;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+}
+
 .inputText {
+  grid-area: inputText;
+
   border-right: solid 2px #7e4d049d;
-  width: 55%;
+  width: 90%;
 }
 .inputNumber {
-  border-right: solid 2px #7e4d049d;
-  width: 20%;
+  grid-area: inputNumber;
 
+  border-right: solid 2px #7e4d049d;
+  width: 90%;
 }
 .inputUnit {
-  width: 25%;
+  grid-area: inputUnit;
 
+  width: 90%;
 }
+.tick {
+  grid-area: tick;
+  background-image: url('./icons/tick.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
 .icon {
   background-repeat: no-repeat;
   width: 70%;
@@ -105,10 +134,7 @@
   background-image: url('./icons/edit.svg');
 }
 
-.tick {
-  grid-area: edit;
-  background-image: url('./icons/tick.svg');
-}
+
 
 .delete {
   grid-area: delete;

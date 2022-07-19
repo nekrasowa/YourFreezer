@@ -1,7 +1,9 @@
 import React  from 'react'
-import BtnDelete from './LE-BtnDelete'
+import BtnDelete from '../GoodsListElem2/compOfElem/DeleteBTN'
+// import BtnDelete from './LE-BtnDelete'
 // import InputCheckbox from './LE-InputCheckbox'
 import InputCheckbox from '../GoodsListElem2/compOfElem/CheckBox'
+import ModifyOrView from '../GoodsListElem2/compOfElem/BodyOfElem'
 // import ChangeInput from './LE-ChangeInput'
 // import BtnEdit from './LE-BtnEdit'
 // import BtnTick from './LE-BtnTick'
@@ -65,21 +67,10 @@ function ListElement(props) {
   // }
   return (
     <>
-      <div
-        className={`${styles.ListElement}`} 
-        >
-        <InputCheckbox 
-          
-        />
-        {/* <ModifyOrView  */}
-          <div 
-        className={`${styles.ListElement}`} 
-          
-        />
-        {/* /> */}
-        <BtnDelete 
-          
-        /> 
+      <div className={`${styles.ListElement}`} >
+        <InputCheckbox />
+        <ModifyOrView />
+        <BtnDelete /> 
       </div>
     </>
   )

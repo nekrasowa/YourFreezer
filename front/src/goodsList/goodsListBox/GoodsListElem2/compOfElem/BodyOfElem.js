@@ -1,12 +1,16 @@
 import React  from 'react'
-import styles from './GoodsListElements.module.scss'
+import ModifyBlock from './B-ModifyBlock'
+// import ReadBlock from './B-ReadBlock'
+
 
 function BodyOfElem(props) {
 
+
+
   return (
     <>
-      <div className={`${styles.BodyOfElem}`}>
-      </div>
+      <ModifyBlock />
+      {/* <ReadBlock /> */}
     </>
   )
 }
