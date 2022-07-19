@@ -1,24 +1,20 @@
 import React from 'react'
 import styles from './GoodsListBtns.module.scss'
-import {CopyToClipboard} from 'react-copy-to-clipboard'
+import { CopyToClipboard } from 'react-copy-to-clipboard'
+import { connect } from 'react-redux'
+// import {  }
 
 function Copy(props) {
-  const clickHandler = () => {
-    const action = {
-      type: 'COPY'
-    }
-    props.dispatch(action)
-  }
-
+  
   return (        
     <div className={`${styles.Copy}`}>
       <CopyToClipboard
-        text={props.copyText}
+        text={'text'}
         onCopy={() => {console.log('is copied')}}>
         <button 
           type='button' 
           id={`${styles.CopyBtn}`}
-          onClick={clickHandler}
+          onClick={null}
           />
       </CopyToClipboard>
       
@@ -26,4 +22,23 @@ function Copy(props) {
     )
 }
 
-export default Copy
+function mapStateToProps(state) {
+  console.log('[state]:', state)
+  return {
+    copyText: state.copyText
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+
+  return {
+    onCopyList: () => {
+      const action = {
+        type: 'COPY',
+      }
+      dispatch(action)
+  }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Copy)

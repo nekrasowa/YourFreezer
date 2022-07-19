@@ -1,14 +1,17 @@
 import React from 'react'
 import styles from './GoodsListInput.module.scss'
 import './add.svg'
+import { useDispatch, useSelector } from 'react-redux'
+
 
 function InputAddBtn(props) {
 
-  const onClickHandler = () => {
-    const action = {
-      type: 'ADD'
-    }
-    props.dispatch(action)
+
+  const dispatch = useDispatch()
+
+  const handleAdd = (e) => {
+    e.preventDefault()
+    // dispatch(addGood(date, id))
   }
   return (
     <>
@@ -16,7 +19,8 @@ function InputAddBtn(props) {
         <button 
           type='button' 
           id={`${styles.addBtn}`} 
-          onClick={onClickHandler}></button>
+          onClick={handleAdd}>
+        </button>
       </div>
     </>
   )

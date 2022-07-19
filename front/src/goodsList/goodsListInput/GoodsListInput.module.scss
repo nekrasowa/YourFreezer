@@ -6,15 +6,25 @@
   max-height: 35%;
 
   display: grid;
-  grid-template-areas: 'InputText InputNumber InputAddBtn';
-  grid-template-rows: 1fr;
-  grid-template-columns: 4fr 2fr 1fr; 
-
+  grid-template-areas: 'InputText InputNumber InputRadioBtns InputAddBtn';
+  grid-template-rows: 2fr;
+  grid-template-columns: 6fr 2fr 2fr 1fr; 
 }
 
 .InputText {
   grid-area: InputText;
-
+  max-width: 75%;
+  min-width: 30%;
+  box-shadow: inset 3px 5px 0px 0px #ad8d4d, inset -3px -5px 0px 0px #bfe165;
+  background: #f7ea63ba;
+  color: #21580a;
+  height: 3rem;
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 0 20% 0 5%;
 }
 
 #inputNumber, #listText {
@@ -26,7 +36,7 @@
   color: #21580a;
 }
 
-#listText {
+#InputText {
   width: 9.5rem;
   box-shadow: inset 3px 5px 0px 0px #bfe165, inset -3px -5px 0px 0px #ad8d4d;
   padding: 0 1rem;
@@ -42,13 +52,8 @@
 
 .InputNumber {
   grid-area: InputNumber;
-  display: grid;
-  grid-template-areas: 'number kilo'
-                       'number pcs'; 
-  grid-template-rows: repeat(2, 1fr); 
-  grid-template-columns: repeat(2, 1fr); 
-  
-  width: 4.5rem;
+  max-width: 80%;
+  min-width: 50%;
   box-shadow: inset 3px 5px 0px 0px #ad8d4d, inset -3px -5px 0px 0px #bfe165;
   background: #f7ea63ba;
   color: #21580a;
@@ -73,16 +78,17 @@ $primary-color: #074303;
 $text-color: mix(#000, $primary-color, 64%);
 
 .InputRadioBtns {
+  display: grid;
+  grid-template-areas: 'kilo'
+                       'pcs'; 
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns:  1fr;
+  
 	font-family: "Inter", sans-serif;
 	color: $text-color;
-	font-size: 25%;
+	font-size: 60%;
 }
-form {
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column;
-  margin: 13% 0% 0% 25%;
-}
+
 label {
 	display: flex;
 	cursor: pointer;
@@ -130,7 +136,7 @@ label {
 .InputAddBtn {
   grid-area: InputAddBtn;
   height: 100%;
-  width: 100&;
+  width: 100%;
 }
 
 #addBtn {
@@ -139,8 +145,8 @@ label {
   background-image: url('./add.svg');
   background-color: rgba(0, 0, 0, 0);
   height: 100%;
-  width: 100%;
+  width: 200%;
   border: none;
   max-width: 50px;
-  margin: 0% 5% 0% 5%;
+  margin: 0% 5% 0% -60%;
 }
