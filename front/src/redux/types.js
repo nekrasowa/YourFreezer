@@ -6,7 +6,7 @@ export const COPY = 'COPY'
 export const DELETE_ALL = 'DELETE-ALL'
 export const INSERT = 'INSERT'
 
-export const ADD = 'ADD'
+export const CREATE_GOOD = 'CREATE_GOOD'
 export const UPDATE_ADD_INPUT_NUMBER = 'UPDATE_ADD_INPUT_NUMBER'
 export const UPDATE_ADD_INPUT_UNIT = 'UPDATE_ADD_INPUT_UNIT'
 export const UPDATE_ADD_INPUT_TEXT = 'UPDATE_ADD_INPUT_TEXT'

@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
 // import { copyListReducer, deleteElementReducer } from './reducers/goodsListBoxReducers'
-import { addGoodReducer } from './reducers/goodsListBoxReducers'
+import { createGoodReducer } from './reducers/goodsListBoxReducers'
  
 const rootReducer = combineReducers({
-  addGood: addGoodReducer,
+  createGood: createGoodReducer,
 
   // copyList: copyListReducer,
 

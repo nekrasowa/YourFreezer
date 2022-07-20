@@ -5,10 +5,10 @@ import {
   COPY,
   DELETE_ALL,
   // INSERT,
-  ADD
+  CREATE_GOOD, 
  } from "../types.js"
 
- export function deleteAllGoods() {
+export function deleteAllGoods() {
   return {
     type: DELETE_ALL
   }
@@ -19,10 +19,10 @@ export function copyGoods() {
   }
 }
 
-export function addGood() {
+export function createGood(data) {
   return {
-    type: ADD
-
+    type: CREATE_GOOD,   
+    data
   }
 }
 

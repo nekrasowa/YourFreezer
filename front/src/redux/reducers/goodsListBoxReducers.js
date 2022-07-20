@@ -1,50 +1,50 @@
+import { CREATE_GOOD } from '../types'
+
 const initialState = {
-  goods: [],
+  goods: [
+    {
+      textGood: 'applle',
+      numberGood: 5,
+      unitGood: 'kg',
+      id: 'lkjhe78',
+      key: 'lkjhe78'
+    },
+    {
+      textGood: 'meat',
+      numberGood: 4,
+      unitGood: 'kg',
+      id: 'lr4hgi78',
+      key: 'lr4hgi78'
+    },
+    {
+      textGood: 'bread',
+      numberGood: 1,
+      unitGood: 'pcs',
+      id: 'lk67uh8',
+      key: 'lk67uh8'
+    },
+  ],
 }
 
-export const addGoodReducer = (state = initialState, action) => {
+export const createGoodReducer = (state = initialState, action) => {
   console.log('[action]:', action)
 
   switch(action.type) {
-    case 'ADD':
-      return {
+    case CREATE_GOOD:
+      console.log('[action.data]:', action.data)
 
+      return {
+        ...state,
+        goods: [...state.goods, {
+          textGood: action.data.textGood,
+          numberGood: action.data.numberGood,
+          unitGood: action.data.unitGood,
+          id: action.data.id,
+          key: action.data.id
+        }]
       }
     default:
       return state
   }
 }
-
-
-// export const copyListReducer = (state = initialState, action) => {
-//   console.log('[action]:', action)
-
-//   switch(action.type) {
-//     case 'COPY':
-
-//       function getList() {
-        
-//       }
-
-//       return {
-//         ...state, 
-//         copyText: getList(state)
-//       }
-//     default: 
-//       return state
-//   } 
-// }
-
-// export const deleteElementReducer = (state = initialState, action) => {
-//   console.log('[action]:', action)
-
-//   switch(action.type) {
-//     case 'DELETE':
-//       return {
-
-//       }
-//     default: 
-//       return state
-//   } 
-// }
 
