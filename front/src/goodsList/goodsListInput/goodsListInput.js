@@ -34,11 +34,13 @@ function GoodsListInput(props) {
       id
     }
     dispatch(createGood(data))
+    setTextGood('')
+    setNumberGood('');
   }
 
   return (
     <>
-      <form className={`${styles.GoodsListInput}`}>
+      <div className={`${styles.GoodsListInput}`}>
         <input 
           className={`${styles.InputText}`}
           type='text'
@@ -50,16 +52,15 @@ function GoodsListInput(props) {
           type='text'
           onChange={handleInputNumber}
           value={numberGood} />
-        <div 
+        <form 
           className={`${styles.container} ${styles.InputRadioBtns}`}
-          onChange={handleInputUnit}
-        >
+          onChange={handleInputUnit}>
           <label>
             <input 
               type='radio' 
               name='radio' 
               value='kilo'
-              defaultChecked
+              // defaultChecked
             />
             <span>kilo</span>
           </label>
@@ -71,14 +72,14 @@ function GoodsListInput(props) {
             />
             <span>pcs</span>
           </label>
-        </div>
+        </form> 
         <input 
           type='submit' 
           id={`${styles.addBtn}`} 
           onClick={handleAdd} 
           value={''}
           />
-      </form>
+      </div>
     </>
   )
 }
