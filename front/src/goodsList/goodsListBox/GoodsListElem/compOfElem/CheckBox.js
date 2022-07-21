@@ -8,7 +8,7 @@ function CheckBox(props) {
   const id = 0
 
   const [isCheck, setIsCheck] = useState(false)
-  console.log('[state]:', isCheck)
+  // console.log('[state]:', isCheck)
 
   const onChangeHandler = () => setIsCheck(!isCheck)
   return (

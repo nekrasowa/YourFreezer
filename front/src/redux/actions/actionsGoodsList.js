@@ -1,28 +1,18 @@
 import { 
-  // DELETE_ONE, 
-  // SHOW_BODY,
-  // CHECK,
-  COPY,
-  DELETE_ALL,
-  // INSERT,
-  CREATE_GOOD, 
+  CREATE_GOOD,
+  LOADING_GOODS
  } from "../types.js"
-
-export function deleteAllGoods() {
-  return {
-    type: DELETE_ALL
-  }
-}
-export function copyGoods() {
-  return {
-    type: COPY
-  }
-}
 
 export function createGood(data) {
   return {
-    type: CREATE_GOOD,   
-    data
+    type: CREATE_GOOD,  
+    data 
+  }
+}
+
+export function loadGoods() {
+  return {
+    type: LOADING_GOODS,   
   }
 }
 

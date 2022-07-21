@@ -10,7 +10,7 @@ function BodyOfElem(props) {
   return (
     <>
       {/* <ModifyBlock /> */}
-      <ReadBlock />
+      <ReadBlock goodInfo={props.goodInfo}/>
     </>
   )
 }

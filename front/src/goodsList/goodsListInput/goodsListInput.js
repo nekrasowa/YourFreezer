@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import uniqid from 'uniqid'
 import styles from './GoodsListInput.module.scss'
 import { createGood } from '../../redux/actions/actionsGoodsList'
@@ -18,24 +18,19 @@ function GoodsListInput(props) {
   const handleInputUnit = (e) => {
     setUnitGood(e.target.value);
   }
-  const goods = useSelector(state => {
-    const { createGood } = state
-    return createGood.goods
-  })
   const dispatch = useDispatch()
-
+  
+  const data = {
+    textGood,
+    numberGood,
+    unitGood,
+    id: uniqid()
+  }
   const handleAdd = (e) => {
-    e.preventDefault()
-    const id = uniqid()
-    const data = {
-      textGood,
-      numberGood,
-      unitGood,
-      id
-    }
+    // e.preventDefault()
     dispatch(createGood(data))
     setTextGood('')
-    setNumberGood('');
+    setNumberGood('')
   }
 
   return (

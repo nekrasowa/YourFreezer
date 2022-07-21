@@ -10,7 +10,7 @@ function ListElement(props) {
     <>
       <div className={`${styles.ListElement}`}>
         <CheckBox />
-        <BodyOfElem />
+        <BodyOfElem goodInfo={props.goodInfo}/>
         <DeleteBTN />
       </div>
     </>
