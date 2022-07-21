@@ -1,4 +1,4 @@
-import { CREATE_GOOD, LOADING_GOODS } from '../types'
+import { CREATE_GOOD, LOADING_GOODS, DELETE_ONE } from '../types'
 
 const initialState = {
   goods: [
@@ -26,7 +26,7 @@ const initialState = {
 export const createGoodReducer = (state = initialState, action) => {
   // console.log('[action]:', action)
 
-  switch(action.type) {
+  switch (action.type) {
     case CREATE_GOOD:
       console.log('[action.data]:', action.data)
       return {
@@ -47,6 +47,17 @@ export const createGoodReducer = (state = initialState, action) => {
         ...state,
         goods: [...state.goods]
       }
+    case DELETE_ONE:
+      const deletedGoodIndex = state.goods
+        .findIndex(good => good.id === action.id)
+
+      const goodsWithoutDeletedEl = [...state.goods]
+      goodsWithoutDeletedEl.splice(deletedGoodIndex, 1)
+      return {
+        ...state,
+        goods: goodsWithoutDeletedEl
+      }
+
     default:
       return state
   }
