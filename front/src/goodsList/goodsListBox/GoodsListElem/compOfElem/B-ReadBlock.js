@@ -1,24 +1,32 @@
-import React  from 'react'
+import React from 'react'
 import styles from '../GoodsListElements.module.scss'
+import { useDispatch } from 'react-redux'
+import { editGood } from '../../../../redux/actions/actionsGoodsList'
 
 function ReadBlock(props) {
-  const { textGood, numberGood, unitGood, id, isChacked } = props.goodInfo 
-  // console.log('[props.goodInfo ]:', props.goodInfo )
+  const { textGood, numberGood, unitGood, id } = props.goodInfo.info
+  const { isChecked } = props.goodInfo.state
+  // console.log('props.goodInfo.state >>>>', props.goodInfo.state)
+  // console.log('isChacked >>>>', isChacked)
   const goodText = `${textGood} ${numberGood} ${unitGood}`
-  // console.log('[goodText ]:', goodText )
-  
+
+  const dispatch = useDispatch()
+  const editClickHandler = () => {
+    dispatch(editGood(id))
+  }
+
   return (
     <div className={`${styles.BodyOfElem}`} id={id}>
-      <p 
-        className={isChacked 
-        ? `${styles.element} ${styles.text} ${styles.wasChecked}`
-        : `${styles.element} ${styles.text}`}
+      <p
+        className={isChecked
+          ? `${styles.element} ${styles.text} ${styles.wasChecked}`
+          : `${styles.element} ${styles.text}`}
         value={''}> {goodText}
       </p>
 
-      <div 
+      <div
         className={`${styles.element} ${styles.icon} ${styles.edit}`}
-        onClick={null} > 
+        onClick={editClickHandler} >
       </div>
     </div>
   )

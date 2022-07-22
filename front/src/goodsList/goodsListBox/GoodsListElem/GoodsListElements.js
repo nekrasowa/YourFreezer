@@ -7,8 +7,7 @@ function GoodsListElements(props) {
 
   const goods = useSelector(state => state.createGood.goods)
 
-  const list = goods.map(good => <ListElement goodInfo={good} key={good.id}/>)
-  
+  const list = goods.map(good => <ListElement goodInfo={good} key={good.info.id}/>)
   return (
     <div className={`${styles.BoxElements}`}>
       {list}

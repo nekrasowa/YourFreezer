@@ -5,27 +5,28 @@ import styles from './GoodsListInput.module.scss'
 import { createGood } from '../../redux/actions/actionsGoodsList'
 
 function GoodsListInput(props) {
-  
-  const [ textGood, setTextGood ] = useState('')
+
+  const [textGood, setTextGood] = useState('')
   const handleInputText = (e) => {
     setTextGood(e.target.value);
   }
-  const [ numberGood, setNumberGood ] = useState('')
+  const [numberGood, setNumberGood] = useState('')
   const handleInputNumber = (e) => {
     setNumberGood(e.target.value);
   }
-  const [ unitGood, setUnitGood ] = useState('')
+  const [unitGood, setUnitGood] = useState('')
   const handleInputUnit = (e) => {
     setUnitGood(e.target.value);
   }
   const dispatch = useDispatch()
-  
+
   const data = {
-    textGood,
-    numberGood,
-    unitGood,
-    id: uniqid(),
-    isChacked: false
+    info: {
+      textGood,
+      numberGood,
+      unitGood,
+      id: uniqid(),
+    }
   }
   const handleAdd = (e) => {
     // e.preventDefault()
@@ -37,44 +38,44 @@ function GoodsListInput(props) {
   return (
     <>
       <div className={`${styles.GoodsListInput}`}>
-        <input 
+        <input
           className={`${styles.InputText}`}
           type='text'
           onChange={handleInputText}
           value={textGood} />
 
-        <input 
+        <input
           className={`${styles.InputNumber}`}
           type='text'
           onChange={handleInputNumber}
           value={numberGood} />
-        <form 
+        <form
           className={`${styles.container} ${styles.InputRadioBtns}`}
           onChange={handleInputUnit}>
           <label>
-            <input 
-              type='radio' 
-              name='radio' 
+            <input
+              type='radio'
+              name='radio'
               value='kilo'
-              // defaultChecked
+            // defaultChecked
             />
             <span>kilo</span>
           </label>
           <label>
-            <input 
-              type='radio' 
+            <input
+              type='radio'
               name='radio'
               value='pcs'
             />
             <span>pcs</span>
           </label>
-        </form> 
-        <input 
-          type='submit' 
-          id={`${styles.addBtn}`} 
-          onClick={handleAdd} 
+        </form>
+        <input
+          type='submit'
+          id={`${styles.addBtn}`}
+          onClick={handleAdd}
           value={''}
-          />
+        />
       </div>
     </>
   )

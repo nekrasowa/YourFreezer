@@ -1,6 +1,8 @@
 export const DELETE_ONE = 'DELETE_ONE'
-export const SHOW_BODY = 'SHOW_BODY'
 export const CHECKED = 'CHECKED'
+export const EDIT_GOOD = 'EDIT_GOOD'
+export const KEEP_GOOD = 'KEEP_GOOD'
+
 
 export const COPY = 'COPY'
 export const DELETE_ALL = 'DELETE-ALL'
