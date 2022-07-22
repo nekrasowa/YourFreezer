@@ -1,16 +1,16 @@
-import { 
+import {
   CREATE_GOOD,
   LOADING_GOODS,
   DELETE_ONE,
   CHECKED,
   EDIT_GOOD,
   KEEP_GOOD
- } from "../types.js"
+} from "../types.js"
 
 export function createGood(data) {
   return {
     type: CREATE_GOOD,
-    data 
+    data
   }
 }
 
@@ -23,25 +23,25 @@ export function loadGoods() {
 export function deleteGood(id) {
   return {
     type: DELETE_ONE,
-    id 
+    id
   }
 }
 export function chackedGood(id) {
   return {
     type: CHECKED,
-    id 
+    id
   }
 }
 export function editGood(id) {
   return {
     type: EDIT_GOOD,
-    id 
+    id
   }
 }
-export function keepGood(id) {
+export function keepGood(data) {
   return {
     type: KEEP_GOOD,
-    id 
+    data
   }
 }
 

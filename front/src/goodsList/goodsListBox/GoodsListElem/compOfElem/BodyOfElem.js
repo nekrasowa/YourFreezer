@@ -1,19 +1,24 @@
-import React  from 'react'
+import React from 'react'
 import ModifyBlock from './B-ModifyBlock'
 import ReadBlock from './B-ReadBlock'
 
 
 function BodyOfElem(props) {
-  const editClicked = null
-  
-
+  const showBlock = () => {
+    const fieldShow = props.goodInfo.states.fieldShow
+    if (fieldShow === 'ModifyBlock') {
+      return true
+    }
+    return false
+  }
+  console.log(showBlock())
   return (
     <>
-      {editClicked 
-        ? <ModifyBlock />
-        : <ReadBlock goodInfo={props.goodInfo}/>
+      {showBlock()
+        ? <ModifyBlock goodInfo={props.goodInfo}/>
+        : <ReadBlock goodInfo={props.goodInfo} />
       }
-       
+
     </>
   )
 }

@@ -5,8 +5,8 @@ import { editGood } from '../../../../redux/actions/actionsGoodsList'
 
 function ReadBlock(props) {
   const { textGood, numberGood, unitGood, id } = props.goodInfo.info
-  const { isChecked } = props.goodInfo.state
-  // console.log('props.goodInfo.state >>>>', props.goodInfo.state)
+  const { isChecked } = props.goodInfo.states
+  // console.log('props.goodInfo.states >>>>', props.goodInfo.states)
   // console.log('isChacked >>>>', isChacked)
   const goodText = `${textGood} ${numberGood} ${unitGood}`
 

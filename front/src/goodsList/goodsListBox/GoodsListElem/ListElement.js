@@ -5,11 +5,12 @@ import BodyOfElem from './compOfElem/BodyOfElem'
 import DeleteBTN from './compOfElem/DeleteBTN'
 
 function ListElement(props) {
-  const id = props.goodInfo.state.id
+
+  const id = props.goodInfo.info.id
   return (
     <>
       <div className={`${styles.ListElement}`}>
-        <CheckBox id={props.goodInfo.info.id} isChacked={id}/>
+        <CheckBox id={id} isChacked={props.goodInfo.states.isChacked}/>
         <BodyOfElem goodInfo={props.goodInfo}/>
         <DeleteBTN id={id}/>
       </div>

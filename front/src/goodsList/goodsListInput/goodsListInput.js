@@ -28,7 +28,7 @@ function GoodsListInput(props) {
       id: uniqid(),
     }
   }
-  const handleAdd = (e) => {
+  const AddHandle = () => {
     // e.preventDefault()
     dispatch(createGood(data))
     setTextGood('')
@@ -73,7 +73,7 @@ function GoodsListInput(props) {
         <input
           type='submit'
           id={`${styles.addBtn}`}
-          onClick={handleAdd}
+          onClick={AddHandle}
           value={''}
         />
       </div>
