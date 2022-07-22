@@ -24,7 +24,8 @@ function GoodsListInput(props) {
     textGood,
     numberGood,
     unitGood,
-    id: uniqid()
+    id: uniqid(),
+    isChacked: false
   }
   const handleAdd = (e) => {
     // e.preventDefault()

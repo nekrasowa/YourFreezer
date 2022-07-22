@@ -9,7 +9,7 @@ function ListElement(props) {
   return (
     <>
       <div className={`${styles.ListElement}`}>
-        <CheckBox id={props.goodInfo.id}/>
+        <CheckBox id={props.goodInfo.id} isChacked={props.goodInfo.isChacked}/>
         <BodyOfElem goodInfo={props.goodInfo}/>
         <DeleteBTN id={props.goodInfo.id}/>
       </div>

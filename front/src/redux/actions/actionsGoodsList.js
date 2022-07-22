@@ -1,7 +1,8 @@
 import { 
   CREATE_GOOD,
   LOADING_GOODS,
-  DELETE_ONE
+  DELETE_ONE,
+  CHECKED
  } from "../types.js"
 
 export function createGood(data) {
@@ -23,3 +24,10 @@ export function deleteGood(id) {
     id 
   }
 }
+export function chackedGood(id) {
+  return {
+    type: CHECKED,
+    id 
+  }
+}
+

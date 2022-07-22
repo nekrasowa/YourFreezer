@@ -1,4 +1,4 @@
-import { CREATE_GOOD, LOADING_GOODS, DELETE_ONE } from '../types'
+import { CREATE_GOOD, LOADING_GOODS, DELETE_ONE, CHECKED } from '../types'
 
 const initialState = {
   goods: [
@@ -7,18 +7,21 @@ const initialState = {
       numberGood: 5,
       unitGood: 'kg',
       id: 'lkjhe78',
+      isChacked: true
     },
     {
       textGood: 'meat',
       numberGood: 4,
       unitGood: 'kg',
       id: 'lr4hgi78',
+      isChacked: false
     },
     {
       textGood: 'bread',
       numberGood: 1,
       unitGood: 'pcs',
       id: 'lk67uh8',
+      isChacked: false
     },
   ],
 }
@@ -36,7 +39,7 @@ export const createGoodReducer = (state = initialState, action) => {
           numberGood: action.data.numberGood,
           unitGood: action.data.unitGood,
           id: action.data.id,
-          key: action.data.id
+          isChacked: false
         }]
       }
 
@@ -56,6 +59,23 @@ export const createGoodReducer = (state = initialState, action) => {
       return {
         ...state,
         goods: goodsWithoutDeletedEl
+      }
+    case CHECKED:
+      const chackedGood = state.goods
+        .find(good => good.id === action.id)
+      const chackedGoodIndex = state.goods
+        .findIndex(good => good.id === action.id)
+          
+        const copyChackedGood = {...chackedGood}
+      copyChackedGood.isChacked = !copyChackedGood.isChacked
+      
+      const goodsWithCheckedEl = [...state.goods]
+      goodsWithCheckedEl.splice(chackedGoodIndex, 1, copyChackedGood)
+
+      console.log(goodsWithCheckedEl)
+      return {
+        ...state,
+        goods: goodsWithCheckedEl
       }
 
     default:
