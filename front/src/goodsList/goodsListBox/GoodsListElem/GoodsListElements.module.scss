@@ -32,17 +32,16 @@
 
 .BodyOfElem {
   grid-area: bodyOfElem;
-
+  max-height: 1.5em;
   display: grid;
   grid-template-areas: 'text edit';
   grid-template-rows: 1fr;
   grid-template-columns: 5fr 1fr;
 }
 
-
 .text {
   grid-area: text;
-  margin: 0% 3% 0% 3%;
+  margin: 0% 3% 0% -4%;
 
   font-size: 1.5rem;
   font-weight: bold;
@@ -50,7 +49,6 @@
   color: rgb(17,17,17);
   text-decoration: none;
   vertical-align: middle;
-
 }
 
 .wasChecked {
@@ -74,7 +72,7 @@
 }
 
 .inputText, .inputNumber, .inputUnit {
-  font-size: 130%;
+  font-size: 150%;
   font-family: fantasy;
   color: rgb(17,17,17);
   background: none;
@@ -97,23 +95,21 @@
   grid-template-areas: 'inputText inputNumber inputUnit tick';
   grid-template-rows: 1fr;
   grid-template-columns: 2fr 1fr 1fr 1fr;
+  max-height: 1.5em;
 }
 
 .inputText {
   grid-area: inputText;
-
   border-right: solid 2px #7e4d049d;
   width: 90%;
 }
 .inputNumber {
   grid-area: inputNumber;
-
   border-right: solid 2px #7e4d049d;
-  width: 90%;
+  width: 80%;
 }
 .inputUnit {
   grid-area: inputUnit;
-
   width: 90%;
 }
 .tick {
@@ -133,8 +129,6 @@
   grid-area: edit;
   background-image: url('./icons/edit.svg');
 }
-
-
 
 .delete {
   grid-area: delete;

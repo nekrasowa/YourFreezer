@@ -7,10 +7,11 @@ import DeleteBTN from './compOfElem/DeleteBTN'
 function ListElement(props) {
 
   const id = props.goodInfo.info.id
+  const isChecked = props.goodInfo.states.isChecked
   return (
     <>
       <div className={`${styles.ListElement}`}>
-        <CheckBox id={id} isChacked={props.goodInfo.states.isChacked}/>
+        <CheckBox id={id} isChecked={isChecked}/>
         <BodyOfElem goodInfo={props.goodInfo}/>
         <DeleteBTN id={id}/>
       </div>

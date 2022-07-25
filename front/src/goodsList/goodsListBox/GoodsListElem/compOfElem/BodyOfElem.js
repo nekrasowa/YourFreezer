@@ -11,7 +11,6 @@ function BodyOfElem(props) {
     }
     return false
   }
-  console.log(showBlock())
   return (
     <>
       {showBlock()

@@ -7,12 +7,13 @@ import { chackedGood } from '../../../../redux/actions/actionsGoodsList'
 function CheckBox(props) {
   const checkboxStyle = {opacity: 0, display: 'none'}
   const id = props.id
-  const isChacked = props.isChacked
+  const isChecked = props.isChecked
   const dispatch = useDispatch()
 
-  const [isCheck, setIsCheck] = useState(false)
-  // console.log('[states]:', isCheck)
-
+  const [isCheck, setIsCheck] = useState(isChecked)
+console.log('[isCheck]:', isCheck)
+console.log('[isChecked]:', isChecked)
+console.log('[props]:', props)
   const onChangeHandler = () => {
     dispatch(chackedGood(id))
     setIsCheck(!isCheck)
@@ -27,12 +28,13 @@ function CheckBox(props) {
         id={`check${id}`} 
         style={checkboxStyle}
         onChange={onChangeHandler}
-        checked={isChacked}
+        defaultChecked={isCheck}
         />
       <label 
         className={`${styles.element}`} 
         htmlFor={`check${id}`}
-        checked={isChacked}
+        type='checkbox'
+        defaultChecked={isCheck}
         >
       </label>
     </>
