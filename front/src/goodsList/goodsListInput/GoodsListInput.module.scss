@@ -26,7 +26,10 @@
   font-weight: bold;
   padding: 0 20% 0 5%;
 }
+.warning {
+  background: rgba(138, 24, 24, 0.534);
 
+}
 #inputNumber, #listText {
   height: 3rem;
   border: none;
@@ -150,3 +153,4 @@ label {
   max-width: 50px;
   margin: 0% 5% 0% -60%;
 }
+

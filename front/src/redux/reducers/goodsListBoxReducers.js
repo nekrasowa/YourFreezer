@@ -48,6 +48,9 @@ const initialState = {
       }
     },
   ],
+  // inputField: {
+  //   warning: false
+  // }
 }
 
 export const createGoodReducer = (state = initialState, action) => {
@@ -55,6 +58,15 @@ export const createGoodReducer = (state = initialState, action) => {
 
   switch (action.type) {
     case CREATE_GOOD:
+      // if (action.data.info.textGood === '') {
+      //   const inputFieldCopy = {...state.inputField}
+      //   inputFieldCopy.warning = true
+      //   return {
+      //     ...state,
+      //     inputField: inputFieldCopy
+      //   }
+      // }
+
       console.log('[action.data]:', action.data)
       return {
         ...state,
@@ -127,7 +139,6 @@ export const createGoodReducer = (state = initialState, action) => {
 
       const goodsWithEditedEl = [...state.goods]
       goodsWithEditedEl.splice(editedGoodIndex, 1, updatedGoodShow)
-// debugger
       return {
         ...state,
         goods: goodsWithEditedEl

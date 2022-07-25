@@ -29,9 +29,10 @@ function GoodsListInput(props) {
     }
   }
 
-  const inputTextStylesNormal = `${styles.InputText}`
-  const inputTextStylesWarning = `${styles.InputText} ${styles.warning}`
+  const inputTextStylesNormal = `${styles.GoodsListInput}`
+  const inputTextStylesWarning = `${styles.GoodsListInput} ${styles.warning}`
 
+ 
   const AddHandle = () => {
     if(textGood === '') {
       return 
@@ -46,8 +47,8 @@ function GoodsListInput(props) {
       <div className={`${styles.GoodsListInput}`}>
         <input
           className={textGood === ''
-            ? inputTextStylesWarning
-            : inputTextStylesNormal}
+        ? inputTextStylesWarning
+        : inputTextStylesNormal}
           type='text'
           onChange={handleInputText}
           value={textGood} />
