@@ -4,7 +4,6 @@ import { keepGood } from '../../../../redux/actions/actionsGoodsList'
 import styles from '../GoodsListElements.module.scss'
 
 function ModifyBlock(props) {
-  console.log('[props]:', props)
   const { 
     textGood: oldTextGood,
     numberGood: oldNumberGood,
@@ -16,7 +15,6 @@ function ModifyBlock(props) {
   const handleInputText = (e) => {
     setTextGood(e.target.value);
   }
-  console.log('[textInput]:', oldTextGood)
 
   const [ numberInput, setNumberGood ] = useState(oldNumberGood)
   const handleInputNumber = (e) => {

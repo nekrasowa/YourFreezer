@@ -43,31 +43,17 @@ const initialState = {
       },
       states: {
         isChecked: false,
-        fieldShow: 'ModifyBlock'
+        fieldShow: 'ReadBlock'
 
       }
     },
   ],
-  // inputField: {
-  //   warning: false
-  // }
 }
 
 export const createGoodReducer = (state = initialState, action) => {
-  // console.log('[action]:', action)
 
   switch (action.type) {
     case CREATE_GOOD:
-      // if (action.data.info.textGood === '') {
-      //   const inputFieldCopy = {...state.inputField}
-      //   inputFieldCopy.warning = true
-      //   return {
-      //     ...state,
-      //     inputField: inputFieldCopy
-      //   }
-      // }
-
-      console.log('[action.data]:', action.data)
       return {
         ...state,
         goods: [...state.goods, {
