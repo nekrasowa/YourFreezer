@@ -1,58 +1,31 @@
+// import { getAllGoods } from '../../requests/forGoodsList/getAllGoods'
 import {
   CREATE_GOOD,
   LOADING_GOODS,
   DELETE_ONE,
   CHECKED,
   EDIT_GOOD,
-  KEEP_GOOD
+  KEEP_GOOD,
+  INIT_GOODS
 } from '../types'
 
+// console.log('[initialState]:', initialState)
+
+// const initialState = getAllGoods()
 const initialState = {
-  goods: [
-    {
-      info: {
-        textGood: 'apple',
-        numberGood: 5,
-        unitGood: 'kg',
-        id: 'lkjhe78'
-      },
-      states: {
-        isChecked: true,
-        fieldShow: 'ReadBlock'
-      }
-    },
-    {
-      info: {
-        textGood: 'meat',
-        numberGood: 4,
-        unitGood: 'kg',
-        id: 'lr4hgi78',
-      },
-      states: {
-        isChecked: true,
-        fieldShow: 'ReadBlock'
-
-      }
-    },
-    {
-      info: {
-        textGood: 'bread',
-        numberGood: 1,
-        unitGood: 'pcs',
-        id: 'lk67uh8',
-      },
-      states: {
-        isChecked: false,
-        fieldShow: 'ReadBlock'
-
-      }
-    },
-  ],
+  goods: []
 }
 
 export const createGoodReducer = (state = initialState, action) => {
-
   switch (action.type) {
+
+    case INIT_GOODS:
+
+      return {
+        ...state,
+        goods: action.data
+      }
+
     case CREATE_GOOD:
       return {
         ...state,
@@ -153,7 +126,7 @@ export const createGoodReducer = (state = initialState, action) => {
       const goodsWithKeepedEl = [...state.goods]
 
       goodsWithKeepedEl.splice(keepedGoodIndex, 1, updatedGood)
-        console.log('[goodsWithKeepedEl]:', goodsWithKeepedEl)
+      console.log('[goodsWithKeepedEl]:', goodsWithKeepedEl)
 
       return {
         ...state,
@@ -162,4 +135,5 @@ export const createGoodReducer = (state = initialState, action) => {
     default:
       return state
   }
+
 }

@@ -1,12 +1,43 @@
 const goods = [
   {
-    id: 1,
-    text: 'bananas' 
+    info: {
+      textGood: 'apple',
+      numberGood: 5,
+      unitGood: 'kg',
+      id: 'lkjhe78'
+    },
+    states: {
+      isChecked: true,
+      fieldShow: 'ReadBlock'
+    }
   },
   {
-    id: 2,
-    text: 'apple'
+    info: {
+      textGood: 'meat',
+      numberGood: 4,
+      unitGood: 'kg',
+      id: 'lr4hgi78',
+    },
+    states: {
+      isChecked: true,
+      fieldShow: 'ReadBlock'
+
+    }
+  },
+  {
+    info: {
+      textGood: 'bread',
+      numberGood: 1,
+      unitGood: 'pcs',
+      id: 'lk67uh8',
+    },
+    states: {
+      isChecked: false,
+      fieldShow: 'ReadBlock'
+
+    }
   }
 ]
-
-export default goods
+module.exports = {
+  goods
+}

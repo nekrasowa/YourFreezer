@@ -11,4 +11,7 @@ export const INSERT = 'INSERT'
 export const CREATE_GOOD = 'CREATE_GOOD'
 export const LOADING_GOODS = 'LOADING_GOODS'
 
+export const LOADER_ON = 'LOADER_ON'
+export const LOADER_OFF = 'LOADER_OFF'
 
+export const INIT_GOODS = 'INIT_GOODS'

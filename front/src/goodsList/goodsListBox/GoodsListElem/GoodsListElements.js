@@ -1,13 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from './GoodsListElements.module.scss'
 import ListElement from './ListElement'
-import { useSelector } from 'react-redux'
+// import Loader from '../../../Background/Loader'
+// import { Loader } from 'rsuite'
+import 'rsuite/dist/rsuite.min.css'
+import { useSelector, useDispatch } from 'react-redux'
+import { getAllGoods } from '../../../redux/thunks/getAllGoods'
 
 function GoodsListElements(props) {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(getAllGoods())  
+  }, [dispatch])
 
   const goods = useSelector(state => state.createGood.goods)
-
+  console.log('[goods]:', goods)
+  
   const list = goods.map(good => <ListElement goodInfo={good} key={good.info.id}/>)
+   
   return (
     <div className={`${styles.BoxElements}`}>
       {list}
