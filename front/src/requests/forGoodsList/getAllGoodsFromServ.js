@@ -6,5 +6,5 @@ const getAllGoodsURL = new URL('/goods/all', url)
 export async function getAllGoodsFromServ() {
     const res = await axios.get(getAllGoodsURL)
 
-    return res.data.goods
+    return res.data
   }
