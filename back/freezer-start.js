@@ -6,21 +6,22 @@ const app = express()
 const port = 5000
 
 app.use(cors())
+app.use(express.json())
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
 app.get('/goods/all', (req, res) => {
-  console.log('[goods]', goods)
-
   res.json(goods)
 })
 
 app.delete('/goods/deleteOne', (req, res) => {
-  'some code'
 
-  res.json({isOk: true})
+  const deletedElemIndex = goods.goods.findIndex((elem) => elem.info.id === req.id)
+  goods.goods.slice(deletedElemIndex, 1)
+
+  res.json({ isOk: true })
 })
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
