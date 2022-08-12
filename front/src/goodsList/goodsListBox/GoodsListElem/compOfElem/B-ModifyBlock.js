@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { keepGood } from '../../../../redux/actions/actionsGoodsList'
+import { keepModifiedGood } from '../../../../redux/thunks/keepModifiedGood'
 import styles from '../GoodsListElements.module.scss'
 
 function ModifyBlock(props) {
@@ -34,8 +34,8 @@ function ModifyBlock(props) {
     unitInput
   }
 
-  const modifyHamdler = () => {
-    dispatch(keepGood(data))
+  const modifyHandler = () => {
+    dispatch(keepModifiedGood(data))
   }
   return (
     <div className={`${styles.ModifyBlock}`}>
@@ -60,7 +60,7 @@ function ModifyBlock(props) {
 
       <div 
       className={`${styles.element} ${styles.tick}`}
-      onClick={modifyHamdler}>  
+      onClick={modifyHandler}>  
       </div>
     </div>
   )
