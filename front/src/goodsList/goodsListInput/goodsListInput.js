@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import uniqid from 'uniqid'
 import styles from './GoodsListInput.module.scss'
-import { createGood } from '../../redux/actions/actionsGoodsList'
+import { createGood } from '../../redux/thunks/thunksGoodsBox/createGood'
 
 function GoodsListInput(props) {
 
@@ -21,12 +20,9 @@ function GoodsListInput(props) {
   const dispatch = useDispatch()
 
   const data = {
-    info: {
       textGood,
       numberGood,
       unitGood,
-      id: uniqid(),
-    }
   }
 
   const inputTextStylesNormal = `${styles.InputText}`

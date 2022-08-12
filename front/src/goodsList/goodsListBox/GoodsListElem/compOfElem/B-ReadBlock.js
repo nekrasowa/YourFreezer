@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from '../GoodsListElements.module.scss'
 import { useDispatch } from 'react-redux'
-import { editGood } from '../../../../redux/actions/actionsGoodsList'
+import { editGoodAction } from '../../../../redux/actions/actionsGoodsList'
 
 function ReadBlock(props) {
   const { textGood, numberGood, unitGood, id } = props.goodInfo.info
@@ -10,7 +10,7 @@ function ReadBlock(props) {
 
   const dispatch = useDispatch()
   const editClickHandler = () => {
-    dispatch(editGood(id))
+    dispatch(editGoodAction(id))
   }
 
   return (

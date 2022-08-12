@@ -1,5 +1,7 @@
 const express = require('express')
 const cors = require('cors')
+const uniqid = require('uniqid')
+
 const { goods } = require('./goods')
 // const lang = require('lodash/fp/lang')
 
@@ -18,13 +20,49 @@ app.get('/goods/all', (req, res) => {
   res.json(goods)
 })
 
+app.post('/goods/createGood', (req, res) => {
+  try {
+    const id = uniqid()
+    const {
+      textGood,
+      numberGood,
+      unitGood
+    } = req.body
+
+    const newGood = {
+      info: {
+        textGood,
+        numberGood,
+        unitGood,
+        id,
+      },
+      states: {
+        isChecked: false,
+        fieldShow: 'ReadBlock'
+      }
+    }
+    console.log('[newGood]:', newGood)
+
+    goods.push(newGood)
+    console.log('[goods]:', goods.length)
+
+    res.json({
+      isOk: true,
+      massage: 'Goods is added'
+    })
+  } catch (err) {
+
+  }
+})
 app.put('/goods/keepModifiedGood', (req, res) => {
   try {
-    const { id,
+    const {
+      id,
       textInput,
       numberInput,
-      unitInput }  = req.body
-      console.log('[id]:', id)
+      unitInput
+    } = req.body
+    console.log('[id]:', id)
 
     const modifyElem = goods.find((elem) => elem.info.id === id)
     if (
@@ -46,7 +84,7 @@ app.put('/goods/keepModifiedGood', (req, res) => {
       isOk: true,
       massage: 'Goods is keeped'
     })
-    
+
   } catch (err) {
     console.log('[err]:', err)
   }
@@ -107,6 +145,6 @@ app.delete('/goods/deleteOne', (req, res) => {
     })
   }
 })
-  app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-  })
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})

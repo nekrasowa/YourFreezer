@@ -7,38 +7,38 @@ import {
   KEEP_GOOD
 } from "../types.js"
 
-export function createGood(data) {
+export function createGoodAction(data) {
   return {
     type: CREATE_GOOD,
     data
   }
 }
 
-export function loadGoods() {
+export function loadGoodsAction() {
   return {
     type: LOADING_GOODS,
   }
 }
 
-export function deleteGood(id) {
+export function deleteGoodAction(id) {
   return {
     type: DELETE_ONE,
     id
   }
 }
-export function chackedGood(id) {
+export function chackedGoodAction(id) {
   return {
     type: CHECKED,
     id
   }
 }
-export function editGood(id) {
+export function editGoodAction(id) {
   return {
     type: EDIT_GOOD,
     id
   }
 }
-export function keepGood(data) {
+export function keepGoodAction(data) {
   return {
     type: KEEP_GOOD,
     data
