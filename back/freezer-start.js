@@ -1,6 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const { goods } = require('./goods')
+const lang = require('lodash/fp/lang')
 
 const app = express()
 const port = 5000
@@ -16,30 +17,61 @@ app.get('/goods/all', (req, res) => {
   res.json(goods)
 })
 
+app.put('/goods/checkedGood', (req, res) => {
+  try {
+    const checkedElemIndex = goods.findIndex((elem) => elem.info.id === req.body.id)
+    const checkedElem = goods[checkedElemIndex]
+
+    if (
+      !checkedElem ||
+      typeof checkedElem !== 'object' ||
+      checkedElemIndex === -1
+    ) {
+      res.json({
+        isOk: false,
+        massage: 'Goods is NOT checked'
+      })
+    }
+
+    checkedElem.states.isChecked = !checkedElem.states.isChecked
+
+    res.json({
+      isOk: true,
+      massage: 'Goods is checked'
+    })
+  }
+  catch (err) {
+    res.json({
+      isOk: false,
+      massage: `Goods is NOT checked! ${err.massage}`
+    })
+  }
+})
+
 app.delete('/goods/deleteOne', (req, res) => {
-  const goodsLenghtBefore = goods.length
+  try {
+    const deletedElemIndex = goods.findIndex((elem) => elem.info.id === req.body.id)
 
-  const deletedElemIndex = goods.findIndex((elem) => elem.info.id === req.id)
-  const newGoods = goods.slice(deletedElemIndex, 1)
+    if (deletedElemIndex === -1) {
+      res.json({
+        isOk: false,
+        massage: 'Goods is NOT deleted'
+      })
+    }
 
-  const goodsLenghtAfter = newGoods.length
+    goods.splice(deletedElemIndex, 1)
 
-  console.log(goodsLenghtBefore, goodsLenghtAfter)
-  console.log('[goods]', newGoods)
-
-  if (goodsLenghtBefore > goodsLenghtAfter) {
     res.json({
       isOk: true,
       massage: 'Goods is deleted'
     })
-    return
+  } catch (err) {
+    res.json({
+      isOk: false,
+      massage: `Goods is NOT deleted!`
+    })
   }
-  res.json({
-    isOk: false,
-    massage: 'Goods is NOT deleted'
+})
+  app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
   })
-})
-
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
