@@ -1,45 +1,13 @@
 const express = require('express')
 const router = express.Router()
 const { goods } = require('../../goods')
+const getAllGoods = require('../controlers/getAllGoods')
+const createGood = require('../controlers/postCreateGood')
+const keepModifiedGood = require('../controlers/putKeepModifiedGood')
 
-router.get('/allGoods', (req, res) => {
-  res.json(goods)
-})
+router.get('/allGoods', getAllGoods)
 
-router.post('/createGood', (req, res) => {
-  try {
-    const id = uniqid()
-    const {
-      textGood,
-      numberGood,
-      unitGood
-    } = req.body
-
-    const newGood = {
-      info: {
-        textGood,
-        numberGood,
-        unitGood,
-        id,
-      },
-      states: {
-        isChecked: false,
-        fieldShow: 'ReadBlock'
-      }
-    }
-    console.log('[newGood]:', newGood)
-
-    goods.push(newGood)
-    console.log('[goods]:', goods.length)
-
-    res.json({
-      isOk: true,
-      massage: 'Goods is added'
-    })
-  } catch (err) {
-
-  }
-})
+router.post('/createGood', createGood)
 
 router.put('/keepModifiedGood', (req, res) => {
   try {
