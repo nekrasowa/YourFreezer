@@ -1,9 +1,9 @@
 import { CHECKED } from "../../types"
 import { checkedGoodOnServ } from "../../../requests/forGoodsList/checkedGoodOnServ"
 
-export const checkedGood = (id) => {
+export const checkedGood = (id, isChecked) => {
   return (dispatch) => {
-    checkedGoodOnServ(id).then((res) => {
+    checkedGoodOnServ(id, isChecked).then((res) => {
       console.log('[RES in th>>>]', res)
 
       if (res.isOk) {

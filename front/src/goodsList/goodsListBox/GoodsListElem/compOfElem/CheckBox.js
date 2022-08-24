@@ -12,7 +12,7 @@ function CheckBox(props) {
 
   const [isCheck, setIsCheck] = useState(isChecked)
   const onChangeHandler = () => {
-    dispatch(checkedGood(id))
+    dispatch(checkedGood(id, isChecked))
     setIsCheck(!isCheck)
   }
   return (

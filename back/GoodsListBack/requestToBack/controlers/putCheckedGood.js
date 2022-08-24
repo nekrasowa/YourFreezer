@@ -1,22 +1,22 @@
-const { goods } = require('../../goods')
+const GoodsList = require('../../requestToDB/models/goodsListModel')
 
 async function checkedGood(req, res) {
   try {
-    const checkedElemIndex = goods.findIndex((elem) => elem.info.id === req.body.id)
-    const checkedElem = goods[checkedElemIndex]
+    console.log('[req.body]:', req.body)
 
-    if (
-      !checkedElem ||
-      typeof checkedElem !== 'object' ||
-      checkedElemIndex === -1
-    ) {
-      res.json({
-        isOk: false,
-        massage: 'Goods is NOT checked'
-      })
-    }
+    const retuntWhat = await GoodsList.update({is_Checked: !req.body.isChecked}, {
+      where: {
+        id: req.body.id
+      }
+    })
 
-    checkedElem.states.isChecked = !checkedElem.states.isChecked
+    console.log('[retuntWhat]:', retuntWhat)
+    //  {
+    //   res.json({
+    //     isOk: false,
+    //     massage: 'Goods is NOT checked'
+    //   })
+    // }
 
     res.json({
       isOk: true,

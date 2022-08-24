@@ -21,7 +21,6 @@ module.exports = function bringToCorrectForm(array) {
       }
     }
 
-    console.log('[newGood]:', newGood)
     return newGood
   })
 }
