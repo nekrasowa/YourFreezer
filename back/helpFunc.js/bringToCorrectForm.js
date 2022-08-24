@@ -1,5 +1,4 @@
-module.exports = function bringToCorrectForm(array) {
-  return array.map((el) => {
+module.exports = function bringToCorrectForm(el) {
     const element = el.dataValues
 
     const id = element.id
@@ -22,5 +21,4 @@ module.exports = function bringToCorrectForm(array) {
     }
 
     return newGood
-  })
-}
+  }

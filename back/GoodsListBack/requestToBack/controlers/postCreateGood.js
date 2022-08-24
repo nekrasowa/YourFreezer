@@ -1,29 +1,21 @@
-const { goods } = require('../../goods')
+const GoodsList = require('../../requestToDB/models/goodsListModel')
+const bringToCorrectForm = require('../../../helpFunc.js/bringToCorrectForm')
 
 async function createGood(req, res) {
   try {
-    const id = uniqid()
     const {
       textGood,
       numberGood,
       unitGood
     } = req.body
 
-    const newGood = {
-      info: {
-        textGood,
-        numberGood,
-        unitGood,
-        id,
-      },
-      states: {
-        isChecked: false,
-        fieldShow: 'ReadBlock'
-      }
-    }
-    console.log('[newGood]:', newGood)
+    const newGoodInDB = await GoodsList.create({
+      name_of_good: textGood,
+      number_of_good: numberGood,
+      unit_of_good: unitGood,
+    })
 
-    goods.push(newGood)
+    const newGood = bringToCorrectForm(newGoodInDB)
 
     res.json({
       isOk: true,
