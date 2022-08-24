@@ -1,10 +1,9 @@
 const { DataTypes, Model } = require('sequelize')
 const sequelize = require('../sequlizeConnection')
 
-class Goods_list_new extends Model {}
-console.log('[Goods_list_new]: ', Goods_list_new)
+class GoodsList extends Model {}
 
-Goods_list_new.init({
+GoodsList.init({
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -14,8 +13,12 @@ Goods_list_new.init({
     type: DataTypes.STRING(30),
     allowNull: false
   },
-  unit_of_number: {
+  number_of_good: {
     type: DataTypes.REAL,
+    allowNull: false
+  },
+  unit_of_good: {
+    type: DataTypes.STRING(3),
     allowNull: true
   },
   is_Checked: {
@@ -25,8 +28,9 @@ Goods_list_new.init({
   }
 },
   {
-    sequelize
+    sequelize,
+    tableName: 'Goods_list'
   })
 
   
-module.exports = Goods_list_new
+module.exports = GoodsList

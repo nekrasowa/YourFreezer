@@ -1,11 +1,14 @@
 // const { goods } = require('../../goods')
-const Goods_list_new = require('../../requestToDB/models/goodsListModel')
+const GoodsList = require('../../requestToDB/models/goodsListModel')
+const bringToCorrectForm = require('../../../helpFunc.js/bringToCorrectForm')
 
 async function getAllGoods(req, res) {
   console.log('in controler 1')
-  await Goods_list_new.sync()
+  // await GoodsList.sync({ alter: true })
+  const goodsFromDB = await GoodsList.findAll()
+  const goods = bringToCorrectForm(goodsFromDB)
 
-  await res.json()
+  await res.json(goods)
 }
 
 module.exports = getAllGoods

@@ -6,7 +6,6 @@ export const getAllGoods = () => {
 
   return (dispatch) => {
     try {
-
       console.log('{ in thunk }')
       getAllGoodsFromServ().then((goods) => {
         dispatch({
