@@ -1,5 +1,5 @@
-import { KEEP_GOOD } from "../types"
-import { keepModifiedGoodOnServ } from "../../requests/forGoodsList/keepModifiedGoodOnServ"
+import { KEEP_GOOD } from "../../types"
+import { keepModifiedGoodOnServ } from "../../../requests/forGoodsList/keepModifiedGoodOnServ"
 
 export const keepModifiedGood = (data) => {
 

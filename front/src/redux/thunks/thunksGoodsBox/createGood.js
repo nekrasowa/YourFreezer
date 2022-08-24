@@ -1,6 +1,6 @@
 import { createGoodOnServ } from "../../../requests/forGoodsList/createGoodOnServ"
 import { createGoodAction } from '../../actions/actionsGoodsList'
-import { getAllGoods } from '../getAllGoods'
+import { getAllGoods } from './getAllGoods'
 
 export const createGood = (data) => {
   return (dispatch) => {

@@ -1,5 +1,5 @@
-import { DELETE_ONE } from "../types"
-import { deleteOneGoodFromServ } from "../../requests/forGoodsList/deleteOneGoodFromServ"
+import { DELETE_ONE } from "../../types"
+import { deleteOneGoodFromServ } from "../../../requests/forGoodsList/deleteOneGoodFromServ"
 
 export const deleteOneGood = (id) => {
   return (dispatch) => {

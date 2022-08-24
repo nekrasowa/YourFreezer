@@ -4,6 +4,8 @@ const url = new URL('http://localhost:5000')
 const getAllGoodsURL = new URL('/goods/allGoods', url)
 
 export async function getAllGoodsFromServ() {
+  console.log(' [  in req  ]  ', getAllGoodsURL)
+
     const res = await axios.get(getAllGoodsURL)
 
     return res.data

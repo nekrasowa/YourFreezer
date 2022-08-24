@@ -1,7 +1,11 @@
-const { goods } = require('../../goods')
+// const { goods } = require('../../goods')
+const Goods_list_new = require('../../requestToDB/models/goodsListModel')
 
 async function getAllGoods(req, res) {
-   await res.json(goods)
+  console.log('in controler 1')
+  await Goods_list_new.sync()
+
+  await res.json()
 }
 
 module.exports = getAllGoods

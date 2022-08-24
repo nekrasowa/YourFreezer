@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from '../GoodsListElements.module.scss'
 import { useDispatch } from 'react-redux'
-import { deleteOneGood } from '../../../../redux/thunks/deleteOneGood'
+import { deleteOneGood } from '../../../../redux/thunks/thunksGoodsBox/deleteOneGood'
 
 function DeleteBTN(props) {
   const id = props.id

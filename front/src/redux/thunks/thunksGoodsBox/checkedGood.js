@@ -1,5 +1,5 @@
-import { CHECKED } from "../types"
-import { checkedGoodOnServ } from "../../requests/forGoodsList/checkedGoodOnServ"
+import { CHECKED } from "../../types"
+import { checkedGoodOnServ } from "../../../requests/forGoodsList/checkedGoodOnServ"
 
 export const checkedGood = (id) => {
   return (dispatch) => {

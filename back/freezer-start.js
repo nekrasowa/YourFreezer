@@ -1,7 +1,6 @@
 const express = require('express')
 const sequelize = require('./GoodsListBack/requestToDB/sequlizeConnection')
 const cors = require('cors')
-// const uniqid = require('uniqid')
 const goodList = require('./GoodsListBack/requestToBack/routers/goodsListRouters')
 
 // const lang = require('lodash/fp/lang')

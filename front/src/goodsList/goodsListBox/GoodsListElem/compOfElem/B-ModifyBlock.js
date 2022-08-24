@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { keepModifiedGood } from '../../../../redux/thunks/keepModifiedGood'
+import { keepModifiedGood } from '../../../../redux/thunks/thunksGoodsBox/keepModifiedGood'
 import styles from '../GoodsListElements.module.scss'
 
 function ModifyBlock(props) {
