@@ -1,4 +1,4 @@
-const { goods } = require('../../goods')
+const GoodsList = require('../../requestToDB/models/goodsListModel')
 
 async function keepModifiedGood(req, res) {
   try {
@@ -8,23 +8,24 @@ async function keepModifiedGood(req, res) {
       numberInput,
       unitInput
     } = req.body
-    console.log('[id]:', id)
 
-    const modifyElem = goods.find((elem) => elem.info.id === id)
-    if (
-      !modifyElem ||
-      typeof modifyElem !== 'object'
-    ) {
+    const retuntWhat = await GoodsList.update({
+      name_of_good: textInput,
+      number_of_good: numberInput,
+      unit_of_good: unitInput,
+    },
+      {
+        where: { id }
+      })
+
+
+    if (retuntWhat === 1) {
       res.json({
         isOk: false,
-        massage: 'Goods is NOT keeped'
+        massage: 'Goods is NOT checked'
       })
     }
-    modifyElem.info.textGood = textInput
-    modifyElem.info.numberGood = numberInput
-    modifyElem.info.unitGood = unitInput
-
-    console.log('[goods]:', goods)
+    console.log('[retuntWhat]:', retuntWhat)
 
     res.json({
       isOk: true,
