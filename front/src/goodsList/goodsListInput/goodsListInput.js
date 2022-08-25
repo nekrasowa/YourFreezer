@@ -1,23 +1,38 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import _ from 'lodash/lang'
 import styles from './GoodsListInput.module.scss'
 import { createGood } from '../../redux/thunks/thunksGoodsBox/createGood'
+import { showError } from '../../redux/actions/actionsError'
 
 function GoodsListInput(props) {
+  const dispatch = useDispatch()
 
   const [textGood, setTextGood] = useState('')
   const handleInputText = (e) => {
-    setTextGood(e.target.value);
+    setTextGood(e.target.value)
   }
+
   const [numberGood, setNumberGood] = useState('')
   const handleInputNumber = (e) => {
-    setNumberGood(e.target.value);
+    if(typeof e.target.value === Number) {
+      setNumberGood(e.target.value)
+    }
+
+    const massage = 'Enter the number!'
+    dispatch(showError(massage))
   }
+
+  const isError = useSelector(state => state.isError.error)
+  let errorMassage 
+  if (!_.isEmpty(isError)) {
+    errorMassage = isError.massage
+  }
+  
   const [unitGood, setUnitGood] = useState('')
   const handleInputUnit = (e) => {
     setUnitGood(e.target.value);
   }
-  const dispatch = useDispatch()
 
   const data = {
       textGood,
@@ -39,6 +54,9 @@ function GoodsListInput(props) {
 
   return (
     <>
+      <div className={`${styles.ErrorMassage}`}>
+        <p>{errorMassage}</p>
+      </div>
       <div className={`${styles.GoodsListInput}`}>
         <input
           className={textGood === ''
@@ -61,7 +79,6 @@ function GoodsListInput(props) {
               type='radio'
               name='radio'
               value='kilo'
-            // defaultChecked
             />
             <span>kilo</span>
           </label>
