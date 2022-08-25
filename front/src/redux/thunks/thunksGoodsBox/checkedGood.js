@@ -4,7 +4,6 @@ import { checkedGoodOnServ } from "../../../requests/forGoodsList/checkedGoodOnS
 export const checkedGood = (id, isChecked) => {
   return (dispatch) => {
     checkedGoodOnServ(id, isChecked).then((res) => {
-      console.log('[RES in th>>>]', res)
 
       if (res.isOk) {
         dispatch({

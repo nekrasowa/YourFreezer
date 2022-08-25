@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import _ from 'lodash/lang'
 import styles from './GoodsListInput.module.scss'
 import { createGood } from '../../redux/thunks/thunksGoodsBox/createGood'
-import { showError } from '../../redux/actions/actionsError'
+import { hideError, showError } from '../../redux/actions/actionsError'
+import ErrorMassage from './ErrorMassage'
 
 function GoodsListInput(props) {
   const dispatch = useDispatch()
@@ -14,38 +15,52 @@ function GoodsListInput(props) {
   }
 
   const [numberGood, setNumberGood] = useState('')
+  const errorMassage = 'Enter the number!'
+
   const handleInputNumber = (e) => {
-    if(typeof e.target.value === Number) {
-      setNumberGood(e.target.value)
+    const userInput = Number(e.target.value)
+
+    if (isNaN(userInput)) {
+      dispatch(showError(errorMassage))
+      return
     }
 
-    const massage = 'Enter the number!'
-    dispatch(showError(massage))
+    if (!isNaN(userInput)) {
+      dispatch(hideError())
+      return
+    }
+    dispatch(hideError)
+
+    setNumberGood(userInput)
   }
 
   const isError = useSelector(state => state.isError.error)
-  let errorMassage 
-  if (!_.isEmpty(isError)) {
-    errorMassage = isError.massage
+  const showErrorInBrowser = () => {
+    if (!_.isEmpty(isError)) {
+
+
+      return true
+    }
+    return false
   }
-  
+
   const [unitGood, setUnitGood] = useState('')
   const handleInputUnit = (e) => {
     setUnitGood(e.target.value);
   }
 
   const data = {
-      textGood,
-      numberGood,
-      unitGood,
+    textGood,
+    numberGood,
+    unitGood,
   }
 
   const inputTextStylesNormal = `${styles.InputText}`
   const inputTextStylesWarning = `${styles.InputText} ${styles.warning}`
 
   const AddHandle = () => {
-    if(textGood === '') {
-      return 
+    if (textGood === '') {
+      return
     }
     dispatch(createGood(data))
     setTextGood('')
@@ -54,23 +69,28 @@ function GoodsListInput(props) {
 
   return (
     <>
-      <div className={`${styles.ErrorMassage}`}>
-        <p>{errorMassage}</p>
-      </div>
       <div className={`${styles.GoodsListInput}`}>
-        <input
+        {showErrorInBrowser()
+          ? <ErrorMassage massage={errorMassage} />
+          : <div className={`${styles.ErrorMassage}`}></div> 
+          }
+        <input 
           className={textGood === ''
             ? inputTextStylesWarning
             : inputTextStylesNormal}
           type='text'
           onChange={handleInputText}
-          value={textGood} />
+          value={textGood}
+          maxLength='30'
+        />
 
         <input
           className={`${styles.InputNumber}`}
           type='text'
           onChange={handleInputNumber}
-          value={numberGood} />
+          value={numberGood}
+          maxLength='4'
+        />
         <form
           className={`${styles.container} ${styles.InputRadioBtns}`}
           onChange={handleInputUnit}>

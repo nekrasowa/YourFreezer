@@ -14,8 +14,8 @@ export const LOADING_GOODS = 'LOADING_GOODS'
 export const LOADER_ON = 'LOADER_ON'
 export const LOADER_OFF = 'LOADER_OFF'
 
-export const SHOW_ERROR = 'LOADER_OFF'
-export const HIDE_ERROR = 'LOADER_OFF'
+export const SHOW_ERROR = 'SHOW_ERROR'
+export const HIDE_ERROR = 'HIDE_ERROR'
 
 
 
