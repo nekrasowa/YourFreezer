@@ -15,9 +15,10 @@ function GoodsListInput(props) {
   }
 
   const [numberGood, setNumberGood] = useState('')
-  const errorMassage = 'Enter the number!'
 
   const handleInputNumber = (e) => {
+    const errorMassage = 'Enter the number!'
+
     const userInput = Number(e.target.value)
 
     if (isNaN(userInput)) {
@@ -30,6 +31,8 @@ function GoodsListInput(props) {
   }
 
   const isError = useSelector(state => state.isError.error)
+  const errorMassage = useSelector(state => state.isError.error.massage)
+
   const showErrorInBrowser = () => {
     if (!_.isEmpty(isError)) {
       return true
