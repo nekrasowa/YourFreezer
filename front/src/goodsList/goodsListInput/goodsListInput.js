@@ -24,12 +24,7 @@ function GoodsListInput(props) {
       dispatch(showError(errorMassage))
       return
     }
-
-    if (!isNaN(userInput)) {
-      dispatch(hideError())
-      return
-    }
-    dispatch(hideError)
+    dispatch(hideError())
 
     setNumberGood(userInput)
   }
@@ -37,8 +32,6 @@ function GoodsListInput(props) {
   const isError = useSelector(state => state.isError.error)
   const showErrorInBrowser = () => {
     if (!_.isEmpty(isError)) {
-
-
       return true
     }
     return false
