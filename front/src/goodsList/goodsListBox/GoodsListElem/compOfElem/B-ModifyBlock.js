@@ -5,13 +5,15 @@ import styles from '../GoodsListElements.module.scss'
 import { hideError, showError } from '../../../../redux/actions/actionsError'
 
 function ModifyBlock(props) {
-  const {
+  let {
     textGood: oldTextGood,
     numberGood: oldNumberGood,
     unitGood: oldUnitGood,
     id
   } = props.goodInfo.info
-
+  if (oldNumberGood === null) {
+    oldNumberGood = ''
+  }
   const [textInput, setTextGood] = useState(oldTextGood)
   const handleInputText = (e) => {
     setTextGood(e.target.value);
@@ -53,7 +55,9 @@ function ModifyBlock(props) {
       dispatch(showError(errorMassage))
       return
     }
-    if (data.unitInput !== 'kg' && data.unitInput !== 'pcs') {
+    if (data.unitInput !== 'kg'
+      && data.unitInput !== 'pcs'
+      && data.unitInput !== '') {
       const errorMassage = "Only 'kg' or 'pcs'!"
       dispatch(showError(errorMassage))
       return

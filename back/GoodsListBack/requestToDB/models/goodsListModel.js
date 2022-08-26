@@ -15,7 +15,7 @@ GoodsList.init({
   },
   number_of_good: {
     type: DataTypes.REAL,
-    allowNull: false
+    allowNull: true
   },
   unit_of_good: {
     type: DataTypes.STRING(3),

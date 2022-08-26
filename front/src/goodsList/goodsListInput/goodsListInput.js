@@ -8,36 +8,32 @@ import ErrorMassage from './ErrorMassage'
 
 function GoodsListInput(props) {
   const dispatch = useDispatch()
-
-  const [textGood, setTextGood] = useState('')
-  const handleInputText = (e) => {
-    setTextGood(e.target.value)
-  }
-
-  const [numberGood, setNumberGood] = useState('')
-
-  const handleInputNumber = (e) => {
-    const errorMassage = 'Enter the number!'
-
-    const userInput = Number(e.target.value)
-
-    if (isNaN(userInput)) {
-      dispatch(showError(errorMassage))
-      return
-    }
-    dispatch(hideError())
-
-    setNumberGood(userInput)
-  }
-
   const isError = useSelector(state => state.isError.error)
   const errorMassage = useSelector(state => state.isError.error.massage)
-
   const showErrorInBrowser = () => {
     if (!_.isEmpty(isError)) {
       return true
     }
     return false
+  }
+
+  const [textGood, setTextGood] = useState('')
+  const handleInputText = (e) => {
+    dispatch(hideError())
+    setTextGood(e.target.value)
+  }
+
+  const [numberGood, setNumberGood] = useState('')
+  const handleInputNumber = (e) => {
+    const errorMassage = 'Enter the number!'
+    const userInput = Number(e.target.value)
+console.log(isNaN(userInput))
+    if (isNaN(userInput) && userInput !== '') {
+      dispatch(showError(errorMassage))
+      return
+    }
+    dispatch(hideError())
+    setNumberGood(userInput)
   }
 
   const [unitGood, setUnitGood] = useState('')
@@ -56,8 +52,12 @@ function GoodsListInput(props) {
 
   const AddHandle = () => {
     if (textGood === '') {
+      const errorMassage = "Don't leave empty first field!"
+      dispatch(showError(errorMassage))
       return
     }
+
+    dispatch(hideError())
     dispatch(createGood(data))
     setTextGood('')
     setNumberGood('')
