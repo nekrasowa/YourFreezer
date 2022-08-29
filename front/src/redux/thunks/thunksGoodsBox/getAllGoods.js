@@ -1,24 +1,32 @@
-import { INIT_GOODS } from "../../types"
+import {
+  INIT_GOODS,
+  SHOW_ERROR
+} from "../../types"
 import { getAllGoodsFromServ } from "../../../requests/forGoodsList/getAllGoodsFromServ"
 
 export const getAllGoods = () => {
-  console.log('{ in thunk }')
-
-  return (dispatch) => {
+  return async (dispatch) => {
     try {
-      console.log('{ in thunk }')
-      getAllGoodsFromServ().then((goods) => {
+      const response = await getAllGoodsFromServ()
+      if (response.status === 200) {
         dispatch({
           type: INIT_GOODS,
-          data: goods
+          data: response.data
         })
-      }).catch((err) => {
-        console.log('[err]:', err)
-      })
+      }
+
     } catch (err) {
-      console.log('[err]:', err)
-
+      // console.log('[err]:', err)
+      if (err.response.status === 500) {
+        dispatch({
+          type: INIT_GOODS,
+          data: []
+        })
+        dispatch({
+          type: SHOW_ERROR,
+          massage: err.response.data.massage
+        })
+      }
     }
-
   }
 }

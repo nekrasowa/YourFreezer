@@ -2,12 +2,19 @@ const GoodsList = require('../../requestToDB/models/goodsListModel')
 const bringToCorrectForm = require('../../../helpFunc.js/bringToCorrectForm')
 
 async function getAllGoods(req, res) {
-  console.log('in controler 1')
   // await GoodsList.sync({ alter: true })
-  const goodsFromDB = await GoodsList.findAll()
-  const goods = goodsFromDB.map(bringToCorrectForm)
+  try {
+    const goodsFromDB = await GoodsList.findAll()
+    const goods = goodsFromDB.map(bringToCorrectForm)
+// throw {name: 'my', massage: 'non'}
+    await res.json(goods)
+  } catch (err) {
 
-  await res.json(goods)
+    console.log(`${err.name}, ${err.massage}`)
+    const massage = 'Error on server, try again leter!'
+    res
+      .status(500).send({ massage: massage })
+  }
 }
 
 module.exports = getAllGoods
