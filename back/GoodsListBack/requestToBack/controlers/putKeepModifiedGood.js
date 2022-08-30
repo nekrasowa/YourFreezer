@@ -18,7 +18,7 @@ async function keepModifiedGood(req, res) {
 
     if (Number.isFinite(id)
       && typeof textInput === "string"
-      && Number.isFinite(numberInput)
+      && (Number.isFinite(numberInput)|| null)
       && (unitInput === 'kg'
         || unitInput === 'pcs'
         || unitInput === '')) {

@@ -94,9 +94,9 @@ console.log(isNaN(userInput))
             <input
               type='radio'
               name='radio'
-              value='kilo'
+              value='kg'
             />
-            <span>kilo</span>
+            <span>kg</span>
           </label>
           <label>
             <input
