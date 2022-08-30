@@ -10,5 +10,8 @@ export async function checkedGoodOnServ(id, isChecked) {
     url: checkedGoodURL,
     data: { id, isChecked }
   })
-  return res.data
+    return {
+      massage: res.data.massage,
+      status: res.data.status
+    }
 }
