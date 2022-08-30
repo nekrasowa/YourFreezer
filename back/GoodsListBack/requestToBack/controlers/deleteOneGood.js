@@ -7,7 +7,6 @@ async function deleteOneGood(req, res) {
       const deletedElem = await GoodsList.destroy({
         where: { id }
       })
-
       if (deletedElem === 0) {
         res.json({
           isOk: false,
