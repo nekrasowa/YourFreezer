@@ -2,24 +2,30 @@ const GoodsList = require('../../requestToDB/models/goodsListModel')
 
 async function deleteOneGood(req, res) {
   try {
-    const deletedElem = await GoodsList.destroy({
-      where: {
-        id: req.body.id
-      }
-    }) 
-    console.log('[ deletedElem ]:', deletedElem)
+    const id = req.body.id
+    if (Number.isFinite(id)) {
+      const deletedElem = await GoodsList.destroy({
+        where: { id }
+      })
 
-    // const deletedElemIndex = -1
-    if (deletedElem === 0) {
+      if (deletedElem === 0) {
+        res.json({
+          isOk: false,
+          massage: 'Goods is NOT deleted'
+        })
+        return
+      }
+
       res.json({
-        isOk: false,
-        massage: 'Goods is NOT deleted'
+        isOk: true,
+        massage: 'Goods is deleted'
       })
       return
     }
+
     res.json({
-      isOk: true,
-      massage: 'Goods is deleted'
+      isOk: false,
+      massage: 'ID should be a number'
     })
   } catch (err) {
     res.json({
