@@ -2,7 +2,6 @@ import React from 'react'
 import ModifyBlock from './B-ModifyBlock'
 import ReadBlock from './B-ReadBlock'
 
-
 function BodyOfElem(props) {
   const showBlock = () => {
     const fieldShow = props.goodInfo.states.fieldShow

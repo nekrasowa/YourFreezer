@@ -1,10 +1,9 @@
 const express = require('express')
+const sequelize = require('./GoodsListBack/requestToDB/sequlizeConnection')
 const cors = require('cors')
-const uniqid = require('uniqid')
+const goodList = require('./GoodsListBack/requestToBack/routers/goodsListRouters')
 
-const { goods } = require('./goods')
 // const lang = require('lodash/fp/lang')
-
 
 const app = express()
 const port = 5000
@@ -12,139 +11,30 @@ const port = 5000
 app.use(cors())
 app.use(express.json())
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+app.use('/goods', goodList)
 
-app.get('/goods/all', (req, res) => {
-  res.json(goods)
-})
+async function assertDatabaseConnectionOk() {
+	console.log(`Checking database connection...`);
+	try {
+		await sequelize.authenticate();
+		console.log('Database connection OK!');
+	} catch (error) {
+		console.log('Unable to connect to the database:');
+		console.log(error.message);
+		process.exit(1);
+	}
+}
 
-app.post('/goods/createGood', (req, res) => {
-  try {
-    const id = uniqid()
-    const {
-      textGood,
-      numberGood,
-      unitGood
-    } = req.body
+async function init() {
+	await assertDatabaseConnectionOk();
 
-    const newGood = {
-      info: {
-        textGood,
-        numberGood,
-        unitGood,
-        id,
-      },
-      states: {
-        isChecked: false,
-        fieldShow: 'ReadBlock'
-      }
-    }
-    console.log('[newGood]:', newGood)
+	console.log(`Starting Sequelize + Express example on port ${port}...`);
 
-    goods.push(newGood)
-    console.log('[goods]:', goods.length)
+	app.listen(port, () => {
+		console.log(`Express server started on port ${port}. Try some routes, such as '/api/users'.`);
+	});
+}
 
-    res.json({
-      isOk: true,
-      massage: 'Goods is added'
-    })
-  } catch (err) {
+init();
 
-  }
-})
-app.put('/goods/keepModifiedGood', (req, res) => {
-  try {
-    const {
-      id,
-      textInput,
-      numberInput,
-      unitInput
-    } = req.body
-    console.log('[id]:', id)
 
-    const modifyElem = goods.find((elem) => elem.info.id === id)
-    if (
-      !modifyElem ||
-      typeof modifyElem !== 'object'
-    ) {
-      res.json({
-        isOk: false,
-        massage: 'Goods is NOT keeped'
-      })
-    }
-    modifyElem.info.textGood = textInput
-    modifyElem.info.numberGood = numberInput
-    modifyElem.info.unitGood = unitInput
-
-    console.log('[goods]:', goods)
-
-    res.json({
-      isOk: true,
-      massage: 'Goods is keeped'
-    })
-
-  } catch (err) {
-    console.log('[err]:', err)
-  }
-})
-
-app.put('/goods/checkedGood', (req, res) => {
-  try {
-    const checkedElemIndex = goods.findIndex((elem) => elem.info.id === req.body.id)
-    const checkedElem = goods[checkedElemIndex]
-
-    if (
-      !checkedElem ||
-      typeof checkedElem !== 'object' ||
-      checkedElemIndex === -1
-    ) {
-      res.json({
-        isOk: false,
-        massage: 'Goods is NOT checked'
-      })
-    }
-
-    checkedElem.states.isChecked = !checkedElem.states.isChecked
-
-    res.json({
-      isOk: true,
-      massage: 'Goods is checked'
-    })
-  }
-  catch (err) {
-    res.json({
-      isOk: false,
-      massage: `Goods is NOT checked! ${err.massage}`
-    })
-  }
-})
-
-app.delete('/goods/deleteOne', (req, res) => {
-  try {
-    const deletedElemIndex = goods.findIndex((elem) => elem.info.id === req.body.id)
-
-    if (deletedElemIndex === -1) {
-      res.json({
-        isOk: false,
-        massage: 'Goods is NOT deleted'
-      })
-    }
-
-    goods.splice(deletedElemIndex, 1)
-
-    res.json({
-      isOk: true,
-      massage: 'Goods is deleted'
-    })
-  } catch (err) {
-    res.json({
-      isOk: false,
-      massage: `Goods is NOT deleted!`
-    })
-  }
-})
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})

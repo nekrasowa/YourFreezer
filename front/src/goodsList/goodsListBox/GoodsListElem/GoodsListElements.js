@@ -5,7 +5,7 @@ import ListElement from './ListElement'
 // import { Loader } from 'rsuite'
 import 'rsuite/dist/rsuite.min.css'
 import { useSelector, useDispatch } from 'react-redux'
-import { getAllGoods } from '../../../redux/thunks/getAllGoods'
+import { getAllGoods } from '../../../redux/thunks/thunksGoodsBox/getAllGoods'
 
 function GoodsListElements(props) {
   const dispatch = useDispatch()

@@ -1,27 +1,42 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { keepModifiedGood } from '../../../../redux/thunks/keepModifiedGood'
+import { keepModifiedGood } from '../../../../redux/thunks/thunksGoodsBox/keepModifiedGood'
 import styles from '../GoodsListElements.module.scss'
+import { hideError, showError } from '../../../../redux/actions/actionsError'
 
 function ModifyBlock(props) {
-  const { 
+  let {
     textGood: oldTextGood,
     numberGood: oldNumberGood,
     unitGood: oldUnitGood,
-    id 
+    id
   } = props.goodInfo.info
-
-  const [ textInput, setTextGood ] = useState(oldTextGood)
+  if (oldNumberGood === null) {
+    oldNumberGood = ''
+  }
+  const [textInput, setTextGood] = useState(oldTextGood)
   const handleInputText = (e) => {
     setTextGood(e.target.value);
   }
 
-  const [ numberInput, setNumberGood ] = useState(oldNumberGood)
+  const [numberInput, setNumberGood] = useState(oldNumberGood)
+
   const handleInputNumber = (e) => {
-    setNumberGood(e.target.value);
+    const userInput = Number(e.target.value)
+    const errorMassage = 'Enter the number!'
+
+    if (isNaN(userInput)) {
+      dispatch(showError(errorMassage))
+      return
+    }
+    dispatch(hideError())
+
+    setNumberGood(userInput);
   }
-  const [ unitInput, setUnitGood ] = useState(oldUnitGood)
+
+  const [unitInput, setUnitGood] = useState(oldUnitGood)
   const handleInputUnit = (e) => {
+    dispatch(hideError())
     setUnitGood(e.target.value);
   }
 
@@ -35,32 +50,45 @@ function ModifyBlock(props) {
   }
 
   const modifyHandler = () => {
+    if (data.textInput === '') {
+      const errorMassage = "Don't leave empty first field!"
+      dispatch(showError(errorMassage))
+      return
+    }
+    if (data.unitInput !== 'kg'
+      && data.unitInput !== 'pcs'
+      && data.unitInput !== '') {
+      const errorMassage = "Only 'kg' or 'pcs'!"
+      dispatch(showError(errorMassage))
+      return
+    }
+    dispatch(hideError())
     dispatch(keepModifiedGood(data))
   }
   return (
     <div className={`${styles.ModifyBlock}`}>
-      <input 
+      <input
         className={styles.inputText}
         onChange={handleInputText}
         type='text'
         value={textInput}
       />
-      <input 
+      <input
         className={styles.inputNumber}
         onChange={handleInputNumber}
         type='text'
         value={numberInput}
       />
-      <input 
+      <input
         className={styles.inputUnit}
         onChange={handleInputUnit}
         type='text'
         value={unitInput}
       />
 
-      <div 
-      className={`${styles.element} ${styles.tick}`}
-      onClick={modifyHandler}>  
+      <div
+        className={`${styles.element} ${styles.tick}`}
+        onClick={modifyHandler}>
       </div>
     </div>
   )

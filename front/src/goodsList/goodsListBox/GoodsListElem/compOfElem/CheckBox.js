@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styles from '../GoodsListElements.module.scss'
 import check from '../checkbox.module.css'
 import { useDispatch } from 'react-redux'
-import { checkedGood } from '../../../../redux/thunks/checkedGood'
+import { checkedGood } from '../../../../redux/thunks/thunksGoodsBox/checkedGood'
 
 function CheckBox(props) {
   const checkboxStyle = {opacity: 0, display: 'none'}
@@ -12,7 +12,7 @@ function CheckBox(props) {
 
   const [isCheck, setIsCheck] = useState(isChecked)
   const onChangeHandler = () => {
-    dispatch(checkedGood(id))
+    dispatch(checkedGood(id, isChecked))
     setIsCheck(!isCheck)
   }
   return (

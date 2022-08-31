@@ -1,4 +1,3 @@
-// import { getAllGoods } from '../../requests/forGoodsList/getAllGoods'
 import {
   CREATE_GOOD,
   LOADING_GOODS,
@@ -9,11 +8,8 @@ import {
   INIT_GOODS
 } from '../types'
 
-// console.log('[initialState]:', initialState)
-
-// const initialState = getAllGoods()
 const initialState = {
-  goods: []
+  goods: [] 
 }
 
 export const createGoodReducer = (state = initialState, action) => {

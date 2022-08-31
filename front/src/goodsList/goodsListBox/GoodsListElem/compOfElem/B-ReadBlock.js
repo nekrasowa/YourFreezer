@@ -4,8 +4,11 @@ import { useDispatch } from 'react-redux'
 import { editGoodAction } from '../../../../redux/actions/actionsGoodsList'
 
 function ReadBlock(props) {
-  const { textGood, numberGood, unitGood, id } = props.goodInfo.info
+  let { textGood, numberGood, unitGood, id } = props.goodInfo.info
   const { isChecked } = props.goodInfo.states
+  if(numberGood === null) {
+    numberGood = ''
+  }
   const goodText = `${textGood} ${numberGood} ${unitGood}`
 
   const dispatch = useDispatch()

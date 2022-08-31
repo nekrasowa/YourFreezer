@@ -4,7 +4,8 @@
   margin: 0% 2% 0% 33%;
 
   display: grid;
-  grid-template-areas: 'BoxBtns'
+  grid-template-areas:
+                       'BoxBtns'
                        'BoxElements';
   grid-template-rows:  1fr 9fr; 
   grid-template-columns: 1fr;

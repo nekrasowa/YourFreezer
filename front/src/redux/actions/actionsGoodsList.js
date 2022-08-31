@@ -26,10 +26,11 @@ export function deleteGoodAction(id) {
     id
   }
 }
-export function chackedGoodAction(id) {
+export function chackedGoodAction(id, isChecked) {
   return {
     type: CHECKED,
-    id
+    id, 
+    isChecked
   }
 }
 export function editGoodAction(id) {
