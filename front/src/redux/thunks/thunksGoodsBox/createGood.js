@@ -7,8 +7,6 @@ import { SHOW_ERROR } from "../../types"
 export const createGood = (data) => {
   return (dispatch) => {
     createGoodOnServ(data).then((res) => {
-      console.log('res', res)
-
       if (res.status === 200) {
         dispatch(getAllGoods())
         dispatch(createGoodAction(res.data))

@@ -14,7 +14,6 @@ async function createGood(req, res) {
       || (unitInput !== 'kg'
         && unitInput !== 'pcs'
         && unitInput !== '')) {
-          console.log('here')
       res.json({
         status: 400,
         massage: 'Goods data is not valid'
@@ -33,7 +32,6 @@ async function createGood(req, res) {
       })
 
     }
-    console.log('newGoodInDB', newGoodInDB)
     // const newGood = bringToCorrectForm(newGoodInDB)
 
     res.json({

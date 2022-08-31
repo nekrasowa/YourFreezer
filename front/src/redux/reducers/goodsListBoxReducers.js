@@ -40,8 +40,6 @@ export const createGoodReducer = (state = initialState, action) => {
       }
 
     case LOADING_GOODS:
-      console.log('[action.data]:', action)
-
       return {
         ...state,
         goods: [...state.goods]
@@ -122,7 +120,6 @@ export const createGoodReducer = (state = initialState, action) => {
       const goodsWithKeepedEl = [...state.goods]
 
       goodsWithKeepedEl.splice(keepedGoodIndex, 1, updatedGood)
-      console.log('[goodsWithKeepedEl]:', goodsWithKeepedEl)
 
       return {
         ...state,

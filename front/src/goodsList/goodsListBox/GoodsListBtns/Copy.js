@@ -23,7 +23,6 @@ function Copy(props) {
 }
 
 function mapStateToProps(state) {
-  // console.log('[state]:', state)
   return {
     copyText: state.copyText
   }

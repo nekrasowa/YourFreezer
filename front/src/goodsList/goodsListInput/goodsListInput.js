@@ -27,7 +27,6 @@ function GoodsListInput(props) {
   const handleInputNumber = (e) => {
     const errorMassage = 'Enter the number!'
     const userInput = Number(e.target.value)
-console.log(isNaN(userInput))
     if (isNaN(userInput) && userInput !== '') {
       dispatch(showError(errorMassage))
       return

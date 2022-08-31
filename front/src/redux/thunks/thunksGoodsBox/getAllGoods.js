@@ -16,7 +16,6 @@ export const getAllGoods = () => {
       }
 
     } catch (err) {
-      // console.log('[err]:', err)
       if (err.response.status === 500) {
         dispatch({
           type: INIT_GOODS,

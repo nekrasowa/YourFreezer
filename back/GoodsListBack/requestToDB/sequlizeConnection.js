@@ -1,5 +1,4 @@
-const { Sequelize, Model } = require('sequelize')
-// const { goods_list_new } = require('../requestToDB/models/goodsListModel')
+const { Sequelize } = require('sequelize')
 
 const user = 'ludochka'
 const host = 'localhost'
@@ -13,17 +12,5 @@ const sequelize = new Sequelize(database, user, password, {
   dialect: 'postgres',
   logging: false
 })
-
-// const modelDefiners = [
-// 	require('./models/goodsListModel'),
-// ]
-
-// for (const modelDefiner of modelDefiners) {
-// 	modelDefiner(sequelize)
-// }
-
-
-// console.log('[sequelize111]: ', sequelize)
-
 
 module.exports = sequelize

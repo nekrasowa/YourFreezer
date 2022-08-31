@@ -60,8 +60,6 @@ export const store = {
       rerenderEntireTree(store)
     }
     if (action.type === 'CHECK') {
-      console.log('[]', this)
-
       const elem = this._findGoodById(action.parantsId, { isElement: true })
       elem.isChecked = !elem.isChecked
 
@@ -80,8 +78,6 @@ export const store = {
         const elem = this._findGoodById(action.parantsId, { isElement: true })
         elem.change.inputUnit = action.newUnit
       }
-console.log(this._state.goods.change)
-
       rerenderEntireTree(store)
     }
     if (action.type === 'SHOW-BODY') {
@@ -155,5 +151,3 @@ console.log(this._state.goods.change)
     }
   }
 }
-
-// window.store = store

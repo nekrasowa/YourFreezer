@@ -9,13 +9,6 @@ async function keepModifiedGood(req, res) {
       unitInput
     } = req.body
 
-    // console.log('true?',
-    //   Number.isFinite(id)
-    //   && typeof textInput === "string"
-    //   && Number.isFinite(numberInput)
-    //   && (unitInput === 'kg' || unitInput === 'pcs' || unitInput === '')
-    // )
-
     if (Number.isFinite(id)
       && typeof textInput === "string"
       && (Number.isFinite(numberInput)|| null)
