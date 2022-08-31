@@ -20,17 +20,17 @@ function GoodsListInput(props) {
   const dispatch = useDispatch()
 
   const data = {
-      textGood,
-      numberGood,
-      unitGood,
+    textGood,
+    numberGood,
+    unitGood,
   }
 
   const inputTextStylesNormal = `${styles.InputText}`
   const inputTextStylesWarning = `${styles.InputText} ${styles.warning}`
 
   const AddHandle = () => {
-    if(textGood === '') {
-      return 
+    if (textGood === '') {
+      return
     }
     dispatch(createGood(data))
     setTextGood('')
@@ -53,27 +53,31 @@ function GoodsListInput(props) {
           type='text'
           onChange={handleInputNumber}
           value={numberGood} />
-        <form
-          className={`${styles.container} ${styles.InputRadioBtns}`}
-          onChange={handleInputUnit}>
-          <label>
-            <input
-              type='radio'
-              name='radio'
-              value='kilo'
-            // defaultChecked
-            />
-            <span>kilo</span>
-          </label>
-          <label>
-            <input
-              type='radio'
-              name='radio'
-              value='pcs'
-            />
-            <span>pcs</span>
-          </label>
-        </form>
+        <div
+          className={`${styles.BoxRadioBtns}`}>
+          <form
+            className={`${styles.InputRadioBtns}`}
+            onChange={handleInputUnit}>
+            <label>
+              <input
+                type='radio'
+                name='radio'
+                value='kilo'
+              // defaultChecked
+              />
+              <span>kilo</span>
+            </label>
+            <label>
+              <input
+                type='radio'
+                name='radio'
+                value='pcs'
+              />
+              <span>pcs</span>
+            </label>
+          </form>
+        </div>
+
         <input
           type='submit'
           id={`${styles.addBtn}`}

@@ -13,8 +13,8 @@
 
 .InputText {
   grid-area: InputText;
-  max-width: 75%;
-  min-width: 30%;
+  max-width: 99%;
+  min-width: 50%;
   box-shadow: inset 3px 5px 0px 0px #ad8d4d, inset -3px -5px 0px 0px #bfe165;
   background: #f7ea63ba;
   color: #21580a;
@@ -45,7 +45,6 @@
   padding: 0 1rem;
   border-radius: 0.5rem;
   background: #f7ea63ba;
-  
 }
 
 ::placeholder {
@@ -55,7 +54,7 @@
 
 .InputNumber {
   grid-area: InputNumber;
-  max-width: 80%;
+  max-width: 90%;
   min-width: 50%;
   box-shadow: inset 3px 5px 0px 0px #ad8d4d, inset -3px -5px 0px 0px #bfe165;
   background: #f7ea63ba;
@@ -80,13 +79,19 @@
 $primary-color: #074303; 
 $text-color: mix(#000, $primary-color, 64%);
 
+.BoxRadioBtns {
+  margin: -5% 20% 0% -10%;
+  padding: 0% 4% 0% 0%;  
+}
+
 .InputRadioBtns {
   display: grid;
   grid-template-areas: 'kilo'
                        'pcs'; 
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns:  1fr;
-  
+  max-width: 95%;
+  min-width: 50%;
 	font-family: "Inter", sans-serif;
 	color: $text-color;
 	font-size: 60%;
@@ -98,7 +103,6 @@ label {
 	font-weight: 500;
 	position: relative;
 	overflow: hidden;
-	margin-bottom: 0.375em;
 	border: none;
 		
 	input {
@@ -115,7 +119,7 @@ label {
 		display: flex;
 		align-items: center;
 		padding: 0.375em 0.75em 0.375em 0.375em;
-    font-size: 97%;
+    font-size: 130%;
 		border-radius: 99em; 
 		transition: 0.25s ease;
 		&:hover {

@@ -1,5 +1,6 @@
 .BoxElements {
   grid-area: BoxElements;
+  overflow: auto
 }
 
 .ListElement {
@@ -8,9 +9,6 @@
   grid-template-areas: 'checkbox bodyOfElem delete';
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 6fr 1fr;
-
-  /* border: 1px solid black; */
-
 }
 
 .element {
