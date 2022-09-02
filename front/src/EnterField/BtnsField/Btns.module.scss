@@ -1,0 +1,86 @@
+.BtnsField {
+  margin: 0% 0% 0% 0%;
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.BtnsField__Btn {
+  margin-top: 3%;
+  min-width: 50%;
+  color: rgb(6 43 95);
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.7em;
+  text-shadow: rgba(255, 255, 255, 0.5) 1px 1px,
+    rgba(100, 100, 100, 0.3) 3px 7px 3px;
+  user-select: none;
+  padding: 0.6em 1.6em;
+  outline: none;
+  border-radius: 3px / 100%;
+  background-image: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0) 70%
+    ),
+    linear-gradient(
+      to right,
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0) 20%,
+      rgba(255, 255, 255, 0) 90%,
+      rgba(255, 255, 255, 0.3)
+    ),
+    linear-gradient(
+      to right,
+      rgba(125, 125, 125, 1),
+      rgba(147 74 33 / 90%) 45%,
+      rgba(125, 125, 125, 0.5)
+    ),
+    linear-gradient(
+      to right,
+      rgba(125, 125, 125, 1),
+      rgba(147 74 33 / 90%) 45%,
+      rgba(125, 125, 125, 0.5)
+    ),
+    linear-gradient(
+      to right,
+      rgba(223, 190, 170, 1),
+      rgba(147 74 33 / 90%) 45%,
+      rgba(223, 190, 170, 0.5)
+    ),
+    linear-gradient(
+      to right,
+      rgba(223, 190, 170, 1),
+      rgba(147 74 33 / 90%) 45%,
+      rgba(223, 190, 170, 0.5)
+    );
+  background-repeat: no-repeat;
+  background-size: 200% 100%, auto, 100% 2px, 100% 2px, 100% 1px, 100% 1px;
+  background-position: 200% 0, 0 0, 0 0, 0 100%, 0 4px, 0 calc(100% - 4px);
+  box-shadow: rgba(0, 0, 0, 0.5) 3px 10px 10px -10px;
+
+  &:hover {
+    transition: 0.5s linear;
+    background-position: -200% 0, 0 0, 0 0, 0 100%, 0 4px, 0 calc(100% - 4px);
+  }
+
+  &.BtnsField__Btn_auth {
+    background-color: rgba(164, 168, 120, 0.69);
+    &:active {
+      color: #1f6311;
+      box-shadow: inset #00eb3b 0 -1px 1px, inset 0 1px 1px #1c8a36,
+        #4acc22 0 0 0 1px, 0 10px 10px -9px #000;
+    }
+  }
+
+  &.BtnsField__Btn_register {
+    background-color: rgba(122, 120, 168, 0.69);
+    &:active {
+      color: #1f6311;
+      box-shadow: inset #00eb3b 0 -1px 1px, inset 0 1px 1px #1c8a36,
+        #4acc22 0 0 0 1px, 0 10px 10px -9px #000;
+    }
+  }
+}

@@ -1,0 +1,76 @@
+$dark-blue: rgb(19, 13, 55);
+
+.EnterField {
+  grid-area: EnterField;
+}
+
+.submit {
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(151, 24, 24, 0.54);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    box-sizing: border-box;
+  }
+  &:before {
+    bottom: 0;
+    left: 0;
+    border-left: 1px solid white;
+    border-top: 1px solid white;
+    transition: 0s ease opacity 0.8s, 0.2s ease width 0.4s,
+      0.2s ease height 0.6s;
+  }
+  &:after {
+    top: 0;
+    right: 0;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    transition: 0s ease opacity 0.4s, 0.2s ease width, 0.2s ease height 0.2s;
+  }
+  &:hover:before,
+  &:hover:after {
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+  }
+  &:hover:before {
+    transition: 0s ease opacity 0s, 0.2s ease height, 0.2s ease width 0.2s;
+  }
+  &:hover:after {
+    transition: 0s ease opacity 0.4s, 0.2s ease height 0.4s,
+      0.2s ease width 0.6s;
+  }
+  &:hover {
+    background: rgba(151, 38, 38, 0.298);
+  }
+}
+
+.Form__inputField {
+  background-color: rgba(183, 183, 29, 0.70);
+  min-height: 2em;
+  outline: none;
+  border: 1px solod $dark-blue;
+  padding: 0% 2% 0% 2%;
+  &:active {
+    background-color: rgba(89, 167, 212, 0.7);
+
+  }
+  &:hover {
+    background-color: rgba(121, 183, 29, 0.7);
+
+  }
+  &:focus {
+    background-color: rgba(177, 175, 238, 0.7);
+
+  }
+}

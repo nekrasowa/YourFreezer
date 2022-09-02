@@ -1,7 +1,7 @@
 .GoodsListBox {
   border: 3px solid #93702a;
   grid-area: GoodsListBox;
-  margin: 0% 2% 0% 33%;
+  margin: -10% 2% 0% 33%;
 
   display: grid;
   grid-template-areas:

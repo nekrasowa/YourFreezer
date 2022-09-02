@@ -1,0 +1,36 @@
+.RegisterField {
+  grid-area: RegisterField;
+  margin: 1% 0% 0% 1%;
+}
+
+.RegisterForm {
+  display: flex;
+  flex-wrap: wrap;
+  // flex-direction: column;
+  justify-content: space-around;
+  // align-items: center;
+  width: 95%;
+  flex-grow: 1;
+  flex-shrink: 1;
+  color: rgb(0, 0, 0);
+  font-size: 1em;
+  ::placeholder {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 1em;
+  }
+}
+.RegisterForm__inputField {
+  margin: 1% 0% 1% 0%;
+}
+.Register__submit {
+  max-width: 50%;
+  padding: 1% 10% 1% 10%;
+  font-size: 1em;
+  color:rgb(0, 0, 0);
+  background-color: rgba(61, 235, 113, 0.499);
+  margin-left: 64%;
+
+  &:hover {
+    background: rgba(55, 151, 38, 0.298);
+  }
+}
