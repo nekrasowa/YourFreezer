@@ -1,11 +1,15 @@
-import React from "react"
+import React from 'react'
+import { useDispatch } from 'react-redux'
+import { showWelcomeField } from '../../redux/actions/actionsEnter'
 import styles from './AuthField.module.scss'
 import globalStyles from '../EnterField.module.scss'
 
-
 function AuthField() {
+  const dispatch = useDispatch()
+
   const handleSubmit = (e) => {
     e.preventDefault()
+    dispatch(showWelcomeField())
   }
   return (
     <>

@@ -24,6 +24,9 @@ export const enterReducer = (state = initialState, action) => {
     }
   }
   if (action.type === SHOW_AUTH_FIELD) {
+    console.log('here >> enterReducer',)
+    console.log('initialState>>>', initialState)
+
     return {
       ...state,
       stateEnter: action.enter

@@ -1,6 +1,6 @@
 .RegisterField {
   grid-area: RegisterField;
-  margin: 1% 0% 0% 1%;
+  margin: 1% -23% 0% -10%;
 }
 
 .RegisterForm {
@@ -9,7 +9,7 @@
   // flex-direction: column;
   justify-content: space-around;
   // align-items: center;
-  width: 95%;
+  width: 65%;
   flex-grow: 1;
   flex-shrink: 1;
   color: rgb(0, 0, 0);
@@ -28,7 +28,7 @@
   font-size: 1em;
   color:rgb(0, 0, 0);
   background-color: rgba(61, 235, 113, 0.499);
-  margin-left: 64%;
+  margin-left: 58%;
 
   &:hover {
     background: rgba(55, 151, 38, 0.298);

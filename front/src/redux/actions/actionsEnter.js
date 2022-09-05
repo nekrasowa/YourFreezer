@@ -18,6 +18,8 @@ export function showRegisterField() {
   }
 }
 export function showAuthField() {
+  console.log('here >> showAuthField',)
+
   return {
     type: SHOW_AUTH_FIELD,
     enter: 'showAuthField'

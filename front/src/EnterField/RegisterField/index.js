@@ -1,10 +1,16 @@
 import React from 'react'
+import { showAuthField } from '../../redux/actions/actionsEnter'
+import { useDispatch } from 'react-redux'
 import styles from './RegisterField.module.scss'
 import globalStyles from '../EnterField.module.scss'
 
 function RegisterField() {
+  const dispatch = useDispatch()
+
   const handleSubmit = (e) => {
     e.preventDefault()
+    dispatch(showAuthField())
+  
   }
   return (
     <div className={`${styles.RegisterField}`}> 

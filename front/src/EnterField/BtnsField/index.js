@@ -5,14 +5,12 @@ import { showRegisterField, showAuthField } from '../../redux/actions/actionsEnt
 
 function BtnsField(props) {
   const dispatch = useDispatch()
+
   const clickHandlerAuth = () => {
-    dispatch(showAuthField)
-    console.log('click E')
+    dispatch(showAuthField())
   }
   const clickHandlerRegister = () => {
-    dispatch(showRegisterField)
-
-    console.log('click R')
+    dispatch(showRegisterField())
   }
   return (
     <div className={`${styles.BtnsField}`}>

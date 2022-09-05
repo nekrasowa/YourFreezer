@@ -20,15 +20,12 @@
 }
 
 .AppName {
+  flex-grow: 2;
   font-size: 9vw;
   font-family: fantasy;
   color: rgb(58 148 178);
   grid-area: EnterField;
-  padding-right: 0;
-
-  margin-left: 15%;
-  margin-top: 0%;
-  margin-bottom: -4%;
+  margin: -1% 5% -1% 11%;
 }
 .AppName_anima {
   animation-name: appName;
