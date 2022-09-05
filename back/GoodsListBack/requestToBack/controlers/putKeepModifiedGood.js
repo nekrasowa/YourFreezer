@@ -1,4 +1,4 @@
-const GoodsList = require('../../requestToDB/models/goodsListModel')
+const GoodsList = require('../../../requestToDB/models/goodsListModel')
 
 async function keepModifiedGood(req, res) {
   try {

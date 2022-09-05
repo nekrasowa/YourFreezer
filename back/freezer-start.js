@@ -1,5 +1,5 @@
 const express = require('express')
-const sequelize = require('./GoodsListBack/requestToDB/sequlizeConnection')
+const sequelize = require('./requestToDB/sequlizeConnection')
 const cors = require('cors')
 const goodList = require('./GoodsListBack/requestToBack/routers/goodsListRouters')
 

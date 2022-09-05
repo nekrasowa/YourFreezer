@@ -1,6 +1,6 @@
 .App {
   display: grid;
-  grid-template-areas: 'AppName         AppName         AppName         AppName        EnterField      EnterField'
+  grid-template-areas: 'EnterField         EnterField         EnterField         EnterField        EnterField      EnterField'
                        'FridgeContents  FridgeContents  FridgeContents  GoodsListInput GoodsListInput GoodsListInput'
                        'FridgeContents  FridgeContents  FridgeContents  GoodsListBox   GoodsListBox   GoodsListBox'
                        'FridgeContents  FridgeContents  FridgeContents  GoodsListBox   GoodsListBox   GoodsListBox'

@@ -1,4 +1,4 @@
-const GoodsList = require('../../requestToDB/models/goodsListModel')
+const GoodsList = require('../../../requestToDB/models/goodsListModel')
 // const bringToCorrectForm = require('../../../helpFunc.js/bringToCorrectForm')
 
 async function createGood(req, res) {

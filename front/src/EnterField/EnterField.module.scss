@@ -2,6 +2,7 @@ $dark-blue: rgb(19, 13, 55);
 
 .EnterField {
   grid-area: EnterField;
+  display: flex;
 }
 
 .submit {

@@ -5,7 +5,6 @@
   width: 200%;
   height: 200%;
   z-index: -1;
-
 }
 
 .BackImg {
@@ -24,10 +23,24 @@
   font-size: 9vw;
   font-family: fantasy;
   color: rgb(58 148 178);
-  grid-area: AppName;
-
+  grid-area: EnterField;
   padding-right: 0;
+
   margin-left: 20%;
-  margin-top: -2%;
+  margin-top: 0%;
   margin-bottom: -4%;
+}
+.AppName_anima {
+  animation-name: appName;
+  animation-duration: 2.5s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes appName {
+  0% {
+    margin-right: 0%;
+  }
+  100% {
+    margin-right: 50%;
+  }
 }

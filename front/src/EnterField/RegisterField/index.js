@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from'./RegisterField.module.scss'
+import styles from './RegisterField.module.scss'
 import globalStyles from '../EnterField.module.scss'
 
 function RegisterField() {

@@ -1,0 +1,31 @@
+.WelcomeField {
+  margin: 0% 0% 0% 0%;
+  animation-name: welcome;
+  animation-duration: 2.5s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes welcome{
+
+  0%{
+    margin-right: 0%;
+
+  }
+  100%{
+    margin-right: -50%;
+
+  }
+  }
+
+.WelcomeField__paragraph {
+  margin: 10% 0% 0% 0%;
+  font-size: 3em;
+  font-family: fantasy;
+  font-weight: bolder;
+  background-image: linear-gradient(to left, #4311ce, #5ccadb);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+

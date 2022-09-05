@@ -1,7 +1,6 @@
 import React from "react"
 import styles from './App.module.scss'
 import BackImg  from "./Background/Background"
-import AppName from "./Background/AppName"
 import EnterField from "./EnterField"
 import FridgeContents from "./Contents/FridgeContents/FridgeContents"
 import FreezerContents from "./Contents/FreezerContents/FreezerContents"
@@ -13,7 +12,6 @@ function App(props) {
   return (
     <div className={`${styles.App}`}>
       <BackImg />
-      <AppName />
       <EnterField />
       <FridgeContents />
       <FreezerContents />
