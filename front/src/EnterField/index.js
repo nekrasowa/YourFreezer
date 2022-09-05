@@ -1,4 +1,5 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import styles from './EnterField.module.scss'
 import AppName from '../Background/AppName'
 import BtnsField from './BtnsField'
@@ -6,20 +7,22 @@ import RegisterField from './RegisterField'
 import AuthField from './AuthField'
 import WelcomeField from './WelcomeField'
 
+
 function EnterField(props) {
+  const stateEnter = useSelector((state) => state.enter.stateEnter)
+  console.log('stateEnter >>> ', stateEnter)
 
   const showBlock = () => {
-    const stateEnter = '4'
-    if (stateEnter === '1') {
+    if (stateEnter === 'showBtns') {
       return <BtnsField />
     }
-    if (stateEnter === '2') {
+    if (stateEnter === 'showRegisterField') {
       return <RegisterField />
     }
-    if (stateEnter === '3') {
+    if (stateEnter === 'showAuthField') {
       return <AuthField />
     }
-    if (stateEnter === '4') {
+    if (stateEnter === 'showWelcomeField') {
       return <WelcomeField />
     }
   }

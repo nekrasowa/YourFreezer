@@ -1,11 +1,17 @@
 import React from 'react'
 import styles from './Btns.module.scss'
+import { useDispatch } from 'react-redux'
+import { showRegisterField, showAuthField } from '../../redux/actions/actionsEnter'
 
 function BtnsField(props) {
-  const clickHandlerE = () => {
+  const dispatch = useDispatch()
+  const clickHandlerAuth = () => {
+    dispatch(showAuthField)
     console.log('click E')
   }
-  const clickHandlerR = () => {
+  const clickHandlerRegister = () => {
+    dispatch(showRegisterField)
+
     console.log('click R')
   }
   return (
@@ -13,14 +19,14 @@ function BtnsField(props) {
         <button
           className={`${styles.BtnsField__Btn} ${styles.BtnsField__Btn_auth}`}
           type='button'
-          onClick={clickHandlerE}
+          onClick={clickHandlerAuth}
           name='Enter'
           value='Enter'
         >Enter</button>
         <button
           className={`${styles.BtnsField__Btn} ${styles.BtnsField__Btn_register}`}
           type='button'
-          onClick={clickHandlerR}
+          onClick={clickHandlerRegister}
           name='Register'
           value='Register' 
         >Register</button>

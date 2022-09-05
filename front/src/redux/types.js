@@ -17,7 +17,9 @@ export const LOADER_OFF = 'LOADER_OFF'
 export const SHOW_ERROR = 'SHOW_ERROR'
 export const HIDE_ERROR = 'HIDE_ERROR'
 
-
-
-
 export const INIT_GOODS = 'INIT_GOODS'
+
+export const SHOW_BTNS = 'SHOW_BTNS'
+export const SHOW_REGISTER_FIELD = 'SHOW_REGISTER_FIELD'
+export const SHOW_AUTH_FIELD = 'SHOW_AUTH_FIELD'
+export const SHOW_WELCOME_FIELD = 'SHOW_WELCOME_FIELD'
