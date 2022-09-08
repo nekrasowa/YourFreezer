@@ -3,10 +3,12 @@ import {
   SHOW_REGISTER_FIELD,
   SHOW_AUTH_FIELD,
   SHOW_WELCOME_FIELD,
+  MASSAGE_FOR_NEW_USER
 } from '../types.js'
 
 const initialState = {
-  stateEnter: 'showBtns'
+  stateEnter: 'showBtns',
+  massage: ''
 }
 
 export const enterReducer = (state = initialState, action) => {
@@ -39,7 +41,15 @@ export const enterReducer = (state = initialState, action) => {
     }
   }
 
+  if (action.type === MASSAGE_FOR_NEW_USER) {
+    return {
+      ...state,
+      massage: action.massage
+    }
+  }
+  
   return state
+  
 }
 
 

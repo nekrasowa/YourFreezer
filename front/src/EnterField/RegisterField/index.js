@@ -1,7 +1,9 @@
 import React from 'react'
 import { showAuthField } from '../../redux/actions/actionsEnter'
-import { useDispatch } from 'react-redux'
+import { createNewUser } from '../../redux/thunks/thunksEnterField/createNewUser'
+import { useDispatch, useSelector } from 'react-redux'
 import { useState } from 'react'
+import _ from 'lodash/lang'
 import styles from './RegisterField.module.scss'
 import globalStyles from '../EnterField.module.scss'
 import { checkEmail, checkTel, checkPass } from './checkData'
@@ -9,9 +11,13 @@ import { showError, hideError } from '../../redux/actions/actionsError'
 
 function RegisterField() {
   const dispatch = useDispatch()
+  // dispatch(showError(''))
 
-  const correctInputStyle = `${styles.RegisterForm__inputField} ${globalStyles.Form__inputField}`
-  const wrongInputStyle = `${styles.RegisterForm__inputField} ${globalStyles.Form__inputField} ${styles.RegisterForm__inputField_wrongInput}`
+  const correctInputStyle = `${styles.RegisterForm__inputField} 
+    ${globalStyles.Form__inputField}`
+  const wrongInputStyle = `${styles.RegisterForm__inputField} 
+    ${globalStyles.Form__inputField} 
+    ${styles.RegisterForm__inputField_wrongInput}`
 
   const [userName, setUserName] = useState('')
   const inputNameHandler = (e) => {
@@ -35,8 +41,6 @@ function RegisterField() {
     return correctInputStyle
   }
 
-  // console.log('(true?)>>', )
-
   const [userTel, setUserTel] = useState('')
   const inputTelHandler = (e) => {
     setUserTel(e.target.value)
@@ -45,7 +49,6 @@ function RegisterField() {
       dispatch(showError(errorMassage))
       return
     }
-    dispatch(hideError())
   }
   const changeTelStyle = () => {
     if (!checkTel(userTel) && userTel !== '') {
@@ -71,19 +74,27 @@ function RegisterField() {
     return correctInputStyle
   }
 
-  // const userData = {
-  //   userName,
-  //   userEmail,
-  //   userTel,
-  //   userPass
-  // }
+  const userData = {
+    userName,
+    userEmail,
+    userTel,
+    userPass
+  }
+
   // console.log('userData>>', userData)
+  const isDataCorrect = useSelector((state) => state.isError.error)
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    if (!_.isEmpty(isDataCorrect)) {
+      const errorMassage = 'Data is not correct!'
+      dispatch(showError(errorMassage))
+      return
+    }
     dispatch(hideError())
+    dispatch(createNewUser(userData))
 
-    // dispatch(showAuthField())
+    setTimeout(dispatch(showAuthField()), 5000)
   }
 
   return (

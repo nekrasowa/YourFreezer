@@ -14,8 +14,11 @@ export const errorReducer = (state = initialState, action) => {
       error: { massage: action.massage }
     }
   }
+  console.log('initialState', initialState)
 
   if (action.type === HIDE_ERROR) {
+  console.log('hide2')
+
     return {
       ...state,
       error: {}
