@@ -6,18 +6,13 @@ import { useState } from 'react'
 import _ from 'lodash/lang'
 import styles from './RegisterField.module.scss'
 import globalStyles from '../EnterField.module.scss'
-import { checkEmail, checkTel, checkPass } from './checkData'
+import { checkEmail, checkTel, checkPass } from '../helpFunctions/checkData'
 import { showError, hideError } from '../../redux/actions/actionsError'
+import { changeStyle } from '../helpFunctions/changeStyle'
 
 function RegisterField() {
   const dispatch = useDispatch()
   // dispatch(showError(''))
-
-  const correctInputStyle = `${styles.RegisterForm__inputField} 
-    ${globalStyles.Form__inputField}`
-  const wrongInputStyle = `${styles.RegisterForm__inputField} 
-    ${globalStyles.Form__inputField} 
-    ${styles.RegisterForm__inputField_wrongInput}`
 
   const [userName, setUserName] = useState('')
   const inputNameHandler = (e) => {
@@ -34,12 +29,6 @@ function RegisterField() {
     }
     dispatch(hideError())
   }
-  const changeEmailStyle = () => {
-    if (!checkEmail(userEmail) && userEmail !== '') {
-      return wrongInputStyle
-    }
-    return correctInputStyle
-  }
 
   const [userTel, setUserTel] = useState('')
   const inputTelHandler = (e) => {
@@ -49,12 +38,6 @@ function RegisterField() {
       dispatch(showError(errorMassage))
       return
     }
-  }
-  const changeTelStyle = () => {
-    if (!checkTel(userTel) && userTel !== '') {
-      return wrongInputStyle
-    }
-    return correctInputStyle
   }
 
   const [userPass, setUserPass] = useState('')
@@ -67,12 +50,7 @@ function RegisterField() {
     }
     dispatch(hideError())
   }
-  const changePassStyle = () => {
-    if (!checkPass(userPass) && userPass !== '') {
-      return wrongInputStyle
-    }
-    return correctInputStyle
-  }
+  
 
   const userData = {
     userName,
@@ -111,21 +89,21 @@ function RegisterField() {
           onChange={inputNameHandler}
         />
         <input
-          className={changeEmailStyle()}
+          className={changeStyle(checkEmail, userEmail)}
           type='email'
           placeholder='email'
           value={userEmail}
           onChange={inputEmailHandler}
         />
         <input
-          className={changeTelStyle()}
+          className={changeStyle(checkTel, userTel)}
           type='tel'
           placeholder='tel number'
           value={userTel}
           onChange={inputTelHandler}
         />
         <input
-          className={changePassStyle()}
+          className={changeStyle(checkPass, userPass)}
           type='password'
           placeholder='password'
           value={userPass}

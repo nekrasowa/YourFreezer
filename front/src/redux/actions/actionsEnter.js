@@ -3,7 +3,7 @@ import {
   SHOW_REGISTER_FIELD,
   SHOW_AUTH_FIELD,
   SHOW_WELCOME_FIELD,
-  MASSAGE_FOR_NEW_USER
+  MASSAGE_FOR_USER
 } from '../types.js'
 
 export function showEnterBtns() {
@@ -32,9 +32,9 @@ export function showWelcomeField() {
     enter: 'showWelcomeField'
   }
 }
-export function massageForNewUser(massage) {
+export function massageForUser(massage) {
   return {
-    type: MASSAGE_FOR_NEW_USER,
+    type: MASSAGE_FOR_USER,
     massage
   }
 }

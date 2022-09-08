@@ -10,7 +10,6 @@ import WelcomeField from './WelcomeField'
 
 function EnterField(props) {
   const stateEnter = useSelector((state) => state.enter.stateEnter)
-  console.log('stateEnter >>> ', stateEnter)
 
   const showBlock = () => {
     if (stateEnter === 'showBtns') {

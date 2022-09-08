@@ -1,5 +1,5 @@
 import { createNewUserOnServ } from "../../../requests/forEnterField/createNewUserOnServ"
-import { massageForNewUser } from "../../actions/actionsEnter"
+import { massageForUser } from "../../actions/actionsEnter"
 
 export const createNewUser = (data) => {
   return (dispatch) => {
@@ -8,7 +8,7 @@ export const createNewUser = (data) => {
       // return
     // })
     const massage = 'new user is added'
-    dispatch(massageForNewUser(massage))
+    dispatch(massageForUser(massage))
   }
 }
 
