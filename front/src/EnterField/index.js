@@ -25,8 +25,14 @@ function EnterField(props) {
       return <WelcomeField />
     }
   }
+  const changeStyle = () => {
+    if(stateEnter !== 'showWelcomeField') {
+      return styles.EnterField
+    }
+    return styles.EnterField_welcome
+  }
     return (
-    <div className={styles.EnterField}>
+    <div className={changeStyle()}>
       <AppName />
       {showBlock()}
     </div>

@@ -1,19 +1,19 @@
 .WelcomeField {
-  margin: 0% 0% 0% 0%;
+  margin: 1.5% -10% 1% -9%;
   animation-name: welcome;
   animation-duration: 2.5s;
   animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+
 }
 
 @keyframes welcome{
 
   0%{
-    margin-right: 0%;
-
+    margin: 1.5% -10% 1% -9%;
   }
   100%{
-    margin-right: -50%;
-
+    margin: 1.5% -10% 1% 15%;
   }
   }
 

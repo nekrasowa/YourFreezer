@@ -6,6 +6,13 @@ $dark-blue: rgb(19, 13, 55);
   flex-grow: 1;
 }
 
+.EnterField_welcome {
+  grid-area: EnterField;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-grow: 1;
+}
+
 .submit {
   text-decoration: none;
   display: inline-block;

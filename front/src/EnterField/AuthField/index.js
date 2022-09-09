@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useState } from 'react'
 import { checkUserData } from '../../redux/thunks/thunksEnterField/checkUserData'
-// import { showWelcomeField } from '../../redux/actions/actionsEnter'
+import { showWelcomeField } from '../../redux/actions/actionsEnter'
 import { changeStyle, correctInputStyle } from '../helpFunctions/changeStyle'
 import styles from '../AuthField/AuthField.module.scss'
 import globalStyles from '../EnterField.module.scss'
@@ -47,7 +47,7 @@ function AuthField() {
     }
     dispatch(hideError())
     dispatch(checkUserData(enterData))
-    // dispatch(showWelcomeField())
+    dispatch(showWelcomeField())
   }
   return (
     <>
