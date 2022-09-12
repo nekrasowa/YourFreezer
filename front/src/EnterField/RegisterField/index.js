@@ -1,5 +1,5 @@
 import React from 'react'
-import { showAuthField } from '../../redux/actions/actionsEnter'
+// import { showAuthField } from '../../redux/actions/actionsEnter'
 import { createNewUser } from '../../redux/thunks/thunksEnterField/createNewUser'
 import { useDispatch, useSelector } from 'react-redux'
 import { useState } from 'react'
@@ -51,7 +51,6 @@ function RegisterField() {
     dispatch(hideError())
   }
   
-
   const userData = {
     userName,
     userEmail,
@@ -71,8 +70,6 @@ function RegisterField() {
     }
     dispatch(hideError())
     dispatch(createNewUser(userData))
-
-    setTimeout(dispatch(showAuthField()), 5000)
   }
 
   return (

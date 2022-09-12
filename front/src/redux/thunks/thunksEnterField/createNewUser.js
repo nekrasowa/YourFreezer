@@ -1,14 +1,24 @@
 import { createNewUserOnServ } from "../../../requests/forEnterField/createNewUserOnServ"
-import { massageForUser } from "../../actions/actionsEnter"
+import { massageForUser, permissionToChange, showAuthField } from "../../actions/actionsEnter"
 
-export const createNewUser = (data) => {
-  return (dispatch) => {
-    createNewUserOnServ(data)
-    // .then((res) => {
-      // return
-    // })
-    const massage = 'new user is added'
-    dispatch(massageForUser(massage))
+export const createNewUser =  (usersData) => {
+  return async (dispatch) => {
+    try {
+    const res = await createNewUserOnServ(usersData)
+
+    dispatch(massageForUser(res.massage))
+
+    if(res.status !== 200) {
+      dispatch(permissionToChange(false))
+    }
+    dispatch(permissionToChange(true))
+    dispatch(showAuthField())
+
+    } catch (e) {
+
+    }
+    
+    
   }
 }
 

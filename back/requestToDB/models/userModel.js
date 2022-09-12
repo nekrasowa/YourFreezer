@@ -15,13 +15,15 @@ User.init({
   },
   tel_number_of_user: {
     type: DataTypes.INTEGER,
-    allowNull: false
+    allowNull: false,
+    unique: true
   },
   email_of_user: {
     type: DataTypes.STRING(30),
-    allowNull: false
+    allowNull: false,
+    unique: true
   },
-  ipassword_of_user: {
+  password_of_user: {
     type: DataTypes.STRING(225),
     allowNull: false,
   }
