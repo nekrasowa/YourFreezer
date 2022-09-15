@@ -1,5 +1,5 @@
 const GoodsList = require('../../../requestToDB/models/goodsListModel')
-const bringToCorrectForm = require('../../../helpFunc.js/bringToCorrectForm')
+const bringToCorrectForm = require('../../../helpFunc/bringToCorrectForm')
 
 async function getAllGoods(req, res) {
   // await GoodsList.sync({ alter: true })

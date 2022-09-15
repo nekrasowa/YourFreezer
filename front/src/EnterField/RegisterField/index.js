@@ -22,7 +22,7 @@ function RegisterField() {
   const [userEmail, setUserEmail] = useState('')
   const inputEmailHandler = (e) => {
     setUserEmail(e.target.value)
-    if (!checkPass(userEmail)) {
+    if (!checkEmail(e.target.value)) {
       const errorMassage = 'Input email in correct form'
       dispatch(showError(errorMassage))
       return
@@ -33,17 +33,18 @@ function RegisterField() {
   const [userTel, setUserTel] = useState('')
   const inputTelHandler = (e) => {
     setUserTel(e.target.value)
-    if (!checkPass(userTel)) {
+    if (!checkPass(e.target.value)) {
       const errorMassage = 'Input tel number in correct form'
       dispatch(showError(errorMassage))
       return
     }
+    dispatch(hideError())
   }
 
   const [userPass, setUserPass] = useState('')
   const inputPassHandler = (e) => {
     setUserPass(e.target.value)
-    if (!checkPass(userPass)) {
+    if (!checkPass(e.target.value)) {
       const errorMassage = 'Input pass with number, letter in upper case, at least 6 characters'
       dispatch(showError(errorMassage))
       return
