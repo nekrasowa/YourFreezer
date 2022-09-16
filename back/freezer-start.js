@@ -3,7 +3,8 @@ const sequelize = require('./requestToDB/sequlizeConnection')
 const cors = require('cors')
 const goodList = require('./GoodsListBack/requestToBack/routers/goodsListRouters')
 const enterToSystem = require('./EnterToSystemBack/requestToBack/routers/enterToSystemRouters')
-
+const User = require('./requestToDB/models/userModel')
+const GoodsList = require('./requestToDB/models/goodsListModel')
 // const lang = require('lodash/fp/lang')
 
 const app = express()
@@ -36,6 +37,10 @@ async function init() {
 		console.log(`Express server started on port ${port}.`);
 	})
 
+	User.hasMany(GoodsList, {
+		foreignKey: 'user_id'
+	})
+	
 	sequelize.sync({ alter: true })
 }
 
