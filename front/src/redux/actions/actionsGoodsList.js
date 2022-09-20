@@ -4,7 +4,8 @@ import {
   DELETE_ONE,
   CHECKED,
   EDIT_GOOD,
-  KEEP_GOOD
+  KEEP_GOOD,
+  INIT_GOODS
 } from "../types.js"
 
 export function createGoodAction(data) {
@@ -42,6 +43,12 @@ export function editGoodAction(id) {
 export function keepGoodAction(data) {
   return {
     type: KEEP_GOOD,
+    data
+  }
+}
+export function initGoods(data) {
+  return {
+    type: INIT_GOODS,
     data
   }
 }
