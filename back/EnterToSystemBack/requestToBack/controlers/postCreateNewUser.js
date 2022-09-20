@@ -5,7 +5,7 @@ const {
   checkPass
 } = require('../../../helpFunc/checkData')
 const { getHash } = require('../../../helpFunc/cryptoHash')
-// const bcrypt = require('bcrypt')
+const { createJWT } = require('../../jwtToken')
 
 async function createNewUser(req, res) {
   try {
@@ -44,9 +44,17 @@ async function createNewUser(req, res) {
       })
     }
 
+    const JWTPayload = { 
+      id: 'id',
+      pass: hashPass,
+      email: userEmail
+    }
+    const jwt = createJWT(JWTPayload, 'nestle')
+
     res.json({
       status: 200,
-      massage: 'User is added'
+      massage: 'User is added',
+      jwt
     })
 
   } catch (err) {
