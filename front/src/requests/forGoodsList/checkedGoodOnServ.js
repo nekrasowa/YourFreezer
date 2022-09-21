@@ -5,6 +5,8 @@ const checkedGoodURL = new URL('/goods/checkedGood', url)
 
 export async function checkedGoodOnServ(id, isChecked) {
 
+  const jwt = localStorage.getItem('jwt')
+  console.log('jwt:', jwt)
   const res = await axios({
     method: 'put',
     url: checkedGoodURL,

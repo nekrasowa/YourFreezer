@@ -7,19 +7,24 @@ function createJWT(payload, secretStr) {
   return jwt.sign(payload, secret)
 }
 
-function verifyJWT(token, hashPass) {
-  jwt.verify(token, hashPass)
+function verifyJWT(token, secretStr) {
+  const secret = getHash(secretStr)
+  return jwt.verify(token, secret, (err, decodet) => {
+    if (err) {
+      res.json({
+        status: 400,
+        massage: 'User does not pass verification'
+      })
+      return 
+    }
+    return decodet.id
+  })
 }
 
-
-module.exports = { 
-  createJWT, 
-  verifyJWT 
+module.exports = {
+  createJWT,
+  verifyJWT
 }
-
-
-
-
 
 
 // jwt.decode('jwtString') //whitout verify get data

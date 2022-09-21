@@ -1,8 +1,7 @@
 const axios = require('axios')
 
 const url = new URL('http://localhost:5000')
-const createNewUserOnServURL = new URL('/users/createNewUser', url)
-
+const createNewUserOnServURL = new URL('/register', url)
 
 export async function createNewUserOnServ(usersData) {
   const res = await axios({

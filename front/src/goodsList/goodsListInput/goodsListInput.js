@@ -43,7 +43,7 @@ function GoodsListInput(props) {
   const data = {
     textGood,
     numberGood,
-    unitGood,
+    unitGood
   }
 
   const inputTextStylesNormal = `${styles.InputText}`

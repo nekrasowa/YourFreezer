@@ -4,12 +4,13 @@ const {
   checkPass
 } = require('../../../helpFunc/checkData')
 const { getHash } = require('../../../helpFunc/cryptoHash')
+const { createJWT } = require('../../jwtToken')
 
 async function enterToSystem(req, res) {
   try {
     const {
       userEmail,
-      userPass
+      userPass,
     } = req.body
 
     if (
@@ -31,7 +32,7 @@ async function enterToSystem(req, res) {
           password_of_user: hashPass
         } }
     )
-
+  
     if (!enteredUser) {
       res.json({
         status: 400,
@@ -40,8 +41,20 @@ async function enterToSystem(req, res) {
       return
     }
 
-    
+    const JWTPayload = { 
+      id: enteredUser.dataValues.id,
+      pass: hashPass,
+      email: userEmail
+    }
+    const jwt = createJWT(JWTPayload, 'nestle')
 
+    
+    res.json({
+      status: 200,
+      massage: 'user enters',
+      jwt
+    })
+    return
 
   } catch (e) {
     console.log(e)

@@ -6,9 +6,10 @@ async function createGood(req, res) {
     const {
       textGood: textInput,
       numberGood: numberInput,
-      unitGood: unitInput
+      unitGood: unitInput,
     } = req.body
-    
+    const userId = req.id
+
     if (typeof textInput !== "string"
       || (!!numberInput && !Number.isFinite(numberInput))
       || (unitInput !== 'kg'
@@ -24,15 +25,15 @@ async function createGood(req, res) {
       name_of_good: textInput,
       number_of_good: numberInput || null,
       unit_of_good: unitInput,
+      user_id: userId
     })
     if (!newGoodInDB) {
       res.json({
         status: 500,
         massage: 'Error on serv, goods is nit created'
       })
-
+      return
     }
-    // const newGood = bringToCorrectForm(newGoodInDB)
 
     res.json({
       status: 200,

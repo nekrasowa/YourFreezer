@@ -36,7 +36,6 @@ function AuthField() {
 
   const isDataCorrect = useSelector((state) => state.isError.error)
 
-
   const handleSubmit = (e) => {
     e.preventDefault()
     if (!_.isEmpty(isDataCorrect)) {

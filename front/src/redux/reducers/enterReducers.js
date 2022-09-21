@@ -4,7 +4,7 @@ import {
   SHOW_AUTH_FIELD,
   SHOW_WELCOME_FIELD,
   MASSAGE_FOR_USER,
-  PERMISSION_TO_CHANGE
+  PERMISSION_TO_CHANGE,
 } from '../types.js'
 
 const initialState = {
@@ -28,9 +28,6 @@ export const enterReducer = (state = initialState, action) => {
     }
   }
   if (action.type === SHOW_AUTH_FIELD) {
-    console.log('here >> enterReducer',)
-    console.log('initialState>>>', initialState)
-
     return {
       ...state,
       stateEnter: action.enter
@@ -55,9 +52,8 @@ export const enterReducer = (state = initialState, action) => {
       isRequestSuccessful: action.successful
     }
   }
-  
-  return state
-  
+
+  return state 
 }
 
 

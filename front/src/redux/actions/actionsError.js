@@ -10,7 +10,6 @@ export function showError(massage) {
   }
 }
 export function hideError() {
-  console.log('hide')
   return {
     type: HIDE_ERROR
   }

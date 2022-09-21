@@ -44,17 +44,9 @@ async function createNewUser(req, res) {
       })
     }
 
-    const JWTPayload = { 
-      id: 'id',
-      pass: hashPass,
-      email: userEmail
-    }
-    const jwt = createJWT(JWTPayload, 'nestle')
-
     res.json({
       status: 200,
       massage: 'User is added',
-      jwt
     })
 
   } catch (err) {

@@ -4,7 +4,7 @@ import {
   SHOW_AUTH_FIELD,
   SHOW_WELCOME_FIELD,
   MASSAGE_FOR_USER,
-  PERMISSION_TO_CHANGE
+  PERMISSION_TO_CHANGE,
 } from '../types.js'
 
 export function showEnterBtns() {
@@ -20,8 +20,6 @@ export function showRegisterField() {
   }
 }
 export function showAuthField() {
-  console.log('here >> showAuthField',)
-
   return {
     type: SHOW_AUTH_FIELD,
     enter: 'showAuthField'
@@ -45,5 +43,6 @@ export function permissionToChange(successful) {
     successful
   }
 }
+
 
 

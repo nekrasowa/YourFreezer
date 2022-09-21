@@ -2,10 +2,11 @@ const express = require('express')
 const sequelize = require('./requestToDB/sequlizeConnection')
 const cors = require('cors')
 const goodList = require('./GoodsListBack/requestToBack/routers/goodsListRouters')
+const createNewUser = require('./EnterToSystemBack/requestToBack/controlers/postCreateNewUser')
 const enterToSystem = require('./EnterToSystemBack/requestToBack/routers/enterToSystemRouters')
 const User = require('./requestToDB/models/userModel')
 const GoodsList = require('./requestToDB/models/goodsListModel')
-// const lang = require('lodash/fp/lang')
+const { verifyJWT } = require('./EnterToSystemBack/jwtToken')
 
 const app = express()
 const port = 5000
@@ -13,6 +14,16 @@ const port = 5000
 app.use(cors())
 app.use(express.json())
 
+app.use('/goods', function (req, res, next) {
+	if (req.headers.authorization) {
+		const userJWT = req.headers.authorization.split(' ')[1]
+		const userId = verifyJWT(userJWT, 'nestle')
+		req.id = userId
+	}
+	next()
+})
+
+app.use('/register', createNewUser)
 app.use('/goods', goodList)
 app.use('/users', enterToSystem)
 
@@ -29,18 +40,14 @@ async function assertDatabaseConnectionOk() {
 }
 
 async function init() {
-	await assertDatabaseConnectionOk();
-
-	console.log(`Starting Sequelize + Express example on port ${port}...`);
-
+	await assertDatabaseConnectionOk()
+	console.log(`Starting Sequelize + Express example on port ${port}...`)
 	app.listen(port, () => {
-		console.log(`Express server started on port ${port}.`);
+		console.log(`Express server started on port ${port}.`)
 	})
-
 	User.hasMany(GoodsList, {
 		foreignKey: 'user_id'
 	})
-	
 	sequelize.sync({ alter: true })
 }
 
