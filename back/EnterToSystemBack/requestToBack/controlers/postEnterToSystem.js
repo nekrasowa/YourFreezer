@@ -1,10 +1,12 @@
 const User = require('../../../requestToDB/models/userModel')
+const GoodsList = require('../../../requestToDB/models/goodsListModel')
 const {
   checkEmail,
   checkPass
 } = require('../../../helpFunc/checkData')
 const { getHash } = require('../../../helpFunc/cryptoHash')
 const { createJWT } = require('../../jwtToken')
+const bringToCorrectForm = require('../../../helpFunc/bringToCorrectForm')
 
 async function enterToSystem(req, res) {
   try {
@@ -48,11 +50,16 @@ async function enterToSystem(req, res) {
     }
     const jwt = createJWT(JWTPayload, 'nestle')
 
+    const goodsFromDB = await GoodsList
+      .findAll({ where: { user_id: enteredUser.dataValues.id } })
+
+    const goods = goodsFromDB.map(bringToCorrectForm)
     
     res.json({
       status: 200,
       massage: 'user enters',
-      jwt
+      jwt,
+      goods
     })
     return
 

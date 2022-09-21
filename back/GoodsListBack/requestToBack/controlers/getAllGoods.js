@@ -2,11 +2,12 @@ const GoodsList = require('../../../requestToDB/models/goodsListModel')
 const bringToCorrectForm = require('../../../helpFunc/bringToCorrectForm')
 
 async function getAllGoods(req, res) {
-  // await GoodsList.sync({ alter: true })
   try {
-    const goodsFromDB = await GoodsList.findAll()
+    const userId = req.id
+    const goodsFromDB = await GoodsList
+      .findAll({ where: { user_id: userId } })
     const goods = goodsFromDB.map(bringToCorrectForm)
-// throw {name: 'my', massage: 'non'}
+
     await res.json(goods)
   } catch (err) {
 

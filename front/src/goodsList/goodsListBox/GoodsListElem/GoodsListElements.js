@@ -15,6 +15,7 @@ function GoodsListElements(props) {
   }, [dispatch])
 
   const goods = useSelector(state => state.createGood.goods)
+  console.log('[GOODS]', goods)
   const list = goods.map(good => <ListElement goodInfo={good} key={good.info.id}/>)
    
   return (

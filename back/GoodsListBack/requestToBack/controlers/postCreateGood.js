@@ -1,5 +1,4 @@
 const GoodsList = require('../../../requestToDB/models/goodsListModel')
-// const bringToCorrectForm = require('../../../helpFunc.js/bringToCorrectForm')
 
 async function createGood(req, res) {
   try {
@@ -35,9 +34,17 @@ async function createGood(req, res) {
       return
     }
 
+    // console.log(newGoodInDB)
+
     res.json({
       status: 200,
-      massage: 'Goods is added'
+      massage: 'Goods is added',
+      data: {
+          textGood: newGoodInDB.dataValues.name_of_good,
+          numberGood: newGoodInDB.dataValues.number_of_good,
+          unitGood: newGoodInDB.dataValues.unit_of_good,
+          id: newGoodInDB.dataValues.id,
+      }
     })
   } catch (err) {
     res.json({

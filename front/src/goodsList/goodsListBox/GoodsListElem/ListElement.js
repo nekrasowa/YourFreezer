@@ -5,7 +5,6 @@ import BodyOfElem from './compOfElem/BodyOfElem'
 import DeleteBTN from './compOfElem/DeleteBTN'
 
 function ListElement(props) {
-
   const id = props.goodInfo.info.id
   const isChecked = props.goodInfo.states.isChecked
   return (

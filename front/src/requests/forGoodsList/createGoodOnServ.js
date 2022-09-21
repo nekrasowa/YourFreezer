@@ -1,14 +1,12 @@
 const axios = require('axios')
-
 const url = new URL('http://localhost:5000')
 const createGoodOnServURL = new URL('/goods/createGood', url)
 
 export async function createGoodOnServ(dataOfGood) {
-  console.log('dataOfGood:', dataOfGood)
   if (dataOfGood.numberGood === '') {
     delete dataOfGood.numberGood
   }
-
+  
   const jwt = localStorage.getItem('jwt')
 
   const res = await axios({
@@ -17,7 +15,7 @@ export async function createGoodOnServ(dataOfGood) {
     headers: {'Authorization': `Bearer ${jwt}`},
     data: dataOfGood
   })
-  console.log('[res.data]:', res.data)
+  console.log('[res.data on serv]:', res.data)
 
   return res.data
 }

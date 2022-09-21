@@ -15,11 +15,14 @@ app.use(cors())
 app.use(express.json())
 
 app.use('/goods', function (req, res, next) {
-	if (req.headers.authorization) {
-		const userJWT = req.headers.authorization.split(' ')[1]
-		const userId = verifyJWT(userJWT, 'nestle')
-		req.id = userId
+	if (!req.headers.authorization) {
+		return res.status(400).json({
+			massage: 'User don`t pass verification'
+		})
 	}
+	const userJWT = req.headers.authorization.split(' ')[1]
+	const userId = verifyJWT(userJWT, 'nestle')
+	req.id = userId
 	next()
 })
 

@@ -4,18 +4,19 @@ const url = new URL('http://localhost:5000')
 const getAllGoodsURL = new URL('/goods/allGoods', url)
 
 export async function getAllGoodsFromServ() {
-    const res = await axios.get(getAllGoodsURL)
-    if (res.status === 200) {
-      return {
-        data: res.data, 
-        status: res.status
-      }
-    } else if (res.status === 500) {
-      return {
-        status: res.status,
-        massage: res.massage
-      }
+  const jwt = localStorage.getItem('jwt')
+
+  const res = await axios.get(getAllGoodsURL, {
+    headers: { 'Authorization': `Bearer ${jwt}` }
+  })
+  if (res.data.status !== 200) {
+    return {
+      status: res.data.status,
+      massage: res.data.massage
     }
-    
-    return res.status
   }
+  return {
+    data: res.data,
+    status: res.status
+  }
+}

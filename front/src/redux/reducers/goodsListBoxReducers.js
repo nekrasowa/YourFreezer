@@ -27,10 +27,10 @@ export const createGoodReducer = (state = initialState, action) => {
         ...state,
         goods: [...state.goods, {
           info: {
-            textGood: action.data.info.textGood,
-            numberGood: action.data.info.numberGood,
-            unitGood: action.data.info.unitGood,
-            id: action.data.info.id
+            textGood: action.data.textGood,
+            numberGood: action.data.numberGood,
+            unitGood: action.data.unitGood,
+            id: action.data.id
           },
           states: {
             isChecked: false,

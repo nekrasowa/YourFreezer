@@ -5,7 +5,6 @@ const {
   checkPass
 } = require('../../../helpFunc/checkData')
 const { getHash } = require('../../../helpFunc/cryptoHash')
-const { createJWT } = require('../../jwtToken')
 
 async function createNewUser(req, res) {
   try {
