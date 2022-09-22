@@ -8,6 +8,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { getAllGoods } from '../../../redux/thunks/thunksGoodsBox/getAllGoods'
 
 function GoodsListElements(props) {
+  
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -15,7 +16,6 @@ function GoodsListElements(props) {
   }, [dispatch])
 
   const goods = useSelector(state => state.createGood.goods)
-  console.log('[GOODS]', goods)
   const list = goods.map(good => <ListElement goodInfo={good} key={good.info.id}/>)
    
   return (

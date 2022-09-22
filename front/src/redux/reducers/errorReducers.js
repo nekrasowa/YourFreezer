@@ -8,7 +8,6 @@ const initialState = {
 }
 
 export const errorReducer = (state = initialState, action) => {
-  console.log('[initialState]:', initialState)
   if (action.type === SHOW_ERROR) {
     return {
       ...state,

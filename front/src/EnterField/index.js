@@ -1,14 +1,21 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import styles from './EnterField.module.scss'
 import AppName from '../Background/AppName'
 import BtnsField from './BtnsField'
 import RegisterField from './RegisterField'
 import AuthField from './AuthField'
 import WelcomeField from './WelcomeField'
-
+import { showWelcomeField } from '../redux/actions/actionsEnter'
 
 function EnterField(props) {
+  const dispatch = useDispatch()
+  const jwt = localStorage.getItem('jwt')
+  useEffect(() => {
+    if (jwt) {
+      dispatch(showWelcomeField())
+    }
+  }, [dispatch, jwt])
   const stateEnter = useSelector((state) => state.enter.stateEnter)
 
   const showBlock = () => {
@@ -26,12 +33,12 @@ function EnterField(props) {
     }
   }
   const changeStyle = () => {
-    if(stateEnter !== 'showWelcomeField') {
+    if (stateEnter !== 'showWelcomeField') {
       return styles.EnterField
     }
     return styles.EnterField_welcome
   }
-    return (
+  return (
     <div className={changeStyle()}>
       <AppName />
       {showBlock()}

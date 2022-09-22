@@ -5,6 +5,12 @@ import { getAllGoodsFromServ } from "../../../requests/forGoodsList/getAllGoodsF
 export const getAllGoods = () => {
   return async (dispatch) => {
     try {
+      const jwt = localStorage.getItem('jwt')
+      if(!jwt) {
+        dispatch(initGoods([]))
+        return
+      }
+      
       const res = await getAllGoodsFromServ()
       if (res.status === 200) {
         dispatch(initGoods(res.data))
