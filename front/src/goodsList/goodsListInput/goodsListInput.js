@@ -11,10 +11,12 @@ function GoodsListInput(props) {
   const isError = useSelector(state => state.isError.error)
   const errorMassage = useSelector(state => state.isError.error.massage)
   const showErrorInBrowser = () => {
-    if (!_.isEmpty(isError)) {
-      return true
+    // console.log('empty error>>>', _.isEmpty(isError))
+    // console.log('isError', isError)
+    if (_.isEmpty(isError)) {
+      return false
     }
-    return false
+    return true
   }
 
   const [textGood, setTextGood] = useState('')
@@ -61,6 +63,7 @@ function GoodsListInput(props) {
     setTextGood('')
     setNumberGood('')
   }
+  // console.log('showErrorInBrowser', showErrorInBrowser())
 
   return (
     <>

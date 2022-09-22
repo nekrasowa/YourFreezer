@@ -3,7 +3,6 @@ import styles from './GoodsListBox.module.css'
 import GoodsListBtns from "./GoodsListBtns/GoodsListBtns"
 import GoodsListElements from "./GoodsListElem/GoodsListElements"
 
-
 function GoodsListBox(props) {
   return (
     <>
