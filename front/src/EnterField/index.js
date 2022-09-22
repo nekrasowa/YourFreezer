@@ -6,6 +6,7 @@ import BtnsField from './BtnsField'
 import RegisterField from './RegisterField'
 import AuthField from './AuthField'
 import WelcomeField from './WelcomeField'
+import ExitField from './ExitField'
 import { showWelcomeField } from '../redux/actions/actionsEnter'
 
 function EnterField(props) {
@@ -26,10 +27,10 @@ function EnterField(props) {
       return <RegisterField />
     }
     if (stateEnter === 'showAuthField') {
-      return <AuthField />
+      return <AuthField /> 
     }
     if (stateEnter === 'showWelcomeField') {
-      return <WelcomeField />
+      return [ <WelcomeField key='1'/>, <ExitField key='2'/> ] 
     }
   }
   const changeStyle = () => {
