@@ -11,8 +11,6 @@ function GoodsListInput(props) {
   const isError = useSelector(state => state.isError.error)
   const errorMassage = useSelector(state => state.isError.error.massage)
   const showErrorInBrowser = () => {
-    // console.log('empty error>>>', _.isEmpty(isError))
-    // console.log('isError', isError)
     if (_.isEmpty(isError)) {
       return false
     }
@@ -51,7 +49,7 @@ function GoodsListInput(props) {
   const inputTextStylesNormal = `${styles.InputText}`
   const inputTextStylesWarning = `${styles.InputText} ${styles.warning}`
 
-  const AddHandle = () => {
+  const AddHandler = () => {
     if (textGood === '') {
       const errorMassage = "Don't leave empty first field!"
       dispatch(showError(errorMassage))
@@ -63,7 +61,6 @@ function GoodsListInput(props) {
     setTextGood('')
     setNumberGood('')
   }
-  // console.log('showErrorInBrowser', showErrorInBrowser())
 
   return (
     <>
@@ -112,7 +109,7 @@ function GoodsListInput(props) {
         <input
           type='submit'
           id={`${styles.addBtn}`}
-          onClick={AddHandle}
+          onClick={AddHandler}
           value={''}
         />
       </div>
