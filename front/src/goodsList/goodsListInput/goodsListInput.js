@@ -16,7 +16,7 @@ function GoodsListInput(props) {
     }
     return true
   }
-
+ 
   const [textGood, setTextGood] = useState('')
   const handleInputText = (e) => {
     dispatch(hideError())

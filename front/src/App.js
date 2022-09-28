@@ -1,11 +1,10 @@
-import React from "react"
+import React from 'react'
 import styles from './App.module.scss'
-import BackImg  from "./Background/Background"
-import EnterField from "./EnterField"
-import FridgeContents from "./Contents/FridgeContents/FridgeContents"
-import FreezerContents from "./Contents/FreezerContents/FreezerContents"
-import GoodsListInput from "./GoodsList/GoodsListInput/GoodsListInput"
-import GoodsListBox from "./GoodsList/GoodsListBox/GoodsListBox"
+import BackImg  from './Background/Background'
+import EnterField from './EnterField'
+import Contents from './Contents/Contents'
+import GoodsListInput from './GoodsList/GoodsListInput/GoodsListInput'
+import GoodsListBox from './GoodsList/GoodsListBox/GoodsListBox'
 
 function App(props) {
 
@@ -13,8 +12,7 @@ function App(props) {
     <div className={`${styles.App}`}>
       <BackImg />
       <EnterField />
-      <FridgeContents />
-      <FreezerContents />
+      <Contents />
       <GoodsListInput />
       <GoodsListBox />
     </div>

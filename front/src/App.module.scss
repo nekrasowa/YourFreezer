@@ -1,12 +1,13 @@
 .App {
   display: grid;
-  grid-template-areas: 'EnterField         EnterField         EnterField         EnterField        EnterField      EnterField'
-                       'FridgeContents  FridgeContents  FridgeContents  GoodsListInput GoodsListInput GoodsListInput'
-                       'FridgeContents  FridgeContents  FridgeContents  GoodsListBox   GoodsListBox   GoodsListBox'
-                       'FridgeContents  FridgeContents  FridgeContents  GoodsListBox   GoodsListBox   GoodsListBox'
-                       'FreezerContents FreezerContents FreezerContents GoodsListBox   GoodsListBox   GoodsListBox'
-                       'FreezerContents FreezerContents FreezerContents GoodsListBox   GoodsListBox   GoodsListBox';
+  grid-template-areas: 'EnterField  EnterField  EnterField  EnterField  EnterField      EnterField'
+                       'Contents  Contents  Contents  GoodsListInput GoodsListInput GoodsListInput'
+                       'Contents  Contents  Contents  GoodsListBox   GoodsListBox   GoodsListBox'
+                       'Contents  Contents  Contents  GoodsListBox   GoodsListBox   GoodsListBox'
+                       'Contents  Contents  Contents  GoodsListBox   GoodsListBox   GoodsListBox'
+                       'Contents  Contents  Contents  GoodsListBox   GoodsListBox   GoodsListBox';
   grid-template-rows:  repeat(6, 1fr);
   grid-template-columns: repeat(6, 1fr);
   height: 95vh;
+  margin-left: 2%;
 }

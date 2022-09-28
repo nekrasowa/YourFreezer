@@ -1,13 +1,13 @@
-.FreezerContents {
+.BasicContents {
   display: block;
-  grid-area: FreezerContents;
-  border-top: 2px solid #042f58;
+  /* border: 3px solid #94702a; */
+  grid-area: BasicContents;
   background-color: aliceblue;
-  background-image: url('../backImg/FreezerBackground.jpeg');
+  background-image: url('../backImg/basicBackground.jpeg');
   background-repeat: no-repeat;
   background-attachment: inherit;
   background-position: center;
   background-size: cover;
-  opacity: 0.5;
+  opacity: 0.4;
   background-clip: border-box;
 }

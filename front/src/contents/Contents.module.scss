@@ -1,0 +1,14 @@
+.Contents {
+  border: 3px solid #94702a;
+  grid-area: Contents;
+  display: grid;
+  grid-template-areas: 
+    'BasicContents    BasicContents     BasicContents'
+    'BasicContents    BasicContents     BasicContents'
+    'VegFrutsContents VegFrutsContents  VegFrutsContents'
+    'FreezerContents  FreezerContents   FreezerContents'
+    'FreezerContents  FreezerContents   FreezerContents';
+  grid-template-rows:  repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  height: 82vh;
+}
