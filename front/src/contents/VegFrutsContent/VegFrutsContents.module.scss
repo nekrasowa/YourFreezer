@@ -1,13 +1,13 @@
-.BasicContents {
+.VegFrutsContent {
   display: block;
-  /* border: 3px solid #94702a; */
-  grid-area: BasicContents;
+  grid-area: VegFrutsContent;
+  border-top: 2px solid #042f58;
   background-color: aliceblue;
-  background-image: url('../backImg/basicBackground.jpeg');
+  background-image: url('../backImg/VegFrutsBackground.jpeg');
   background-repeat: no-repeat;
   background-attachment: inherit;
   background-position: center;
   background-size: cover;
-  opacity: 0.4;
+  opacity: 0.3;
   background-clip: border-box;
 }

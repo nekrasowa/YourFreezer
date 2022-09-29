@@ -3,11 +3,11 @@
   grid-area: Contents;
   display: grid;
   grid-template-areas: 
-    'BasicContents    BasicContents     BasicContents'
-    'BasicContents    BasicContents     BasicContents'
-    'VegFrutsContents VegFrutsContents  VegFrutsContents'
-    'FreezerContents  FreezerContents   FreezerContents'
-    'FreezerContents  FreezerContents   FreezerContents';
+    'BasicContent   BasicContent    BasicContent'
+    'BasicContent   BasicContent    BasicContent'
+    'VegFrutsContent VegFrutsContent  VegFrutsContent'
+    'FreezerContent  FreezerContent   FreezerContent'
+    'FreezerContent  FreezerContent   FreezerContent';
   grid-template-rows:  repeat(5, 1fr);
   grid-template-columns: repeat(3, 1fr);
   height: 82vh;
