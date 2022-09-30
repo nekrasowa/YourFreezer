@@ -5,10 +5,13 @@
   grid-template-areas: 
     'BasicContent   BasicContent    BasicContent'
     'BasicContent   BasicContent    BasicContent'
+    'BasicContent   BasicContent    BasicContent'
+    'VegFrutsContent VegFrutsContent  VegFrutsContent'
     'VegFrutsContent VegFrutsContent  VegFrutsContent'
     'FreezerContent  FreezerContent   FreezerContent'
+    'FreezerContent  FreezerContent   FreezerContent'
     'FreezerContent  FreezerContent   FreezerContent';
-  grid-template-rows:  repeat(5, 1fr);
+  grid-template-rows:  repeat(8, 1fr);
   grid-template-columns: repeat(3, 1fr);
-  height: 82vh;
+  height: 80vh;
 }

@@ -1,13 +1,22 @@
 .VegFrutsContent {
-  display: block;
   grid-area: VegFrutsContent;
   border-top: 2px solid #042f58;
-  background-color: aliceblue;
+}
+
+.VegFrutsContent__vegFrutsBackground {
+  height: 19.5%;
+  width: 48.5%;
   background-image: url('../backImg/VegFrutsBackground.jpeg');
-  background-repeat: no-repeat;
-  background-attachment: inherit;
-  background-position: center;
-  background-size: cover;
-  opacity: 0.3;
-  background-clip: border-box;
+
+}
+
+.VegFrutsContent__vegFrutsElements {
+  height: 96%;
+  width: 98%;
+  max-height: min-content;
+}
+
+.VegFrutsContent__VegFrutsElement {
+  min-height: 15%;
+
 }

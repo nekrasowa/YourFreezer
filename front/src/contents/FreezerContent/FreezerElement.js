@@ -1,11 +1,11 @@
 import React from "react"
-import styles from './BasicContent.module.scss'
+import styles from './FreezerContent.module.scss'
 import globalStyles from '../globalStyles.module.scss'
 
-function BasicElement() {
+function FreezerElement() {
   return (
     <>
-      <div className={` ${globalStyles.FreezerOneElement} ${styles.BasicContent__basicElement}`}>
+      <div className={` ${globalStyles.FreezerOneElement} ${styles.FreezerContent__freezerElement}`}>
         <p className={`${globalStyles.FreezerElement__name}`}>go00000od</p>
         <p className={`${globalStyles.FreezerElement__info}`}>1 pcs</p>
       </div>
@@ -13,4 +13,4 @@ function BasicElement() {
   )
 }
 
-export default BasicElement
+export default FreezerElement

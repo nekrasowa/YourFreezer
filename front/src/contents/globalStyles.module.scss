@@ -1,0 +1,52 @@
+.FreezerBackground {
+  background-repeat: no-repeat;
+  background-attachment: inherit;
+  background-position: right 10%;
+  background-size: cover;
+  background-clip: border-box;
+  position: absolute;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.FreezerElements {
+  margin: 1% 1% 1% 1%;
+  overflow: scroll;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex-basis: content;
+  z-index: 1;
+}
+
+.FreezerOneElement {
+  line-height: 100%;
+  padding: 1% 1% 1% 1%;
+  margin: 1% 1% 1% 1%;
+  background: linear-gradient(-135deg, #00e5fe, #4463fe);
+  box-shadow: 0 4px 8px #4753ff;
+  border-width: 0;
+  border-radius: 20%;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 1.3rem;
+  color: #031b48;
+  outline: none;
+  cursor: pointer;
+
+  &.FreezerOneElement:hover 
+    .FreezerElement__info {
+      display: block;
+    }
+}
+
+.FreezerElement__name {
+  display: block;
+  margin: 0% 0% 0% 0%;
+}
+
+.FreezerElement__info {
+  display: none;
+  margin: 0% 0% 0% 0%;
+  text-align: center;
+}

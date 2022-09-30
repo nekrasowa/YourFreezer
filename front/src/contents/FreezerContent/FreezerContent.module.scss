@@ -1,13 +1,19 @@
 .FreezerContent {
-  display: block;
   grid-area: FreezerContent;
   border-top: 2px solid #042f58;
-  background-color: aliceblue;
+}
+
+.FreezerContent__freezerBackground {
+  height: 29.5%;
+  width: 48.5%;
   background-image: url('../backImg/FreezerBackground.jpeg');
-  background-repeat: no-repeat;
-  background-attachment: inherit;
-  background-position: center;
-  background-size: cover;
-  opacity: 0.5;
-  background-clip: border-box;
+}
+
+.FreezerContent__freezerElements {
+  height: 96%;
+  width: 98%;
+}
+
+.FreezerContent__freezerElement {
+  min-height: 14%;
 }
