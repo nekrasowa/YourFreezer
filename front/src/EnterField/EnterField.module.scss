@@ -65,21 +65,18 @@ $dark-blue: rgb(19, 13, 55);
 }
 
 .Form__inputField {
-  background-color: rgba(183, 183, 29, 0.70);
+  background-color: rgba(183, 183, 29, 0.7);
   min-height: 2em;
   outline: none;
   border: 1px solod $dark-blue;
   padding: 0% 2% 0% 2%;
   &:active {
     background-color: rgba(89, 167, 212, 0.7);
-
   }
   &:hover {
     background-color: rgba(121, 183, 29, 0.7);
-
   }
   &:focus {
     background-color: rgba(177, 175, 238, 0.7);
-
   }
 }

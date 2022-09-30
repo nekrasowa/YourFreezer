@@ -5,7 +5,7 @@ function BasicElement() {
   return (
     <>
       <div className={`${styles.BasicContent__basicElement}`}>
-        <p className={`${styles.BasicContent__basicElement__name}`}>good</p>
+        <p className={`${styles.BasicContent__basicElement__name}`}>go00000od</p>
         <p className={`${styles.BasicContent__basicElement__info}`}>1 pcs</p>
       </div>
     </>

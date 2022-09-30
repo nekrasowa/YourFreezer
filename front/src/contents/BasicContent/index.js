@@ -31,8 +31,6 @@ function BasicContent() {
           <BasicElement />
           <BasicElement />
           <BasicElement />
-          <BasicElement />
-          <BasicElement />
         </div>
       </div>
     </>
