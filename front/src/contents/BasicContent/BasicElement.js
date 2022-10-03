@@ -8,6 +8,8 @@ function BasicElement() {
       <div className={` ${globalStyles.FreezerOneElement} ${styles.BasicContent__basicElement}`}>
         <p className={`${globalStyles.FreezerElement__name}`}>go00000od</p>
         <p className={`${globalStyles.FreezerElement__info}`}>1 pcs</p>
+        <div className={`${globalStyles.FreezerElement__cross}`}></div>
+
       </div>
     </>
   )

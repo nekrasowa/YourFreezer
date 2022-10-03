@@ -38,6 +38,13 @@
     .FreezerElement__info {
       display: block;
     }
+  &.FreezerOneElement:hover 
+    .FreezerElement__cross {
+      height: 25%;
+      top: -110%;
+      min-width: 11px;
+      min-height: 1px;
+    }
 }
 
 .FreezerElement__name {
@@ -49,4 +56,23 @@
   display: none;
   margin: 0% 0% 0% 0%;
   text-align: center;
+}
+
+.FreezerElement__cross { 
+  min-width: 11px;
+  min-height: 1px;
+  height: 50%;
+  width: 10%;
+  background-repeat: no-repeat;
+  background-attachment: inherit;
+  background-position: center center;
+  background-size: cover;
+  background-clip: border-box;
+  position: relative;
+  top: -115%;
+  left: 100%;
+  z-index: 2;
+  background-image: url('../GoodsList/GoodsListBox/GoodsListElem/icons/delete.svg');
+  background-color: #fff200;
+  border-radius: 100%;
 }

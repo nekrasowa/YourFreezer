@@ -7,7 +7,8 @@ function VegFrutsContent() {
     <>
       <div className={`${globalStyles.FreezerOneElement} ${styles.VegFrutsContent__VegFrutsElement} `}>
         <p className={`${globalStyles.FreezerElement__name}`}>go0od</p>
-        <p className={`${globalStyles.FreezerElement__info}`}>1 pcs</p>     
+        <p className={`${globalStyles.FreezerElement__info}`}>1 pcs</p> 
+        <div className={`${globalStyles.FreezerElement__cross}`}></div>
       </div>
     </>
   )
