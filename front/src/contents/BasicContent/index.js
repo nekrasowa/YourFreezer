@@ -2,6 +2,8 @@ import React from "react"
 import styles from './BasicContent.module.scss'
 import globalStyles from '../globalStyles.module.scss'
 import BasicElement from './BasicElement'
+import ModifyElement from './ModifyElement'
+import AddBtn from './AddBtn'
 
 function BasicContent() {
   return (
@@ -14,6 +16,8 @@ function BasicContent() {
           <BasicElement />
           <BasicElement />
           <BasicElement />
+          <ModifyElement />
+          <AddBtn />
         </div>
       </div>
     </>

@@ -34,17 +34,15 @@
   outline: none;
   cursor: pointer;
 
-  &.FreezerOneElement:hover 
-    .FreezerElement__info {
-      display: block;
-    }
-  &.FreezerOneElement:hover 
-    .FreezerElement__cross {
-      height: 25%;
-      top: -110%;
-      min-width: 11px;
-      min-height: 1px;
-    }
+  &.FreezerOneElement:hover .FreezerElement__info {
+    display: block;
+  }
+  &.FreezerOneElement:hover .FreezerElement__cross {
+    height: 25%;
+    top: -110%;
+    min-width: 11px;
+    min-height: 1px;
+  }
 }
 
 .FreezerElement__name {
@@ -58,7 +56,7 @@
   text-align: center;
 }
 
-.FreezerElement__cross { 
+.FreezerElement__cross {
   min-width: 11px;
   min-height: 1px;
   height: 50%;
@@ -75,4 +73,158 @@
   background-image: url('../GoodsList/GoodsListBox/GoodsListElem/icons/delete.svg');
   background-color: #fff200;
   border-radius: 100%;
+  grid-area: cross;
+
+  &.FreezerInput__cross {
+    height: 35%;
+    width: 45%;
+    top: -25%;
+    left: 95%;
+  }
 }
+
+.FreezerContent__AddBtn {
+  height: 18%;
+  width: 9%;
+  min-width: 30px;
+  min-height: 30px;
+  background-repeat: no-repeat;
+  background-attachment: inherit;
+  background-position: center center;
+  background-size: cover;
+  background-clip: border-box;
+  position: relative;
+  background-image: url('./backImg/plus.svg');
+  background-color: #46e044;
+  border-radius: 100%;
+  margin: 0% 0% 0% 10%;
+
+  &.FreezerContent__AddBtn:hover {
+    background-color: #5bc9ee;
+  }
+}
+
+.FreezerOneInput {
+  display: grid;
+  grid-template-areas:  'InputName InputName   cross'
+                        'numContainer InputUnic  InputSubmit';
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 2fr 2fr 1fr; 
+  height: 35%;
+  width:  30%;
+  // max-height: 30px; 
+  // max-width: 30px;
+
+  padding: 1% 1% 1% 1%;
+  margin: 1% 1% 1% 1%;
+  background: linear-gradient(-135deg, #00fe77, #1a7b02);
+  border-width: 0;
+  border-radius: 10%;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 0.4rem;
+  color: #031b48;
+  outline: none;
+  cursor: pointer;
+}
+
+.FreezerInput__name {
+  grid-area: InputName;
+
+  max-width: 99%;
+  min-width: 50%;
+  background: #f7ea63ba;
+  color: #21580a;
+  height: 1.5rem;
+  border-radius: 10%;
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0 5% 0 5%;
+}
+
+.FreezerElement__numContainer {
+  grid-area: numContainer;
+  background: #bdd753;
+  border-radius: 10%;
+  border: none;
+  height: 80%;
+  display: grid;
+  grid-template-areas: 'input plus'
+                       'input minus';
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 3fr 1fr; 
+  margin: 10% 4% -2% 1%;
+}
+
+.FreezerInput__number {
+  grid-area: input;
+  background: #bdd753;
+  max-width: 90%;
+  min-width: 50%;
+  color: #21580a;
+  height: 2rem;
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 5% 5% 0 5%;
+  border-radius: 10%;
+
+}
+
+.plus, .minus {
+  background: #53d774;
+  text-align: center;
+  font-weight: bold;
+  background-repeat: no-repeat;
+  background-attachment: inherit;
+  background-position: center center;
+  background-size: cover;
+  background-clip: border-box;
+  position: relative;
+}
+
+.plus {
+  grid-area: plus;
+  margin: 33% 10% 0% 0%;
+  height: 75%;
+  background-image: url('./backImg/plus2.svg');
+}
+
+.minus {
+  grid-area: minus;
+  margin: 0% 10% 33% 0%;
+  background-image: url('./backImg/minus.svg');
+}
+
+.FreezerInput__form {
+  grid-area: InputUnic;
+  margin: 10% 0% 0% 0%;
+}
+
+.FreezerInput__span_kg {
+  padding: 0 25% 0 0%;
+  font-size: 2em;
+}
+.FreezerInput__span_pcs {
+  padding: 0 12% 0 0%;
+  font-size: 2em;
+}
+
+#FreezerInput__submit {
+  grid-area: InputSubmit;
+  background-repeat: no-repeat;
+  background-attachment: inherit;
+  background-position: center center;
+  background-size: cover;
+  background-clip: border-box;
+  background-image: url('./backImg/mark.svg');
+  background-color: #38634c00;
+  z-index: 5;
+  padding: 0% 0% 0% 0%;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;
+    margin:0;}
