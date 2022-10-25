@@ -15,6 +15,7 @@ function FreezerContent() {
           <FreezerElement />
           <FreezerElement />
           <FreezerElement />
+          
         </div>
       </div>
     </>

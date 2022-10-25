@@ -1,3 +1,5 @@
+
+
 .FreezerBackground {
   background-repeat: no-repeat;
   background-attachment: inherit;
@@ -48,6 +50,7 @@
 .FreezerElement__name {
   display: block;
   margin: 0% 0% 0% 0%;
+
 }
 
 .FreezerElement__info {
@@ -141,6 +144,10 @@
   font-size: 1.5rem;
   font-weight: bold;
   padding: 0 5% 0 5%;
+
+  &.FreezerInput__name_error {
+    background: #ff7e00db
+  }
 }
 
 .FreezerElement__numContainer {
@@ -228,3 +235,103 @@
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;
     margin:0;}
+
+
+.EditingElement {
+  display: grid;
+  grid-template-areas:  ' editName editName tick'
+                        ' editNumber editUnitPcs editUnitKg ';
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 4fr 4fr 1fr; 
+  height: 25%;
+  max-width: 25%;
+  padding: 0% 1% 1% 1%;
+  margin: 1% 1% 1% 1%;
+  background: linear-gradient(-135deg, #00e5fe, #4463fe);
+  box-shadow: 0 4px 8px #4753ff;
+  border-width: 0;
+  border-radius: 10%;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 1.3rem;
+  color: #031b48;
+  outline: none;
+  cursor: pointer; 
+}
+
+.EditingElement__input__name {
+  grid-area: editName;
+  box-sizing: border-box;
+  width: 100%;
+  height: 80%;
+  font-size: 1.3rem;
+  font-family: "Montserrat Alternates", sans-serif;
+  background-color: rgba(255, 255, 255, 0);
+  border-style: outset;
+  border-top: none;
+  border-left: none;
+  border-bottom: none;
+  box-shadow: 0 2px rgba(0,0,0,0.2);
+  margin: 2% 0% 0% 2%;
+  padding: 0% 0% 0% 0%;
+  outline: none;
+}
+
+.EditingElement__input__number {
+  grid-area: editNumber;
+  box-sizing: border-box;
+  width: 100%;
+  height: 80%;
+  font-size: 1.3rem;
+  font-family: "Montserrat Alternates", sans-serif;
+  background-color: rgba(255, 255, 255, 0);
+  border-style: outset;
+  border-top: none;
+  border-left: none;
+  border-bottom: none;
+  box-shadow: 0 2px rgba(0,0,0,0.2);
+  margin: 2% 0% 0% 2%;
+  padding: 0% 0% 0% 0%;
+  outline: none;
+}
+
+.EditingElement__input__unit_kg, 
+.EditingElement__input__unit_pcs {
+  display: block;
+  padding: 0% 0% 0% 0%;
+  margin: 0% 0% 0% 0%;
+}
+
+.EditingElement__input__unit_kg {
+  grid-area: editUnitKg;
+
+}
+.EditingElement__input__unit_pcs {
+  grid-area: editUnitPcs;
+  text-align: center;
+}
+
+.EditingElement__input__unit_notActiv {
+  color: rgba(0, 0, 0, 0.3)
+}
+
+.EditingElement__tick {
+  min-width: 15px;
+  min-height: 15px;
+  height: 50%;
+  width: 10%;
+  background-repeat: no-repeat;
+  background-attachment: inherit;
+  background-position: center center;
+  background-size: cover;
+  background-clip: border-box;
+  position: relative;
+  top: -15%;
+  left: 90%;
+  z-index: 2;
+  background-image: url('./backImg/tick.svg');
+  background-color: #fff200;
+  border-radius: 100%;
+  grid-area: tick;
+
+}
+

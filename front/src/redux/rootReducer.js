@@ -4,6 +4,7 @@ import { createGoodReducer } from './reducers/goodsListBoxReducers'
 import { loaderReducer } from './reducers/loaderReducers'
 import { errorReducer } from './reducers/errorReducers'
 import { enterReducer } from './reducers/enterReducers';
+import { contentReducer } from './reducers/contentReducers';
 // import { initDataReducer } from './reducers/initDataReducers'
  
 const rootReducer = combineReducers({
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   loader: loaderReducer,
   isError: errorReducer,
   enter: enterReducer,
+  content: contentReducer,
   // initialData: initDataReducer,
   // copyList: copyListReducer,
 
