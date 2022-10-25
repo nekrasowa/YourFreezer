@@ -2,14 +2,20 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import styles from './BasicContent.module.scss'
 import globalStyles from '../globalStyles.module.scss'
-import { deleteBasicGood } from '../../redux/actions/actionsContent'
+import { deleteBasicGood, editBasicGood } from '../../redux/actions/actionsContent'
 
 function BasicElement(props) {
   const dispatch = useDispatch()
   const id = props.goodInfo.id
   const basicGoods = useSelector((state) => state.content.basicGoods)
 
-  const onClickHandler = () => {
+  const dblClickHandler = () => {
+    console.log('basicGoods', basicGoods)
+    dispatch(editBasicGood(id))
+    
+  }
+
+  const onClickCrossHandler = () => {
     console.log('delete')
     console.log('basicGoods', basicGoods)
     dispatch(deleteBasicGood(id))
@@ -17,7 +23,10 @@ function BasicElement(props) {
 
   return (
     <>
-      <div className={` ${globalStyles.FreezerOneElement} ${styles.BasicContent__basicElement}`}>
+      <div 
+        className={` ${globalStyles.FreezerOneElement} ${styles.BasicContent__basicElement}`}
+        onDoubleClick={dblClickHandler}
+        >
         <p 
           className={`${globalStyles.FreezerElement__name}`}
         >{props.goodInfo.goodName}</p>
@@ -26,7 +35,7 @@ function BasicElement(props) {
         >{`${props.goodInfo.goodNumber} ${props.goodInfo.goodUnit}`}</p>
         <div 
           className={`${globalStyles.FreezerElement__cross}`}
-          onClick={onClickHandler}
+          onClick={onClickCrossHandler}
           ></div>
       </div>
     </>

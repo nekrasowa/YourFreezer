@@ -24,7 +24,14 @@ function BasicContent() {
   }, [dispatch])
 
   const basicGoods = useSelector((state) => state.content.basicGoods)
-  const basicGoodsList = basicGoods.map(good => <BasicElement goodInfo={good} key={good.id}/>)
+  const basicGoodsList = basicGoods.map((good) => {
+    if(good.basicEditState) {
+      return <EditingElement  goodInfo={good} key={good.id}/>
+    }
+
+    return <BasicElement goodInfo={good} key={good.id}/>
+  })
+
 
   return (
     <>
@@ -32,7 +39,6 @@ function BasicContent() {
         <div className={`${globalStyles.FreezerBackground} ${styles.BasicContent__basicBackground}`} />
         <div className={`${globalStyles.FreezerElements} ${styles.BasicContent__basicElements} `}>
           {basicGoodsList}
-          <EditingElement />
           {showAddOrModify()}
         </div>
       </div>

@@ -41,7 +41,8 @@ function ModifyElement() {
     goodName,
     goodNumber,
     goodUnit,
-    id: getRandomInt(1, 100000)
+    id: getRandomInt(1, 100000),
+    basicEditState: false
   }
   const isInputCorrect = useSelector((state) => state.content.incorrectInput)
 

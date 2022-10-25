@@ -296,7 +296,6 @@ input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;
 
 .EditingElement__input__unit_kg, 
 .EditingElement__input__unit_pcs {
-  display: block;
   padding: 0% 0% 0% 0%;
   margin: 0% 0% 0% 0%;
 }
@@ -309,7 +308,9 @@ input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;
   grid-area: editUnitPcs;
   text-align: center;
 }
-
+p+p {
+  margin-top: 0;
+}
 .EditingElement__input__unit_notActiv {
   color: rgba(0, 0, 0, 0.3)
 }

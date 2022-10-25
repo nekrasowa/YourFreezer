@@ -6,6 +6,7 @@ import {
   ADD_BASIC_GOOD,
   GET_BASIC_GOODS,
   EDIT_BASIC_GOOD,
+  SAVE_BASIC_GOOD,
   DELETE_BASIC_GOOD
 } from '../types.js'
 
@@ -44,9 +45,15 @@ export function getBasicGoods() {
 
   }
 }
-export function editBasicGood(data) {
+export function editBasicGood(id) {
   return {
     type: EDIT_BASIC_GOOD,
+    id
+  }
+}
+  export function saveBasicGood(data) {
+  return {
+    type: SAVE_BASIC_GOOD,
     data
   }
 }
