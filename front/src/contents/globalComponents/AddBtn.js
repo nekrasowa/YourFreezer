@@ -1,13 +1,10 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { showInputField } from '../../redux/actions/actionsContent'
-
-// import styles from './AddBtn.module.scss'
 import globalStyles from '../globalStyles.module.scss'
 
-function AddBtn() {
+function AddBtn(props) {
   const dispatch = useDispatch()
-
   const onClickHandler = () => {
     dispatch(showInputField())
   }

@@ -3,17 +3,17 @@ import {
   HIDE_INPUT_FIELD,
   SHOW_ERROR_STYLE,
   HIDE_ERROR_STYLE,
-  ADD_BASIC_GOOD,
-  GET_BASIC_GOODS,
-  EDIT_BASIC_GOOD,
-  SAVE_BASIC_GOOD,
-  DELETE_BASIC_GOOD
+  ADD_GOOD,
+  GET_GOODS,
+  EDIT_FREEZGOOD,
+  SAVE_GOOD,
+  DELETE_GOOD
 } from '../types.js'
 
 const initialState = {
   showInputField: false,
   incorrectInput: true,
-  basicGoods: [],
+  goods: [],
 }
 
 export const contentReducer = (state = initialState, action) => {
@@ -41,29 +41,31 @@ export const contentReducer = (state = initialState, action) => {
       incorrectInput: true
     }
   }
-  if (action.type === ADD_BASIC_GOOD) {
+  if (action.type === ADD_GOOD) {
+    console.log('[action.data]:', action.data)
     return {
       ...state,
-      basicGoods: [...state.basicGoods, {
+      goods: [...state.goods, {
         goodName: action.data.goodName,
         goodNumber: action.data.goodNumber,
         goodUnit: action.data.goodUnit,
+        typeOfGood: action.data.typeOfGood,
         id: action.data.id,
-        basicEditState: false
+        editState: false,
       }]
     }
   }
-  if (action.type === GET_BASIC_GOODS) {
+  if (action.type === GET_GOODS) {
     return {
       ...state,
-      basicGoods: [...state.basicGoods]
+      goods: [...state.goods]
     }
   }
-  if (action.type === EDIT_BASIC_GOOD) {
-    const editedIndex = state.basicGoods
+  if (action.type === EDIT_FREEZGOOD) {
+    const editedIndex = state.goods
       .findIndex(good => good.id === action.id)
 
-    const goodsWithNewEditState = [...state.basicGoods]
+    const goodsWithNewEditState = [...state.goods]
     const editGood = { ...goodsWithNewEditState[editedIndex] }
     console.log('[editGood]', editGood)
 
@@ -75,14 +77,14 @@ export const contentReducer = (state = initialState, action) => {
     console.log('[goodsWithNewEditState]', goodsWithNewEditState)
     return {
       ...state,
-      basicGoods: goodsWithNewEditState
+      goods: goodsWithNewEditState
     }
   }
-  if (action.type === SAVE_BASIC_GOOD) {
-    const savedIndex = state.basicGoods
+  if (action.type === SAVE_GOOD) {
+    const savedIndex = state.goods
       .findIndex(good => good.id === action.data.id)
 
-    const goodsWithNewSavedGood = [...state.basicGoods]
+    const goodsWithNewSavedGood = [...state.goods]
     const savedGood = { ...goodsWithNewSavedGood[savedIndex] }
 
     savedGood.basicEditState = false
@@ -95,17 +97,17 @@ export const contentReducer = (state = initialState, action) => {
     console.log('[goodsWithNewEditState]', goodsWithNewSavedGood)
     return {
       ...state,
-      basicGoods: goodsWithNewSavedGood
+      goods: goodsWithNewSavedGood
     }
   }
-  if (action.type === DELETE_BASIC_GOOD) {
-    const deletedIndex = state.basicGoods
+  if (action.type === DELETE_GOOD) {
+    const deletedIndex = state.goods
       .findIndex(good => good.id === action.id )
-    const goodsWithoutDeletedEl = [...state.basicGoods]
+    const goodsWithoutDeletedEl = [...state.goods]
     goodsWithoutDeletedEl.splice(deletedIndex, 1)
     return {
       ...state,
-      basicGoods: goodsWithoutDeletedEl
+      goods: goodsWithoutDeletedEl
     }
   }
   // if (action.type === DELETE_BASIC_GOOD) {

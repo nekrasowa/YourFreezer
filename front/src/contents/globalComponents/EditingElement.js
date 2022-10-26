@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 // import styles from './BasicContent.module.scss'
 import globalStyles from '../globalStyles.module.scss'
-import { saveBasicGood } from '../../redux/actions/actionsContent'
+import { saveGood } from '../../redux/actions/actionsContent'
 import { showError, hideError } from '../../redux/actions/actionsError'
 import {  showErrorStyle, hideErrorStyle } from '../../redux/actions/actionsContent'
 function EditingElement(props) {
@@ -18,6 +18,8 @@ function EditingElement(props) {
   const [ newGoodName, setNewGoodName ] = useState(goodName)
   const onChangeName = (e) => {
     setNewGoodName(e.target.value)
+    dispatch(hideError())
+
   }
 
   const [ newGoodNumber, setNewGoodNumber ] = useState(goodNumber)
@@ -47,7 +49,7 @@ function EditingElement(props) {
   }
 
   const onClickHandler = () => {
-    if(goodName === '') {
+    if(newGoodName === '') {
       const errorMassage = 'Input title!'
       dispatch(showError(errorMassage))
       dispatch(showErrorStyle())
@@ -56,7 +58,7 @@ function EditingElement(props) {
     console.log('goodInfo', props.goodInfo)
     dispatch(hideErrorStyle())
     dispatch(hideError())
-    dispatch(saveBasicGood(savedGoodData))
+    dispatch(saveGood(savedGoodData))
   }
 
   return (

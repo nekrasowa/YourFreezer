@@ -5,14 +5,16 @@ import { showError, hideError } from '../../redux/actions/actionsError'
 import { 
   showErrorStyle, 
   hideErrorStyle,
-  addBasicGood
- } from '../../redux/actions/actionsContent'
+  addGood
+} from '../../redux/actions/actionsContent'
 import { getRandomInt } from '../helpFunctions/getRandomInt'
 import globalStyles from '../globalStyles.module.scss'
 
-function ModifyElement() {
+function ModifyElement(props) {
 
   const dispatch = useDispatch()
+
+  const typeOfGood = props.type
 
   const [goodName, setGoodName] = useState('')
   const inputNameHandler = (e) => {
@@ -41,9 +43,10 @@ function ModifyElement() {
     goodName,
     goodNumber,
     goodUnit,
+    typeOfGood: typeOfGood,
     id: getRandomInt(1, 100000),
-    basicEditState: false
   }
+
   const isInputCorrect = useSelector((state) => state.content.incorrectInput)
 
   const plusClickHandler = () => {
@@ -103,11 +106,10 @@ function ModifyElement() {
       dispatch(showErrorStyle())
       return
     }
-    dispatch(addBasicGood(dataOfNewGood))
+    dispatch(addGood(dataOfNewGood))
     dispatch(hideErrorStyle())
     dispatch(hideError())
     dispatch(hideInputField())
-  // console.log('[dataOfNewGood]:', dataOfNewGood)
   }
   const onClickOnCrossHandler = () => {
     dispatch(hideErrorStyle())

@@ -3,11 +3,11 @@ import {
   HIDE_INPUT_FIELD,
   SHOW_ERROR_STYLE,
   HIDE_ERROR_STYLE,
-  ADD_BASIC_GOOD,
-  GET_BASIC_GOODS,
-  EDIT_BASIC_GOOD,
-  SAVE_BASIC_GOOD,
-  DELETE_BASIC_GOOD
+  ADD_GOOD,
+  GET_GOODS,
+  EDIT_GOOD,
+  SAVE_GOOD,
+  DELETE_GOOD
 } from '../types.js'
 
 export function showInputField() {
@@ -33,33 +33,33 @@ export function hideErrorStyle() {
     type: HIDE_ERROR_STYLE,
   }
 }
-export function addBasicGood(data) {
+export function addGood(data) {
   return {
-    type: ADD_BASIC_GOOD,
+    type: ADD_GOOD,
     data
   }
 }
-export function getBasicGoods() {
+export function getGoods() {
   return {
-    type: GET_BASIC_GOODS,
+    type: GET_GOODS,
 
   }
 }
-export function editBasicGood(id) {
+export function editGood(id) {
   return {
-    type: EDIT_BASIC_GOOD,
+    type: EDIT_GOOD,
     id
   }
 }
-  export function saveBasicGood(data) {
+  export function saveGood(data) {
   return {
-    type: SAVE_BASIC_GOOD,
+    type: SAVE_GOOD,
     data
   }
 }
-export function deleteBasicGood(id) {
+export function deleteGood(id) {
   return {
-    type: DELETE_BASIC_GOOD,
+    type: DELETE_GOOD,
     id
   }
 }
