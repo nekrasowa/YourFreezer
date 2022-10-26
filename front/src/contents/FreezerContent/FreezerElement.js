@@ -13,7 +13,6 @@ function FreezerElement(props) {
   }
 
   const onClickCrossHandler = () => {
-    console.log('delete')
     dispatch(deleteGood(id))
   }
 

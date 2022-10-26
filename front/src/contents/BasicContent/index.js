@@ -27,7 +27,7 @@ function BasicContent() {
   const basicGoods = goods.filter((good) => good.typeOfGood === 'basic')
   
   const basicGoodsList = basicGoods.map((good) => {
-    if(good.basicEditState) {
+    if(good.editState) {
       return <EditingElement  goodInfo={good} key={good.id}/>
     }
     return <BasicElement goodInfo={good} key={good.id}/>

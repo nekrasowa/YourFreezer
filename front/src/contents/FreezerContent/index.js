@@ -27,7 +27,7 @@ function FreezerContent() {
   const freezerGoods = goods.filter((good) => good.typeOfGood === 'freezer')
   
   const freezerGoodsList = freezerGoods.map((good) => {
-    if(good.basicEditState) {
+    if(good.editState) {
       return <EditingElement  goodInfo={good} key={good.id}/>
     }
     return <FreezerElement goodInfo={good} key={good.id}/>

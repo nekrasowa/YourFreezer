@@ -13,7 +13,6 @@ function BasicElement(props) {
   }
 
   const onClickCrossHandler = () => {
-    console.log('delete')
     dispatch(deleteGood(id))
   }
 
