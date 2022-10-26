@@ -84,13 +84,12 @@ export const contentReducer = (state = initialState, action) => {
 
     const goodsWithNewSavedGood = [...state.basicGoods]
     const savedGood = { ...goodsWithNewSavedGood[savedIndex] }
-    console.log('[savedGood]', savedGood)
 
     savedGood.basicEditState = false
     savedGood.goodName = action.data.newGoodName
     savedGood.goodNumber = action.data.newGoodNumber
     savedGood.goodUnit = action.data.newGoodUnit
-    console.log('[editGood]', savedGood)
+    savedGood.id = action.data.id
 
     goodsWithNewSavedGood.splice(savedIndex, 1, savedGood)
     console.log('[goodsWithNewEditState]', goodsWithNewSavedGood)

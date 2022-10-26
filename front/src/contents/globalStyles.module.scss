@@ -240,7 +240,7 @@ input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;
 .EditingElement {
   display: grid;
   grid-template-areas:  ' editName editName tick'
-                        ' editNumber editUnitPcs editUnitKg ';
+                        ' editNumber editUnit editUnit ';
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 4fr 4fr 1fr; 
   height: 25%;
@@ -294,25 +294,8 @@ input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;
   outline: none;
 }
 
-.EditingElement__input__unit_kg, 
-.EditingElement__input__unit_pcs {
-  padding: 0% 0% 0% 0%;
-  margin: 0% 0% 0% 0%;
-}
-
-.EditingElement__input__unit_kg {
-  grid-area: editUnitKg;
-
-}
-.EditingElement__input__unit_pcs {
-  grid-area: editUnitPcs;
+.EditingElement__input__unit {
   text-align: center;
-}
-p+p {
-  margin-top: 0;
-}
-.EditingElement__input__unit_notActiv {
-  color: rgba(0, 0, 0, 0.3)
 }
 
 .EditingElement__tick {

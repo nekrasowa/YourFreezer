@@ -3,7 +3,8 @@ import { useSelector, useDispatch } from 'react-redux'
 // import styles from './BasicContent.module.scss'
 import globalStyles from '../globalStyles.module.scss'
 import { saveBasicGood } from '../../redux/actions/actionsContent'
-
+import { showError, hideError } from '../../redux/actions/actionsError'
+import {  showErrorStyle, hideErrorStyle } from '../../redux/actions/actionsContent'
 function EditingElement(props) {
   const dispatch = useDispatch()
 
@@ -11,36 +12,50 @@ function EditingElement(props) {
     goodName,
     goodNumber,
     goodUnit,
-    id,
-    basicEditState
+    id
   } = props.goodInfo
-  
-  const styleOfUnit = (unit) => {
-    if(goodUnit === unit) {
-      return `globalStyles.EditingElement__input__unit_${unit} `
-    }
-    return `globalStyles.EditingElement__input__unit_${unit} ${globalStyles.EditingElement__input__unit_notActiv}`
-  }
   
   const [ newGoodName, setNewGoodName ] = useState(goodName)
   const onChangeName = (e) => {
-
+    setNewGoodName(e.target.value)
   }
 
   const [ newGoodNumber, setNewGoodNumber ] = useState(goodNumber)
   const onChangeNumber = (e) => {
-
+    if(isNaN(e.target.value) && e.target.value !== '.') {
+      const errorMassage = 'Input number!'
+      dispatch(showError(errorMassage)) 
+      return
+    }
+    setNewGoodNumber(e.target.value)
+    dispatch(hideError())
+  }
+  const [ newGoodUnit, setNewGoodUnit] = useState(goodUnit)
+  const onUnitClickHandler = () => {
+    if (newGoodUnit === 'kg') {
+      setNewGoodUnit('pcs')
+      return
+    }
+    setNewGoodUnit('kg')
   }
 
   const savedGoodData = {
-    newGoodName: '',
-    newGoodNumber: '',
-    newGoodUnit: '',
+    newGoodName: newGoodName,
+    newGoodNumber: newGoodNumber,
+    newGoodUnit: newGoodUnit,
+    id
   }
 
   const onClickHandler = () => {
-    console.log('click')
+    if(goodName === '') {
+      const errorMassage = 'Input title!'
+      dispatch(showError(errorMassage))
+      dispatch(showErrorStyle())
+      return
+    }
     console.log('goodInfo', props.goodInfo)
+    dispatch(hideErrorStyle())
+    dispatch(hideError())
     dispatch(saveBasicGood(savedGoodData))
   }
 
@@ -56,14 +71,13 @@ function EditingElement(props) {
           className={`${globalStyles.EditingElement__input__number}`}
           value={newGoodNumber}
           onChange={onChangeNumber}
-
          />
-        <p className={styleOfUnit('kg')}>
-          kg
-        </p> 
-        <p className={styleOfUnit('pcs')}>
-          pcs 
-        </p> 
+        <p
+          className={`${globalStyles.EditingElement__input__unit}`}
+          onClick={onUnitClickHandler}
+          >
+          {newGoodUnit}
+        </p>
         <div 
           className={`${globalStyles.EditingElement__tick}`}
           onClick={onClickHandler}
