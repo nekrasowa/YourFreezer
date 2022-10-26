@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import styles from './BasicContent.module.scss'
 import globalStyles from '../globalStyles.module.scss'
 import { deleteGood, editGood } from '../../redux/actions/actionsContent'
@@ -7,17 +7,13 @@ import { deleteGood, editGood } from '../../redux/actions/actionsContent'
 function BasicElement(props) {
   const dispatch = useDispatch()
   const id = props.goodInfo.id
-  const basicGoods = useSelector((state) => state.content.basicGoods)
 
   const dblClickHandler = () => {
-    console.log('basicGoods', basicGoods)
     dispatch(editGood(id))
-    
   }
 
   const onClickCrossHandler = () => {
     console.log('delete')
-    console.log('basicGoods', basicGoods)
     dispatch(deleteGood(id))
   }
 
