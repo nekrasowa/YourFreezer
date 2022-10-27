@@ -10,20 +10,20 @@ import { getGoods } from '../../redux/actions/actionsContent'
 
 function FreezerContent() {
   const dispatch = useDispatch()
-  const isClickedAdd = useSelector((state) => state.content.showInputField)
+  const isClickedAdd = useSelector((state) => state.content.showInputFieldFreezer)
 
   const showAddOrModify = () => {
     if (isClickedAdd) {
       return <ModifyElement type='freezer'/>
     }
-    return <AddBtn />
+    return <AddBtn typePlace='freezer'/>
   }
   
   useEffect(() => {
     dispatch(getGoods())  
   }, [dispatch])
 
-  const goods = useSelector((state) => state.content.goods)
+  const goods = useSelector((state) => state.content.freezGoods)
   const freezerGoods = goods.filter((good) => good.typeOfGood === 'freezer')
   
   const freezerGoodsList = freezerGoods.map((good) => {

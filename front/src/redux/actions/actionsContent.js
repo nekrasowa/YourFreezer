@@ -5,20 +5,22 @@ import {
   HIDE_ERROR_STYLE,
   ADD_GOOD,
   GET_GOODS,
-  EDIT_GOOD,
+  EDIT_FREEZGOOD,
   SAVE_GOOD,
   DELETE_GOOD
 } from '../types.js'
 
-export function showInputField() {
+export function showInputField(typePlace) {
   return {
     type: SHOW_INPUT_FIELD,
+    typePlace
   }
 }
 
-export function hideInputField() {
+export function hideInputField(typePlace) {
   return {
     type: HIDE_INPUT_FIELD,
+    typePlace
   }
 }
 
@@ -47,7 +49,7 @@ export function getGoods() {
 }
 export function editGood(id) {
   return {
-    type: EDIT_GOOD,
+    type: EDIT_FREEZGOOD,
     id
   }
 }

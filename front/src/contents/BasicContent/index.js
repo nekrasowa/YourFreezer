@@ -10,21 +10,23 @@ import { getGoods } from '../../redux/actions/actionsContent'
 
 function BasicContent() {
   const dispatch = useDispatch()
-  const isClickedAdd = useSelector((state) => state.content.showInputField)
+  const isClickedAdd = useSelector((state) => state.content.showInputFieldBasic)
 
   const showAddOrModify = () => {
     if (isClickedAdd) {
       return <ModifyElement type='basic'/>
     }
-    return <AddBtn />
+    return <AddBtn typePlace='basic'/>
   }
   
   useEffect(() => {
     dispatch(getGoods())  
   }, [dispatch])
 
-  const goods = useSelector((state) => state.content.goods)
+  const goods = useSelector((state) => state.content.freezGoods)
+  console.log('[goods]', goods)
   const basicGoods = goods.filter((good) => good.typeOfGood === 'basic')
+  console.log('[basicGoods]', basicGoods)
   
   const basicGoodsList = basicGoods.map((good) => {
     if(good.editState) {

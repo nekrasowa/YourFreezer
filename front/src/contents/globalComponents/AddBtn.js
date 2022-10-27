@@ -6,7 +6,7 @@ import globalStyles from '../globalStyles.module.scss'
 function AddBtn(props) {
   const dispatch = useDispatch()
   const onClickHandler = () => {
-    dispatch(showInputField())
+    dispatch(showInputField(props.typePlace))
   }
 
   return (

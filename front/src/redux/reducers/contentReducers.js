@@ -11,22 +11,52 @@ import {
 } from '../types.js'
 
 const initialState = {
-  showInputField: false,
+  showInputFieldBasic: false,
+  showInputFieldFreezer: false,
+  showInputFieldVegFruts: false,
   incorrectInput: true,
-  goods: [],
+  freezGoods: [],
 }
 
 export const contentReducer = (state = initialState, action) => {
   if (action.type === SHOW_INPUT_FIELD) {
-    return {
-      ...state,
-      showInputField: true
+    if(action.typePlace === 'basic') {
+      return {
+        ...state,
+        showInputFieldBasic: true
+      }
+    }
+    if(action.typePlace === 'freezer') {
+      return {
+        ...state,
+        showInputFieldFreezer: true
+      }
+    }
+    if(action.typePlace === 'vegFruts') {
+      return {
+        ...state,
+        showInputFieldVegFruts: true
+      }
     }
   }
   if (action.type === HIDE_INPUT_FIELD) {
-    return {
-      ...state,
-      showInputField: false
+    if(action.typePlace === 'basic') {
+      return {
+        ...state,
+        showInputFieldBasic: false
+      }
+    }
+    if(action.typePlace === 'freezer') {
+      return {
+        ...state,
+        showInputFieldFreezer: false
+      }
+    }
+    if(action.typePlace === 'vegFruts') {
+      return {
+        ...state,
+        showInputFieldVegFruts: false
+      }
     }
   }
   if (action.type === SHOW_ERROR_STYLE) {
@@ -45,7 +75,7 @@ export const contentReducer = (state = initialState, action) => {
     console.log('[action.data]:', action.data)
     return {
       ...state,
-      goods: [...state.goods, {
+      freezGoods: [...state.freezGoods, {
         goodName: action.data.goodName,
         goodNumber: action.data.goodNumber,
         goodUnit: action.data.goodUnit,
@@ -58,56 +88,53 @@ export const contentReducer = (state = initialState, action) => {
   if (action.type === GET_GOODS) {
     return {
       ...state,
-      goods: [...state.goods]
+      freezGoods: [...state.freezGoods]
     }
   }
   if (action.type === EDIT_FREEZGOOD) {
-    const editedIndex = state.goods
+    const editedIndex = state.freezGoods
       .findIndex(good => good.id === action.id)
 
-    const goodsWithNewEditState = [...state.goods]
+    const goodsWithNewEditState = [...state.freezGoods]
     const editGood = { ...goodsWithNewEditState[editedIndex] }
-    console.log('[editGood]', editGood)
 
-    editGood.basicEditState = true 
-    console.log('[editGood]', editGood)
-    console.log('[goodsWithNewEditState]', goodsWithNewEditState)
+    editGood.editState = true 
 
     goodsWithNewEditState.splice(editedIndex, 1, editGood)
-    console.log('[goodsWithNewEditState]', goodsWithNewEditState)
+
     return {
       ...state,
-      goods: goodsWithNewEditState
+      freezGoods: goodsWithNewEditState
     }
   }
   if (action.type === SAVE_GOOD) {
-    const savedIndex = state.goods
+    const savedIndex = state.freezGoods
       .findIndex(good => good.id === action.data.id)
 
-    const goodsWithNewSavedGood = [...state.goods]
+    const goodsWithNewSavedGood = [...state.freezGoods]
     const savedGood = { ...goodsWithNewSavedGood[savedIndex] }
 
-    savedGood.basicEditState = false
+    savedGood.editState = false
     savedGood.goodName = action.data.newGoodName
     savedGood.goodNumber = action.data.newGoodNumber
     savedGood.goodUnit = action.data.newGoodUnit
     savedGood.id = action.data.id
 
     goodsWithNewSavedGood.splice(savedIndex, 1, savedGood)
-    console.log('[goodsWithNewEditState]', goodsWithNewSavedGood)
+
     return {
       ...state,
-      goods: goodsWithNewSavedGood
+      freezGoods: goodsWithNewSavedGood
     }
   }
   if (action.type === DELETE_GOOD) {
-    const deletedIndex = state.goods
+    const deletedIndex = state.freezGoods
       .findIndex(good => good.id === action.id )
-    const goodsWithoutDeletedEl = [...state.goods]
+    const goodsWithoutDeletedEl = [...state.freezGoods]
     goodsWithoutDeletedEl.splice(deletedIndex, 1)
     return {
       ...state,
-      goods: goodsWithoutDeletedEl
+      freezGoods: goodsWithoutDeletedEl
     }
   }
   // if (action.type === DELETE_BASIC_GOOD) {

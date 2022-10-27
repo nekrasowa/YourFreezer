@@ -109,12 +109,12 @@ function ModifyElement(props) {
     dispatch(addGood(dataOfNewGood))
     dispatch(hideErrorStyle())
     dispatch(hideError())
-    dispatch(hideInputField())
+    dispatch(hideInputField(typeOfGood))
   }
   const onClickOnCrossHandler = () => {
     dispatch(hideErrorStyle())
     dispatch(hideError())
-    dispatch(hideInputField()) 
+    dispatch(hideInputField(typeOfGood)) 
   }
 
   return (
