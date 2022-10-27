@@ -1,9 +1,9 @@
 const { DataTypes, Model } = require('sequelize')
 const sequelize = require('../sequlizeConnection')
 
-class GoodsList extends Model {}
+class FreezerGoods extends Model {}
 
-GoodsList.init({
+FreezerGoods.init({
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -21,10 +21,13 @@ GoodsList.init({
     type: DataTypes.STRING(3),
     allowNull: true
   },
-  is_Checked: {
-    type: DataTypes.BOOLEAN,
-    allowNull: true,
-    defaultValue: false
+  type_of_good: {
+    type: DataTypes.STRING(10),
+    allowNull: false
+  },
+  data_of_addition: {
+    type: DataTypes.DATEONLY,
+    allowNull: false
   },
   user_id: {
     type: DataTypes.INTEGER,
@@ -36,5 +39,5 @@ GoodsList.init({
   tableName: 'Goods_list'
 })
 
-  
-module.exports = GoodsList
+module.exports = FreezerGoods
+

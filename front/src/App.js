@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './App.module.scss'
 import BackImg  from './Background/Background'
 import EnterField from './EnterField'
-import Contents from './Contents/Contents'
+import Contents from './FreezerContents/Contents'
 import GoodsListInput from './GoodsList/GoodsListInput/GoodsListInput'
 import GoodsListBox from './GoodsList/GoodsListBox/GoodsListBox'
 
