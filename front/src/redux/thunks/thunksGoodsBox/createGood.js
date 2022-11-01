@@ -1,6 +1,6 @@
-import { createGoodOnServ } from "../../../requests/forGoodsList/createGoodOnServ"
+import { createGoodOnServ } from '../../../requests/forGoodsList/createGoodOnServ'
 import { createGoodAction } from '../../actions/actionsGoodsList'
-import { SHOW_ERROR } from "../../types"
+import { SHOW_ERROR } from '../../types'
 
 
 export const createGood = (data) => {
@@ -22,6 +22,5 @@ export const createGood = (data) => {
 
     }
   }
-
 }
 

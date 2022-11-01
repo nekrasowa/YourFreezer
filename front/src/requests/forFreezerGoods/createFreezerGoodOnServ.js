@@ -1,18 +1,18 @@
 const axios = require('axios')
 
 const url = new URL('http://localhost:5000')
-const createGoodOnServURL = new URL('/goods/createGood', url)
+const createFreezerGoodOnServURL = new URL('/freezer/createFreezerGood', url)
 
-export async function createGoodOnServ(dataOfGood) {
+export async function createFreezerGoodOnServ(dataOfGood) {
   if (dataOfGood.numberGood === '') {
     delete dataOfGood.numberGood
   }
-  
+
   const jwt = localStorage.getItem('jwt')
 
   const res = await axios({
     method: 'post',
-    url: createGoodOnServURL,
+    url: createFreezerGoodOnServURL,
     headers: {'Authorization': `Bearer ${jwt}`},
     data: dataOfGood
   })
