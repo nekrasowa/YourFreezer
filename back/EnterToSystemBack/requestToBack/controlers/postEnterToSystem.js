@@ -21,7 +21,7 @@ async function enterToSystem(req, res) {
     ) {
       res.json({
         status: 400,
-        massage: 'Data is not correct'
+        message: 'Data is not correct'
       })
       return
     }
@@ -38,7 +38,7 @@ async function enterToSystem(req, res) {
     if (!enteredUser) {
       res.json({
         status: 400,
-        massage: 'User does not find'
+        message: 'User does not find'
       })
       return
     }
@@ -57,7 +57,7 @@ async function enterToSystem(req, res) {
     
     res.json({
       status: 200,
-      massage: 'user enters',
+      message: 'user enters',
       jwt,
       goods
     })

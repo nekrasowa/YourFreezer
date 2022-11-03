@@ -23,8 +23,8 @@ function RegisterField() {
   const inputEmailHandler = (e) => {
     setUserEmail(e.target.value)
     if (!checkEmail(e.target.value)) {
-      const errorMassage = 'Input email in correct form'
-      dispatch(showError(errorMassage))
+      const errorMessage = 'Input email in correct form'
+      dispatch(showError(errorMessage))
       return
     }
     dispatch(hideError())
@@ -34,8 +34,8 @@ function RegisterField() {
   const inputTelHandler = (e) => {
     setUserTel(e.target.value)
     if (!checkPass(e.target.value)) {
-      const errorMassage = 'Input tel number in correct form'
-      dispatch(showError(errorMassage))
+      const errorMessage = 'Input tel number in correct form'
+      dispatch(showError(errorMessage))
       return
     }
     dispatch(hideError())
@@ -45,8 +45,8 @@ function RegisterField() {
   const inputPassHandler = (e) => {
     setUserPass(e.target.value)
     if (!checkPass(e.target.value)) {
-      const errorMassage = 'Input pass with number, letter in upper case, at least 6 characters'
-      dispatch(showError(errorMassage))
+      const errorMessage = 'Input pass with number, letter in upper case, at least 6 characters'
+      dispatch(showError(errorMessage))
       return
     }
     dispatch(hideError())
@@ -65,8 +65,8 @@ function RegisterField() {
   const handleSubmit = (e) => {
     e.preventDefault()
     if (!_.isEmpty(isDataCorrect)) {
-      const errorMassage = 'Data is not correct!'
-      dispatch(showError(errorMassage))
+      const errorMessage = 'Data is not correct!'
+      dispatch(showError(errorMessage))
       return
     }
     dispatch(hideError())

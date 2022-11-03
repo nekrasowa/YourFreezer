@@ -1,6 +1,6 @@
 import { saveGood } from "../../actions/actionsContent"
 import { showError } from "../../actions/actionsError"
-import { keepModifiedFreezerGoodOnServ } from "../../../requests/forGoodsList/keepModifiedGoodOnServ"
+import { keepModifiedFreezerGoodOnServ } from "../../../requests/forFreezerGoods/keepModifiedFreezerGoodOnServ"
 
 export const keepModifiedGood = (data) => {
 
@@ -11,10 +11,10 @@ export const keepModifiedGood = (data) => {
         return
       } else if (res.status === 400
          || res.status === 500) {
-        dispatch(showError(res.massage))
+        dispatch(showError(res.message))
       }
 
-      console.log('ERROR! Try again!', res.massage)
+      console.log('ERROR! Try again!', res.message)
     }).catch((err) => {
 
     })

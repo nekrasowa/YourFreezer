@@ -23,10 +23,10 @@ function ModifyBlock(props) {
 
   const handleInputNumber = (e) => {
     const userInput = Number(e.target.value)
-    const errorMassage = 'Enter the number!'
+    const errorMessage = 'Enter the number!'
 
     if (isNaN(userInput)) {
-      dispatch(showError(errorMassage))
+      dispatch(showError(errorMessage))
       return
     }
     dispatch(hideError())
@@ -51,15 +51,15 @@ function ModifyBlock(props) {
 
   const modifyHandler = () => {
     if (data.textInput === '') {
-      const errorMassage = "Don't leave empty first field!"
-      dispatch(showError(errorMassage))
+      const errorMessage = "Don't leave empty first field!"
+      dispatch(showError(errorMessage))
       return
     }
     if (data.unitInput !== 'kg'
       && data.unitInput !== 'pcs'
       && data.unitInput !== '') {
-      const errorMassage = "Only 'kg' or 'pcs'!"
-      dispatch(showError(errorMassage))
+      const errorMessage = "Only 'kg' or 'pcs'!"
+      dispatch(showError(errorMessage))
       return
     }
     dispatch(hideError())

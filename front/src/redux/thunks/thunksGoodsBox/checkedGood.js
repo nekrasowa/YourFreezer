@@ -14,9 +14,9 @@ export const checkedGood = (id, isChecked) => {
       if (res.status === 400 || res.status === 500) {
         dispatch({
           type: SHOW_ERROR,
-          massage: res.massage
+          message: res.message
         })
-        console.log('ERROR! Try again!', res.massage)
+        console.log('ERROR! Try again!', res.message)
         return
       }
     }).catch((err) => {

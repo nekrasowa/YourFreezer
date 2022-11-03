@@ -14,7 +14,7 @@ export const createGood = (data) => {
       } else if (res.status === 400 || res.status === 500) {
         dispatch({
           type: SHOW_ERROR,
-          massage: res.data.massage
+          message: res.data.message
         })
       }
     } catch (err) {

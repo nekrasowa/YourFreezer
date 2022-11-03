@@ -1,33 +1,34 @@
-const GoodsList = require('../../../requestToDB/models/goodsListModel')
+const freezerGoods = require('../../requestToDB/models/freezerGoodsModel')
 
-async function deleteOneGood(req, res) {
+async function deleteFreezerGood(req, res) {
   try {
     const id = req.body.id
+    comsole.log(Number.isFinite(id))
     if (Number.isFinite(id)) {
-      const deletedElem = await GoodsList.destroy({
+      const deletedElem = await freezerGoods.destroy({
         where: { id }
       })
       if (deletedElem === 0) {
-        res.json({
+        res.status(500).json({
           isOk: false,
           message: 'Goods is NOT deleted'
         })
         return
       }
 
-      res.json({
+      res.status(200).json({
         isOk: true,
         message: 'Goods is deleted'
       })
       return
     }
 
-    res.json({
+    res.status(400).json({
       isOk: false,
       message: 'ID should be a number'
     })
   } catch (err) {
-    res.json({
+    res.status(500).json({
       isOk: false,
       message: `Goods is NOT deleted!`,
       data: err
@@ -35,4 +36,4 @@ async function deleteOneGood(req, res) {
   }
 }
 
-module.exports = deleteOneGood
+module.exports = deleteFreezerGood

@@ -2,7 +2,8 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import styles from './VegFrutsContents.module.scss'
 import globalStyles from '../globalStyles.module.scss'
-import { deleteGood, editGood } from '../../redux/actions/actionsContent'
+import { editGood } from '../../redux/actions/actionsContent'
+import { deleteFreezerGood } from '../../redux/thunks/thunksFreezerGood/deleteFreezerGood'
 
 function VegFrutsContent(props) {
   const dispatch = useDispatch()
@@ -13,7 +14,7 @@ function VegFrutsContent(props) {
   }
 
   const onClickCrossHandler = () => {
-    dispatch(deleteGood(id))
+    dispatch(deleteFreezerGood(id))
   }
 
   return (

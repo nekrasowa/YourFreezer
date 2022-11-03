@@ -19,7 +19,7 @@ export const getAllGoods = () => {
     } catch (err) {
       console.log('ERROR', err)
         dispatch(initGoods([]))
-        dispatch(showError(err.massage))
+        dispatch(showError(err.message))
     }
   }
 }

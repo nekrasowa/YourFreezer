@@ -13,7 +13,7 @@ export async function checkedGoodOnServ(id, isChecked) {
     data: { id, isChecked }
   })
     return {
-      massage: res.data.massage,
+      message: res.data.message,
       status: res.data.status
     }
 }

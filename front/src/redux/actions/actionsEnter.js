@@ -3,7 +3,7 @@ import {
   SHOW_REGISTER_FIELD,
   SHOW_AUTH_FIELD,
   SHOW_WELCOME_FIELD,
-  MASSAGE_FOR_USER,
+  MESSAGE_FOR_USER,
   PERMISSION_TO_CHANGE,
 } from '../types.js'
 
@@ -31,10 +31,10 @@ export function showWelcomeField() {
     enter: 'showWelcomeField'
   }
 }
-export function massageForUser(massage) {
+export function messageForUser(message) {
   return {
-    type: MASSAGE_FOR_USER,
-    massage
+    type: MESSAGE_FOR_USER,
+    message
   }
 }
 export function permissionToChange(successful) {

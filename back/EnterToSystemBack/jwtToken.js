@@ -13,7 +13,7 @@ function verifyJWT(token, secretStr) {
     if (err) {
       res.json({
         status: 400,
-        massage: 'User does not pass verification'
+        message: 'User does not pass verification'
       })
       return 
     }

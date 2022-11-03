@@ -1,58 +1,60 @@
-const GoodsList = require('../../../requestToDB/models/goodsListModel')
+const freezerGoods = require('../../requestToDB/models/freezerGoodsModel')
 
-async function createGood(req, res) {
+async function createFreezerGood(req, res) {
   try {
     const {
-      textGood: textInput,
-      numberGood: numberInput,
-      unitGood: unitInput,
+      goodName: textInput,
+      goodNumber: numberInput,
+      goodUnit: unitInput,
+      typeOfGood: typeOfGood
     } = req.body
     const userId = req.id
-
+    
     if (typeof textInput !== "string"
       || (!!numberInput && !Number.isFinite(numberInput))
       || (unitInput !== 'kg'
         && unitInput !== 'pcs'
         && unitInput !== '')) {
-      res.json({
-        status: 400,
+      res.status(400).json({
         message: 'Goods data is not valid'
       })
       return
     }
-    const newGoodInDB = await GoodsList.create({
+
+    const dataOfAddition = new Date()
+    const newGoodInDB = await freezerGoods.create({
       name_of_good: textInput,
       number_of_good: numberInput || null,
       unit_of_good: unitInput,
+      type_of_good: typeOfGood,
+      data_of_addition: dataOfAddition,
       user_id: userId
     })
     if (!newGoodInDB) {
-      res.json({
-        status: 500,
-        message: 'Error on serv, goods is nit created'
+      res.status(500).json({
+        message: 'Error on serv, goods is n0t created'
       })
       return
     }
 
-    // console.log(newGoodInDB)
+    console.log(newGoodInDB.dataValues)
 
-    res.json({
-      status: 200,
+    res.status(200).json({
       message: 'Goods is added',
       data: {
           textGood: newGoodInDB.dataValues.name_of_good,
           numberGood: newGoodInDB.dataValues.number_of_good,
           unitGood: newGoodInDB.dataValues.unit_of_good,
+          typeOfGood: newGoodInDB.dataValues.type_of_good,
           id: newGoodInDB.dataValues.id,
       }
     })
   } catch (err) {
-    res.json({
-      status: 500,
+    res.status(500).json({
       message: 'Error on serv, goods is nit created'
     })
     console.log(err)
   }
 }
 
-module.exports = createGood
+module.exports = createFreezerGood

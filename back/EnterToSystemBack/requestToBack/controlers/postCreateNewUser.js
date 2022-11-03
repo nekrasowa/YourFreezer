@@ -23,7 +23,7 @@ async function createNewUser(req, res) {
      ) {
       res.json({
         status: 400,
-        massage: 'Data is not correct'
+        message: 'Data is not correct'
       })
       return
      }
@@ -39,19 +39,19 @@ async function createNewUser(req, res) {
     if (!newUser) {
       res.json({
         status: 500,
-        massage: 'Error on serv, user is not created'
+        message: 'Error on serv, user is not created'
       })
     }
 
     res.json({
       status: 200,
-      massage: 'User is added',
+      message: 'User is added',
     })
 
   } catch (err) {
     res.json({
       status: 500,
-      massage: 'Error on serv, user is not created'
+      message: 'Error on serv, user is not created'
     })
     console.log(err)
   }

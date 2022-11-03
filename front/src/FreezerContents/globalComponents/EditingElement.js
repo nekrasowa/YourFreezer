@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 // import styles from './BasicContent.module.scss'
 import globalStyles from '../globalStyles.module.scss'
-import { saveGood } from '../../redux/actions/actionsContent'
+import { keepModifiedGood } from '../../redux/thunks/thunksFreezerGood/keepModifiedFreezerGood'
 import { showError, hideError } from '../../redux/actions/actionsError'
 import {  showErrorStyle, hideErrorStyle } from '../../redux/actions/actionsContent'
 function EditingElement(props) {
@@ -25,8 +25,8 @@ function EditingElement(props) {
   const [ newGoodNumber, setNewGoodNumber ] = useState(goodNumber)
   const onChangeNumber = (e) => {
     if(isNaN(e.target.value) && e.target.value !== '.') {
-      const errorMassage = 'Input number!'
-      dispatch(showError(errorMassage)) 
+      const errorMessage = 'Input number!'
+      dispatch(showError(errorMessage)) 
       return
     }
     setNewGoodNumber(e.target.value)
@@ -50,15 +50,14 @@ function EditingElement(props) {
 
   const onClickHandler = () => {
     if(newGoodName === '') {
-      const errorMassage = 'Input title!'
-      dispatch(showError(errorMassage))
+      const errorMessage = 'Input title!'
+      dispatch(showError(errorMessage))
       dispatch(showErrorStyle())
       return
     }
-    console.log('goodInfo', props.goodInfo)
     dispatch(hideErrorStyle())
     dispatch(hideError())
-    dispatch(saveGood(savedGoodData))
+    dispatch(keepModifiedGood(savedGoodData))
   }
 
   return (

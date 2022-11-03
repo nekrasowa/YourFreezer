@@ -19,7 +19,7 @@ export const getAllFreezerGoods = () => {
     } catch (err) {
       console.log('ERROR', err)
         dispatch(getGoods([]))
-        dispatch(showError(err.massage))
+        dispatch(showError(err.message))
     }
   }
 }

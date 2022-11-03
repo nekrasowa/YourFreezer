@@ -9,6 +9,7 @@ export async function createFreezerGoodOnServ(dataOfGood) {
   }
 
   const jwt = localStorage.getItem('jwt')
+  console.log('serv before')
 
   const res = await axios({
     method: 'post',
@@ -16,7 +17,7 @@ export async function createFreezerGoodOnServ(dataOfGood) {
     headers: {'Authorization': `Bearer ${jwt}`},
     data: dataOfGood
   })
-  console.log('[res.data on serv]:', res.data)
+  console.log('serv after',  res.data)
 
   return res.data
 }

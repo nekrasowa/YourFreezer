@@ -16,7 +16,7 @@ export const deleteOneGood = (id) => {
       } 
         dispatch({
           type: SHOW_ERROR,
-          massage: res.massage
+          message: res.message
         })
       
     }).catch((err) => {

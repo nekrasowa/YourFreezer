@@ -88,7 +88,7 @@ export const contentReducer = (state = initialState, action) => {
   if (action.type === GET_GOODS) {
     return {
       ...state,
-      freezGoods: [...state.freezGoods]
+      freezGoods: action.data
     }
   }
   if (action.type === EDIT_FREEZGOOD) {

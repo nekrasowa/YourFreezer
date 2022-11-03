@@ -1,5 +1,5 @@
 import { checkUserDataOnServ } from "../../../requests/forEnterField/checkUserDataOnServ"
-import { massageForUser, permissionToChange, showWelcomeField } from "../../actions/actionsEnter"
+import { messageForUser, permissionToChange, showWelcomeField } from "../../actions/actionsEnter"
 import { initGoods } from "../../actions/actionsGoodsList"
 
 export const checkUserData = (data) => {
@@ -9,20 +9,20 @@ export const checkUserData = (data) => {
 
       if(res.data.status !== 200) {
         dispatch(permissionToChange(false))
-        dispatch(massageForUser(res.data.massage))
+        dispatch(messageForUser(res.data.message))
         return
       }
       localStorage.setItem('jwt', res.data.jwt)
 
       console.log(res.data)
 
-      dispatch(massageForUser(res.data.massage))
+      dispatch(messageForUser(res.data.message))
       dispatch(showWelcomeField())
       dispatch(initGoods(res.data.goods))
       
     } catch (e) {
       dispatch(permissionToChange(false))
-      dispatch(massageForUser(e.massage))
+      dispatch(messageForUser(e.message))
       console.log(e)
     }
   }

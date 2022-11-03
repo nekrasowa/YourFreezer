@@ -16,8 +16,8 @@ function AuthField() {
   const inputEmailHandler = (e) => {
     setUserEmail(e.target.value)
     if (!checkPass(userEmail)) {
-      const errorMassage = 'Input email in correct form'
-      dispatch(showError(errorMassage))
+      const errorMessage = 'Input email in correct form'
+      dispatch(showError(errorMessage))
       return
     }
     dispatch(hideError())
@@ -39,8 +39,8 @@ function AuthField() {
   const handleSubmit = (e) => {
     e.preventDefault()
     if (!_.isEmpty(isDataCorrect)) {
-      const errorMassage = 'Data is not correct!'
-      dispatch(showError(errorMassage))
+      const errorMessage = 'Data is not correct!'
+      dispatch(showError(errorMessage))
       return
     }
     dispatch(hideError())

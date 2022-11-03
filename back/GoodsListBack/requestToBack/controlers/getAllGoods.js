@@ -11,10 +11,9 @@ async function getAllGoods(req, res) {
     await res.json(goods)
   } catch (err) {
 
-    console.log(`${err.name}, ${err.massage}`)
-    const massage = 'Error on server, try again leter!'
-    res
-      .status(500).send({ massage: massage })
+    console.log(`${err.name}, ${err.message}`)
+    const message = 'Error on server, try again leter!'
+    res.status(500).send({ message: message })
   }
 }
 

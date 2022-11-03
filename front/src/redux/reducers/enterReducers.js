@@ -3,13 +3,13 @@ import {
   SHOW_REGISTER_FIELD,
   SHOW_AUTH_FIELD,
   SHOW_WELCOME_FIELD,
-  MASSAGE_FOR_USER,
+  MESSAGE_FOR_USER,
   PERMISSION_TO_CHANGE,
 } from '../types.js'
 
 const initialState = {
   stateEnter: 'showBtns',
-  massage: '',
+  message: '',
   isRequestSuccessful: true
 }
 
@@ -40,10 +40,10 @@ export const enterReducer = (state = initialState, action) => {
     }
   }
 
-  if (action.type === MASSAGE_FOR_USER) {
+  if (action.type === MESSAGE_FOR_USER) {
     return {
       ...state,
-      massage: action.massage
+      message: action.message
     }
   }
   if (action.type === PERMISSION_TO_CHANGE) {

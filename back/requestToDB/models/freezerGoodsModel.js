@@ -36,8 +36,8 @@ FreezerGoods.init({
 },
 {
   sequelize,
-  tableName: 'Goods_list'
+  tableName: 'FreezerGoods'
 })
-
+// FreezerGoods.sync({ alter: true })
 module.exports = FreezerGoods
 

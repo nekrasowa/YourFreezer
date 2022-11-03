@@ -20,7 +20,7 @@ export async function deleteFreezerGoodFromServ(id) {
       }
     } else if (res.status === 500) {
       return { 
-        massage: res.data.massage, 
+        message: res.data.message, 
         isOk: false
       }
     }

@@ -6,7 +6,7 @@
   max-height: 40%;
 
   display: grid;
-  grid-template-areas:  'ErrorMassage ErrorMassage ErrorMassage ErrorMassage'
+  grid-template-areas:  'ErrorMessage ErrorMessage ErrorMessage ErrorMessage'
                         'InputText InputNumber InputRadioBtns InputAddBtn';
   grid-template-rows: 1fr 2fr;
   grid-template-columns: 6fr 2fr 2fr 1fr; 
@@ -159,8 +159,8 @@ label {
   margin: 0% 5% 0% -60%;
 }
 
-.ErrorMassage {
-  grid-area: ErrorMassage;
+.ErrorMessage {
+  grid-area: ErrorMessage;
   border: none;
   height: 1.5rem;
   outline: none;
@@ -169,7 +169,7 @@ label {
   padding: 0 0% 0 5%;
   margin: -7% 0 0 0;
 }
-.ErrorMassageColor {
+.ErrorMessageColor {
   border-radius: 0.5rem;
   box-shadow: rgb(174, 109, 109);
   background: #ffb700ba;

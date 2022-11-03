@@ -6,7 +6,7 @@ import FreezerElement from './FreezerElement'
 import EditingElement from '../globalComponents/EditingElement'
 import ModifyElement from '../globalComponents/ModifyElement'
 import AddBtn from '../globalComponents/AddBtn'
-import { getGoods } from '../../redux/actions/actionsContent'
+import { getAllFreezerGoods } from '../../redux/thunks/thunksFreezerGood/getAllFreezerGoods'
 
 function FreezerContent() {
   const dispatch = useDispatch()
@@ -20,7 +20,7 @@ function FreezerContent() {
   }
   
   useEffect(() => {
-    dispatch(getGoods())  
+    dispatch(getAllFreezerGoods())  
   }, [dispatch])
 
   const goods = useSelector((state) => state.content.freezGoods)

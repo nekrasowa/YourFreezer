@@ -4,12 +4,12 @@ import _ from 'lodash/lang'
 import styles from './GoodsListInput.module.scss'
 import { createGood } from '../../redux/thunks/thunksGoodsBox/createGood'
 import { hideError, showError } from '../../redux/actions/actionsError'
-import ErrorMassage from './ErrorMassage'
+import ErrorMessage from './ErrorMessage'
 
 function GoodsListInput(props) {
   const dispatch = useDispatch()
   const isError = useSelector(state => state.isError.error)
-  const errorMassage = useSelector(state => state.isError.error.massage)
+  const errorMessage = useSelector(state => state.isError.error.message)
   const showErrorInBrowser = () => {
     if (_.isEmpty(isError)) {
       return false
@@ -25,10 +25,10 @@ function GoodsListInput(props) {
 
   const [numberGood, setNumberGood] = useState('')
   const handleInputNumber = (e) => {
-    const errorMassage = 'Enter the number!'
+    const errorMessage = 'Enter the number!'
     const userInput = Number(e.target.value)
     if (isNaN(userInput) && userInput !== '') {
-      dispatch(showError(errorMassage))
+      dispatch(showError(errorMessage))
       return
     }
     dispatch(hideError())
@@ -51,8 +51,8 @@ function GoodsListInput(props) {
 
   const AddHandler = () => {
     if (textGood === '') {
-      const errorMassage = "Don't leave empty first field!"
-      dispatch(showError(errorMassage))
+      const errorMessage = "Don't leave empty first field!"
+      dispatch(showError(errorMessage))
       return
     }
 
@@ -66,8 +66,8 @@ function GoodsListInput(props) {
     <>
       <div className={`${styles.GoodsListInput}`}>
         {showErrorInBrowser()
-          ? <ErrorMassage massage={errorMassage} />
-          : <div className={`${styles.ErrorMassage}`}></div> 
+          ? <ErrorMessage message={errorMessage} />
+          : <div className={`${styles.ErrorMessage}`}></div> 
           }
         <input 
           className={textGood === ''

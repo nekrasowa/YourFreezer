@@ -6,7 +6,7 @@ import BasicElement from './BasicElement'
 import EditingElement from '../globalComponents/EditingElement'
 import ModifyElement from '../globalComponents/ModifyElement'
 import AddBtn from '../globalComponents/AddBtn'
-import { getGoods } from '../../redux/actions/actionsContent'
+import { getAllFreezerGoods } from '../../redux/thunks/thunksFreezerGood/getAllFreezerGoods'
 
 function BasicContent() {
   const dispatch = useDispatch()
@@ -20,14 +20,11 @@ function BasicContent() {
   }
   
   useEffect(() => {
-    dispatch(getGoods())  
+    dispatch(getAllFreezerGoods())  
   }, [dispatch])
 
   const goods = useSelector((state) => state.content.freezGoods)
-  console.log('[goods]', goods)
   const basicGoods = goods.filter((good) => good.typeOfGood === 'basic')
-  console.log('[basicGoods]', basicGoods)
-  
   const basicGoodsList = basicGoods.map((good) => {
     if(good.editState) {
       return <EditingElement  goodInfo={good} key={good.id}/>

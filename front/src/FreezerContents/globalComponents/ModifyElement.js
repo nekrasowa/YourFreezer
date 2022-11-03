@@ -2,12 +2,9 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { hideInputField } from '../../redux/actions/actionsContent'
 import { showError, hideError } from '../../redux/actions/actionsError'
-import { 
-  showErrorStyle, 
-  hideErrorStyle,
-  addGood
-} from '../../redux/actions/actionsContent'
-import { getRandomInt } from '../helpFunctions/getRandomInt'
+import { createFreezerGood } from '../../redux/thunks/thunksFreezerGood/createFreezerGood'
+import { showErrorStyle, hideErrorStyle } from '../../redux/actions/actionsContent'
+// import { getRandomInt } from '../helpFunctions/getRandomInt'
 import globalStyles from '../globalStyles.module.scss'
 
 function ModifyElement(props) {
@@ -25,12 +22,13 @@ function ModifyElement(props) {
 
   const [goodNumber, setGoodNumber] = useState('')
   const inputNumberHandler = (e) => {
-    if(isNaN(e.target.value) && e.target.value !== '.') {
-      const errorMassage = 'Input number!'
-      dispatch(showError(errorMassage)) 
+    const userInput = Number(e.target.value)
+    if(isNaN(userInput) && userInput !== '.') {
+      const errorMessage = 'Input number!'
+      dispatch(showError(errorMessage)) 
       return
     }
-    setGoodNumber(e.target.value)
+    setGoodNumber(userInput)
     dispatch(hideError())
   }
 
@@ -44,7 +42,7 @@ function ModifyElement(props) {
     goodNumber,
     goodUnit,
     typeOfGood: typeOfGood,
-    id: getRandomInt(1, 100000),
+    // id: getRandomInt(1, 100000),
   }
 
   const isInputCorrect = useSelector((state) => state.content.incorrectInput)
@@ -73,8 +71,8 @@ function ModifyElement(props) {
     }
   }
   if (goodNumber <= -1) {
-    const errorMassage = 'Don\'t leave negative value!'
-    dispatch(showError(errorMassage)) 
+    const errorMessage = 'Don\'t leave negative value!'
+    dispatch(showError(errorMessage)) 
   }
 
   const minusClickHandler = () => {
@@ -101,12 +99,12 @@ function ModifyElement(props) {
 
   const onClickHandler = () => {
     if(goodName === '') {
-      const errorMassage = 'Input title!'
-      dispatch(showError(errorMassage))
+      const errorMessage = 'Input title!'
+      dispatch(showError(errorMessage))
       dispatch(showErrorStyle())
       return
     }
-    dispatch(addGood(dataOfNewGood))
+    dispatch(createFreezerGood(dataOfNewGood))
     dispatch(hideErrorStyle())
     dispatch(hideError())
     dispatch(hideInputField(typeOfGood))

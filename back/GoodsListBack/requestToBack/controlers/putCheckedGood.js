@@ -15,26 +15,26 @@ async function checkedGood(req, res) {
       if (retuntWhat.includes(0)) {
         res.json({
           status: 400,
-          massage: 'Goods is NOT find on serv'
+          message: 'Goods is NOT find on serv'
         })
         return
       }
 
       res.json({
         status: 200,
-        massage: 'Goods is checked'
+        message: 'Goods is checked'
       })
       return
     }
     res.json({
       status: 400,
-      massage: 'Incorrect data entered'
+      message: 'Incorrect data entered'
     })
   }
   catch (err) {
     res.json({
       status: 500,
-      massage: `Goods is NOT checked! ${err.massage}`
+      message: `Goods is NOT checked! ${err.message}`
     })
   }
 }

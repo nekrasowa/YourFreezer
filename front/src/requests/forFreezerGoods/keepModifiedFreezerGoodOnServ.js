@@ -1,7 +1,7 @@
 const axios = require('axios')
 
 const url = new URL('http://localhost:5000')
-const keepModifiedFreezerGoodURL = new URL('/goods/keepModifiedGood', url)
+const keepModifiedFreezerGoodURL = new URL('/goods/keepModifiedFreezerGood', url)
 
 export async function keepModifiedFreezerGoodOnServ(dataOfGood) {
   const jwt = localStorage.getItem('jwt')

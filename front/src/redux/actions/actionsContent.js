@@ -41,10 +41,10 @@ export function addGood(data) {
     data
   }
 }
-export function getGoods() {
+export function getGoods(data) {
   return {
     type: GET_GOODS,
-
+    data
   }
 }
 export function editGood(id) {

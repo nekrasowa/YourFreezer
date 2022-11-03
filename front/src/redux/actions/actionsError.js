@@ -3,10 +3,10 @@ import {
   HIDE_ERROR
 } from "../types.js"
 
-export function showError(massage) {
+export function showError(message) {
   return {
     type: SHOW_ERROR,
-    massage
+    message
   }
 }
 export function hideError() {
