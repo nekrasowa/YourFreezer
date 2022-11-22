@@ -6,8 +6,6 @@ import { deleteFreezerGoodFromServ } from '../../../requests/forFreezerGoods/del
 export const deleteFreezerGood = (id) => {
   return async (dispatch) => {
     try {
-    console.log('thunk')
-
       const res = await deleteFreezerGoodFromServ(id)
 
       if (res.status === 500 || res.status === 400) {

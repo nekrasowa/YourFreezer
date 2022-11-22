@@ -4,20 +4,19 @@ import { keepModifiedFreezerGoodOnServ } from "../../../requests/forFreezerGoods
 
 export const keepModifiedGood = (data) => {
 
-  return (dispatch) => {
-    keepModifiedFreezerGoodOnServ(data).then((res) => {
-      if (res.status === 200) {
-        dispatch(saveGood(data))
+  return async (dispatch) => {
+    try {
+      const res = await keepModifiedFreezerGoodOnServ(data)
+
+      if (res.status === 500 || res.status === 400) {
+        dispatch(showError(res.data.message))
         return
-      } else if (res.status === 400
-         || res.status === 500) {
-        dispatch(showError(res.message))
       }
+      dispatch(saveGood(data))
 
-      console.log('ERROR! Try again!', res.message)
-    }).catch((err) => {
-
-    })
+    } catch (err) {
+      dispatch(showError(err.message))
+    }
   }
 
 }

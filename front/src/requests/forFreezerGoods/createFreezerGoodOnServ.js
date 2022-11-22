@@ -9,7 +9,6 @@ export async function createFreezerGoodOnServ(dataOfGood) {
   }
 
   const jwt = localStorage.getItem('jwt')
-  console.log('serv before')
 
   const res = await axios({
     method: 'post',

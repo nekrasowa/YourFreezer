@@ -5,7 +5,6 @@ const createFreezerGood = require('../controlers/postCreateFreezerGood')
 const keepModifiedFreezerGood = require('../controlers/putKeepModifiedFreezerGood')
 const deleteFreezerGood = require('../controlers/deleteFreezerGood')
 
-
 router.get('/allFreezerGoods', allFreezerGoods)
 
 router.post('/createFreezerGood', createFreezerGood)

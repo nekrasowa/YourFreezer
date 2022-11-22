@@ -16,12 +16,12 @@ export async function deleteFreezerGoodFromServ(id) {
 
     if (res.status === 200) {
       return {
-        isOk: true
+        status: 200      
       }
     } else if (res.status === 500) {
       return { 
+        status: 500,    
         message: res.data.message, 
-        isOk: false
       }
     }
   } catch (err) {

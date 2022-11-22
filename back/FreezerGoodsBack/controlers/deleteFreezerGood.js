@@ -3,7 +3,7 @@ const freezerGoods = require('../../requestToDB/models/freezerGoodsModel')
 async function deleteFreezerGood(req, res) {
   try {
     const id = req.body.id
-    comsole.log(Number.isFinite(id))
+
     if (Number.isFinite(id)) {
       const deletedElem = await freezerGoods.destroy({
         where: { id }

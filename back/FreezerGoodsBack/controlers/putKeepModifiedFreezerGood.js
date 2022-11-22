@@ -1,4 +1,4 @@
-const freezerGoods = require('../../requestToDB/models/freezerGoodsModel')
+const FreezerGoods = require('../../requestToDB/models/freezerGoodsModel')
 
 async function keepModifiedFreezerGood(req, res) {
   try {
@@ -9,23 +9,25 @@ async function keepModifiedFreezerGood(req, res) {
       unitInput,
       typeOfGood
     } = req.body
-
-    if (Number.isFinite(id)
-      && typeof textInput === "string"
-      && (Number.isFinite(numberInput)|| null)
+  
+    if (
+      Number.isFinite(id)
+      && typeof textInput === 'string'
+      && Number.isFinite(numberInput)
       && (unitInput === 'kg'
         || unitInput === 'pcs'
-        || unitInput === '')) {
-
-      const retuntWhat = await freezerGoods.update({
-        name_of_good: textInput,
-        number_of_good: numberInput,
-        unit_of_good: unitInput,
-        type_of_good: typeOfGood,
-      },
+        || unitInput === '')
+      ) {    
+      const retuntWhat = await FreezerGoods.update({
+          name_of_good: textInput,
+          number_of_good: numberInput,
+          unit_of_good: unitInput,
+          type_of_good: typeOfGood,
+        },
         {
           where: { id }
-        })
+        }
+      )
 
       if (retuntWhat.includes(0)) {
         res.status(500).json({

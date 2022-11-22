@@ -12,7 +12,8 @@ function EditingElement(props) {
     goodName,
     goodNumber,
     goodUnit,
-    id
+    id,
+    typeOfGood
   } = props.goodInfo
   
   const [ newGoodName, setNewGoodName ] = useState(goodName)
@@ -42,9 +43,10 @@ function EditingElement(props) {
   }
 
   const savedGoodData = {
-    newGoodName: newGoodName,
-    newGoodNumber: newGoodNumber,
-    newGoodUnit: newGoodUnit,
+    textInput: newGoodName,
+    numberInput: Number(newGoodNumber),
+    unitInput: newGoodUnit,
+    typeOfGood,
     id
   }
 
