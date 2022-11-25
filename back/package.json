@@ -5,7 +5,7 @@
   "main": "freezer-start",
   "scripts": {
     "startDev": "nodemon freezer-start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
@@ -21,6 +21,7 @@
     "uniqid": "^5.4.0"
   },
   "devDependencies": {
+    "jest": "^29.3.1",
     "nodemon": "^2.0.19"
   }
 }

@@ -25,7 +25,7 @@ FreezerGoods.init({
     type: DataTypes.STRING(10),
     allowNull: false
   },
-  data_of_addition: {
+  date_of_addition: {
     type: DataTypes.DATEONLY,
     allowNull: false
   },

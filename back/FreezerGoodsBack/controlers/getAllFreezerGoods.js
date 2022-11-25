@@ -4,9 +4,10 @@ const bringToCorrectFreezForm = require('../../helpFunc/bringToCorrectFreezForm'
 async function allFreezerGoods(req, res) {
   try {
     const userId = req.id
+
     const goodsFromDB = await freezerGoods
       .findAll({ where: { user_id: userId } })
-    const goods = goodsFromDB.map(bringToCorrectFreezForm)
+    const goods = goodsFromDB.map((el) => (bringToCorrectFreezForm(el)))
 
     await res.status(200).json(goods)
   } catch (err) {
