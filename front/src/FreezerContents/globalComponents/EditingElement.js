@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 import globalStyles from '../globalStyles.module.scss'
 import { keepModifiedGood } from '../../redux/thunks/thunksFreezerGood/keepModifiedFreezerGood'
 import { showError, hideError } from '../../redux/actions/actionsError'
-import {  showErrorStyle, hideErrorStyle } from '../../redux/actions/actionsContent'
+import { showErrorStyle, hideErrorStyle } from '../../redux/actions/actionsContent'
 function EditingElement(props) {
   const dispatch = useDispatch()
 

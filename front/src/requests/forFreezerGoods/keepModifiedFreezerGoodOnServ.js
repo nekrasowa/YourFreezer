@@ -5,7 +5,6 @@ const keepModifiedFreezerGoodURL = new URL('/freezer/keepModifiedFreezerGood', u
 
 export async function keepModifiedFreezerGoodOnServ(dataOfGood) {
   const jwt = localStorage.getItem('jwt')
-  console.log('serv before', dataOfGood )
 
   const res = await axios({
     method: 'put',

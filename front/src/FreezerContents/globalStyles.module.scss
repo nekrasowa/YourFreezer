@@ -45,6 +45,16 @@
   }
 }
 
+.FreezerOneElement_yellow {
+  background: linear-gradient(-135deg, #ffc900, #edf200);
+  box-shadow: 0 4px 8px #806409;
+
+}
+.FreezerOneElement_red {
+  background: linear-gradient(-135deg, #fe8300, #891c19);
+  box-shadow: 0 4px 8px #4c0a0a;
+}
+
 .FreezerElement__name {
   display: block;
   margin: 0% 0% 0% 0%;
