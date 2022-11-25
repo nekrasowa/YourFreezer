@@ -1,13 +1,14 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import styles from './FreezerContent.module.scss'
 import globalStyles from '../globalStyles.module.scss'
 import { deleteFreezerGood } from '../../redux/thunks/thunksFreezerGood/deleteFreezerGood'
 import { editGood } from '../../redux/actions/actionsContent'
+import { defineColor } from '../helpFunctions/difineColor'
 
 function FreezerElement(props) {
   const dispatch = useDispatch()
   const id = props.goodInfo.id
+  const timeStatus = props.goodInfo.timeStatus
 
   const dblClickHandler = () => {
     dispatch(editGood(id))
@@ -20,7 +21,7 @@ function FreezerElement(props) {
   return (
     <>
       <div 
-        className={` ${globalStyles.FreezerOneElement} ${styles.FreezerContent__freezerElement}`}
+        className={defineColor(timeStatus, 29, 89)}
         onDoubleClick={dblClickHandler}
         >
         <p 

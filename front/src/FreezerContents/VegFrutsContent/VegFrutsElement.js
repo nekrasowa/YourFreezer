@@ -1,13 +1,14 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import styles from './VegFrutsContents.module.scss'
 import globalStyles from '../globalStyles.module.scss'
 import { editGood } from '../../redux/actions/actionsContent'
 import { deleteFreezerGood } from '../../redux/thunks/thunksFreezerGood/deleteFreezerGood'
+import { defineColor } from '../helpFunctions/difineColor'
 
 function VegFrutsContent(props) {
   const dispatch = useDispatch()
   const id = props.goodInfo.id
+  const timeStatus = props.goodInfo.timeStatus
 
   const dblClickHandler = () => {
     dispatch(editGood(id))
@@ -20,7 +21,7 @@ function VegFrutsContent(props) {
   return (
     <>
       <div 
-        className={`${globalStyles.FreezerOneElement} ${styles.VegFrutsContent__VegFrutsElement} `}
+        className={defineColor(timeStatus, 4, 6)}
         onDoubleClick={dblClickHandler}
         >
         <p 

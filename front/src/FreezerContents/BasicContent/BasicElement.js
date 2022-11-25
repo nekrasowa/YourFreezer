@@ -1,6 +1,5 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-// import styles from './BasicContent.module.scss'
 import globalStyles from '../globalStyles.module.scss'
 import { editGood } from '../../redux/actions/actionsContent'
 import { deleteFreezerGood } from '../../redux/thunks/thunksFreezerGood/deleteFreezerGood'
@@ -11,7 +10,6 @@ function BasicElement(props) {
   const id = props.goodInfo.id
   const timeStatus = props.goodInfo.timeStatus
 
-  
   const dblClickHandler = () => {
     dispatch(editGood(id))
   }
