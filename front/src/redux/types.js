@@ -3,8 +3,7 @@ export const CHECKED = 'CHECKED'
 export const EDIT_GOOD = 'EDIT_GOOD'
 export const KEEP_GOOD = 'KEEP_GOOD'
 
-
-export const COPY = 'COPY'
+export const COPY_ALL_GOODS = 'COPY_ALL_GOODS'
 export const DELETE_ALL = 'DELETE-ALL'
 export const INSERT = 'INSERT'
 

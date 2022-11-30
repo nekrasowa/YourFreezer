@@ -6,7 +6,7 @@ import {
   EDIT_GOOD,
   KEEP_GOOD,
   INIT_GOODS,
-  DELETE_ALL
+  DELETE_ALL,
 } from '../types'
 
 const initialState = {
@@ -133,6 +133,7 @@ export const createGoodReducer = (state = initialState, action) => {
         ...state,
         goods: []
       }
+
     default:
       return state
   }
