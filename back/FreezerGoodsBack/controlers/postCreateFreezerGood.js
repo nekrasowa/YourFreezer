@@ -37,8 +37,6 @@ async function createFreezerGood(req, res) {
       return
     }
 
-    console.log(newGoodInDB.dataValues)
-
     res.status(200).json({
       message: 'Goods is added',
       data: {

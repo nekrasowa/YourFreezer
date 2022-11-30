@@ -10,6 +10,5 @@ export async function createNewUserOnServ(usersData) {
     data: usersData
   })
 
-  console.log('[res.data]:', res.data)
   return res
 }

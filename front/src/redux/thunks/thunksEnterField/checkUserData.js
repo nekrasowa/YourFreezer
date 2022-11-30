@@ -14,8 +14,6 @@ export const checkUserData = (data) => {
       }
       localStorage.setItem('jwt', res.data.jwt)
 
-      console.log(res.data)
-
       dispatch(messageForUser(res.data.message))
       dispatch(showWelcomeField())
       dispatch(initGoods(res.data.goods))

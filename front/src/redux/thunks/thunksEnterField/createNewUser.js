@@ -11,7 +11,6 @@ export const createNewUser = (usersData) => {
         dispatch(permissionToChange(false))
         return
       }
-      console.log(res.data.jwt)
 
       dispatch(permissionToChange(true))
       dispatch(showAuthField())

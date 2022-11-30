@@ -5,7 +5,8 @@ import {
   CHECKED,
   EDIT_GOOD,
   KEEP_GOOD,
-  INIT_GOODS
+  INIT_GOODS,
+  DELETE_ALL
 } from '../types'
 
 const initialState = {
@@ -124,6 +125,13 @@ export const createGoodReducer = (state = initialState, action) => {
       return {
         ...state,
         goods: goodsWithKeepedEl
+      }
+
+    case DELETE_ALL:
+     
+      return {
+        ...state,
+        goods: []
       }
     default:
       return state

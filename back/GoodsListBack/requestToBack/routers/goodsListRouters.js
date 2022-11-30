@@ -4,6 +4,7 @@ const getAllGoods = require('../controlers/getAllGoods')
 const createGood = require('../controlers/postCreateGood')
 const keepModifiedGood = require('../controlers/putKeepModifiedGood')
 const deleteOneGood = require('../controlers/deleteOneGood')
+const deleteAll = require('../controlers/deleteAll')
 const checkedGood = require('../controlers/putCheckedGood')
 
 router.get('/allGoods', getAllGoods)
@@ -15,5 +16,9 @@ router.put('/keepModifiedGood', keepModifiedGood)
 router.put('/checkedGood', checkedGood)
 
 router.delete('/deleteOne', deleteOneGood)
+
+router.delete('/deleteAll', deleteAll)
+
+// router.delete('/deleteOne', deleteOneGood)
 
 module.exports = router

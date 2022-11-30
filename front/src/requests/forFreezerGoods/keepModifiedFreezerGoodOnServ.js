@@ -12,7 +12,6 @@ export async function keepModifiedFreezerGoodOnServ(dataOfGood) {
     headers: { 'Authorization': `Bearer ${jwt}` },
     data: dataOfGood
   })
-  console.log('serv after',  res.data)
 
   return res.data
 }
