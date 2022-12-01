@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import stylesBtn from '../BtnsField/Btns.module.scss'
 import styles from '../ExitField/ExitField.module.scss'
 import { showEnterBtns } from '../../redux/actions/actionsEnter'
+import { getGoods } from '../../redux/actions/actionsContent'
 import { initGoods } from '../../redux/actions/actionsGoodsList'
 
 function ExitField() {
@@ -10,6 +11,7 @@ function ExitField() {
 
   const clickHandlerExit = (e) => {
     localStorage.removeItem('jwt')
+    dispatch(getGoods([]))
     dispatch(initGoods([]))
     dispatch(showEnterBtns())
   }

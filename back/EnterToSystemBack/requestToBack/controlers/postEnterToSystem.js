@@ -1,5 +1,6 @@
 const User = require('../../../requestToDB/models/userModel')
 const GoodsList = require('../../../requestToDB/models/goodsListModel')
+const FreezerGoods = require('../../../requestToDB/models/freezerGoodsModel')
 const {
   checkEmail,
   checkPass
@@ -7,6 +8,7 @@ const {
 const { getHash } = require('../../../helpFunc/cryptoHash')
 const { createJWT } = require('../../jwtToken')
 const bringToCorrectForm = require('../../../helpFunc/bringToCorrectForm')
+const bringToCorrectFreezForm = require('../../../helpFunc/bringToCorrectFreezForm')
 
 async function enterToSystem(req, res) {
   try {
@@ -53,13 +55,19 @@ async function enterToSystem(req, res) {
     const goodsFromDB = await GoodsList
       .findAll({ where: { user_id: enteredUser.dataValues.id } })
 
+    const goodsFreezerFromDB = await FreezerGoods
+      .findAll({ where: { user_id: enteredUser.dataValues.id } })
+
+
     const goods = goodsFromDB.map(bringToCorrectForm)
-    
+    const goodsFreezer = goodsFreezerFromDB.map(bringToCorrectFreezForm)
+    console.log(goodsFreezer)
     res.json({
       status: 200,
       message: 'user enters',
       jwt,
-      goods
+      goods,
+      goodsFreezer
     })
     return
 
