@@ -1,4 +1,3 @@
-
 export function onCopyFuncHandler(goods) {
   if (!goods) {
     return ''
@@ -8,8 +7,6 @@ export function onCopyFuncHandler(goods) {
   })
 
   const goodsListForCopy = goodsList.join('\n')
-  console.log('goodsListForCopy>>>', goodsListForCopy)
-
 
   navigator.clipboard.writeText(goodsListForCopy)
       .then(() => {

@@ -2,7 +2,6 @@ const GoodsList = require('../../../requestToDB/models/goodsListModel')
 
 async function deleteAllGoods(req, res) {
   try {
-    console.log('deleteAllGoods>>>', req.id)
     const user_id = req.id
     if (Number.isFinite(user_id)) {
       const deletedElem = await GoodsList.destroy({

@@ -4,7 +4,7 @@ import { hideInputField } from '../../redux/actions/actionsContent'
 import { showError, hideError } from '../../redux/actions/actionsError'
 import { createFreezerGood } from '../../redux/thunks/thunksFreezerGood/createFreezerGood'
 import { showErrorStyle, hideErrorStyle } from '../../redux/actions/actionsContent'
-// import { getRandomInt } from '../helpFunctions/getRandomInt'
+import { getAllFreezerGoods } from '../../redux/thunks/thunksFreezerGood/getAllFreezerGoods'
 import globalStyles from '../globalStyles.module.scss'
 
 function ModifyElement(props) {
@@ -45,7 +45,7 @@ function ModifyElement(props) {
     // id: getRandomInt(1, 100000),
   }
 
-  const isInputCorrect = useSelector((state) => state.content.incorrectInput)
+  const isInputCorrect = useSelector((state) => state.content.isCorrectInput)
 
   const plusClickHandler = () => {
     if (goodNumber < 1 && goodNumber > 0) {
@@ -108,6 +108,7 @@ function ModifyElement(props) {
     dispatch(hideErrorStyle())
     dispatch(hideError())
     dispatch(hideInputField(typeOfGood))
+    dispatch(getAllFreezerGoods())
   }
   const onClickOnCrossHandler = () => {
     dispatch(hideErrorStyle())

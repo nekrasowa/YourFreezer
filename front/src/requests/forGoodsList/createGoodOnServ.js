@@ -16,7 +16,6 @@ export async function createGoodOnServ(dataOfGood) {
     headers: {'Authorization': `Bearer ${jwt}`},
     data: dataOfGood
   })
-  console.log('[res.data on serv]:', res.data)
 
   return res.data
 }

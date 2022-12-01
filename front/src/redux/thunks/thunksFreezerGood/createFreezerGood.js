@@ -12,8 +12,8 @@ export const createFreezerGood = (data) => {
         dispatch(showError(res.message))
         return
       }
-
-      dispatch(addGood(data))
+      console.log(res.data)
+      dispatch(addGood(res.data))
 
     } catch (err) {
       console.log('err', err)

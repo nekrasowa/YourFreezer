@@ -26,18 +26,18 @@ FreezerGoods.init({
     allowNull: false
   },
   date_of_addition: {
-    type: DataTypes.DATEONLY,
+    type: DataTypes.DATE,
     allowNull: false
   },
   user_id: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: false
   }
 },
 {
   sequelize,
   tableName: 'FreezerGoods'
 })
-// FreezerGoods.sync({ alter: true })
+
 module.exports = FreezerGoods
 

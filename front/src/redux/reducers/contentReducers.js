@@ -14,7 +14,7 @@ const initialState = {
   showInputFieldBasic: false,
   showInputFieldFreezer: false,
   showInputFieldVegFruts: false,
-  incorrectInput: true,
+  isCorrectInput: true,
   freezGoods: [],
 }
 
@@ -62,25 +62,25 @@ export const contentReducer = (state = initialState, action) => {
   if (action.type === SHOW_ERROR_STYLE) {
     return {
       ...state,
-      incorrectInput: false
+      isCorrectInput: false
     }
   }
   if (action.type === HIDE_ERROR_STYLE) {
     return {
       ...state,
-      incorrectInput: true
+      isCorrectInput: true
     }
   }
   if (action.type === ADD_GOOD) {
-    console.log('[action.data]:', action.data)
     return {
       ...state,
       freezGoods: [...state.freezGoods, {
-        goodName: action.data.goodName,
-        goodNumber: action.data.goodNumber,
-        goodUnit: action.data.goodUnit,
-        typeOfGood: action.data.typeOfGood,
-        id: action.data.id,
+        goodName: action.goodName,
+        goodNumber: action.goodNumber,
+        goodUnit: action.goodUnit,
+        typeOfGood: action.typeOfGood,
+        dataOfAddition: action.dataOfAddition,
+        id: action.id,
         editState: false,
       }]
     }

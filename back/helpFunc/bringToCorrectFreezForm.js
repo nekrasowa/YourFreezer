@@ -2,7 +2,6 @@ const getStatusOfGood = require('./getStatusOfGood')
 
 module.exports = function bringToCorrectFreezForm(el) {
   const element = el.dataValues
-  console.log(el.dataValues)
 
   const id = element.id
   const goodName = element.name_of_good

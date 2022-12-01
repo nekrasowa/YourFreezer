@@ -21,18 +21,19 @@ async function createFreezerGood(req, res) {
       return
     }
 
-    const dataOfAddition = new Date()
+    const dateOfAddition = new Date()
+
     const newGoodInDB = await freezerGoods.create({
       name_of_good: textInput,
       number_of_good: numberInput || null,
       unit_of_good: unitInput,
       type_of_good: typeOfGood,
-      data_of_addition: dataOfAddition,
+      date_of_addition: dateOfAddition,
       user_id: userId
     })
     if (!newGoodInDB) {
       res.status(500).json({
-        message: 'Error on serv, goods is n0t created'
+        message: 'Error on serv, goods is not created'
       })
       return
     }
@@ -44,12 +45,13 @@ async function createFreezerGood(req, res) {
           numberGood: newGoodInDB.dataValues.number_of_good,
           unitGood: newGoodInDB.dataValues.unit_of_good,
           typeOfGood: newGoodInDB.dataValues.type_of_good,
+          dataOfAddition: newGoodInDB.dataValues.data_of_addition,
           id: newGoodInDB.dataValues.id,
       }
     })
   } catch (err) {
     res.status(500).json({
-      message: 'Error on serv, goods is nit created'
+      message: 'Error on serv, goods is not created'
     })
     console.log(err)
   }

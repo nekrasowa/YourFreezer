@@ -20,7 +20,6 @@ function EditingElement(props) {
   const onChangeName = (e) => {
     setNewGoodName(e.target.value)
     dispatch(hideError())
-
   }
 
   const [ newGoodNumber, setNewGoodNumber ] = useState(goodNumber)
@@ -30,6 +29,7 @@ function EditingElement(props) {
       dispatch(showError(errorMessage)) 
       return
     }
+    
     setNewGoodNumber(e.target.value)
     dispatch(hideError())
   }

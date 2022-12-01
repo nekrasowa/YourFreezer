@@ -34,8 +34,6 @@ async function createGood(req, res) {
       return
     }
 
-    // console.log(newGoodInDB)
-
     res.json({
       status: 200,
       message: 'Goods is added',
