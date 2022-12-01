@@ -6,6 +6,7 @@ import { createFreezerGood } from '../../redux/thunks/thunksFreezerGood/createFr
 import { showErrorStyle, hideErrorStyle } from '../../redux/actions/actionsContent'
 import { getAllFreezerGoods } from '../../redux/thunks/thunksFreezerGood/getAllFreezerGoods'
 import globalStyles from '../globalStyles.module.scss'
+import styles from '../VegFrutsContent/VegFrutsContents.module.scss'
 
 function ModifyElement(props) {
 
@@ -116,9 +117,17 @@ function ModifyElement(props) {
     dispatch(hideInputField(typeOfGood)) 
   }
 
+  const modifyBlockStyle = () => {
+    if(props.type === 'vegFruts') {
+      return `${globalStyles.FreezerOneInput} ${styles.FreezerOneInput_vegFruts} `
+    }
+    return `${globalStyles.FreezerOneInput}`
+  }
+
+
   return (
     <>
-      <div className={`${globalStyles.FreezerOneInput}`}>
+      <div className={modifyBlockStyle()}>
         <input 
           className={ 
             isInputCorrect
