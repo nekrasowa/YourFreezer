@@ -40,7 +40,7 @@ function RowOfTable(props) {
         className={`${styles.checkbox} ${styles.checkbox_vegFrut}`}
         type='radio' 
         name='radio'
-        value='vegFrut'
+        value='vegFruts'
         />
       <input
         className={`${styles.checkbox} ${styles.checkbox_freezer}`}

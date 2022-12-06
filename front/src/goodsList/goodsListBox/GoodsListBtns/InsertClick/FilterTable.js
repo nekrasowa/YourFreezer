@@ -7,6 +7,8 @@ import {
   insertCloseAction,
   deleteFreezContentAction
 } from '../../../../redux/actions/actionsGoodsList'
+import { createFreezerGood } from '../../../../redux/thunks/thunksFreezerGood/createFreezerGood'
+import { getAllFreezerGoods } from '../../../../redux/thunks/thunksFreezerGood/getAllFreezerGoods'
 
 function FilterTable(props) {
   const dispatch = useDispatch()
@@ -24,9 +26,17 @@ function FilterTable(props) {
 
   const checkedGoodsList = checkedGoods.map((good) => <RowOfTable key={good.info.id} info={good.info}/>)
 
-  console.log('array>>', checkedGoods)
+  const freezGoods = useSelector((state) => state.createGood.freezContent)
+  console.log('freezGoods', freezGoods)
 
   const onClickTransferHandler = () => {
+    freezGoods.forEach((good) => {
+      console.log('good', good)
+      dispatch(createFreezerGood(good))
+    })
+    dispatch(insertCloseAction())
+    setTimeout(dispatch(getAllFreezerGoods()), 3000)
+    
 
   }
 
