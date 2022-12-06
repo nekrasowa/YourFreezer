@@ -6,20 +6,18 @@
   display: inline-flex;
 }
 
-.Insert, .Copy, .Delete {
+.Insert,
+.Copy,
+.Delete {
   top: 0;
-
 }
 
-.Insert {
-  height: auto;
-  flex-grow: 8;
-}
-
-#InsertBtn, #CopyBtn, #DeleteBtn {
+#InsertBtn,
+#CopyBtn,
+#DeleteBtn {
   background-position: center;
   background-color: rgb(228, 217, 217);
-  background-repeat : no-repeat;
+  background-repeat: no-repeat;
   height: 75%;
   border: none;
   max-width: 50px;
@@ -46,10 +44,154 @@
 
 .Copy {
   flex-grow: 1;
-  
 }
 
 .Delete {
   flex-grow: 1;
+}
 
+.Insert {
+  height: auto;
+  flex-grow: 8;
+}
+
+.FilterTableArea {
+  display: grid;
+  position: fixed;
+  right: 0%;
+  top: 0%;
+  height: 100%;
+  width: 100%;
+  z-index: 6;
+  background-color: #59ca5d9e;
+
+  grid-template-areas:
+    ' cansel '
+    ' table '
+    ' transfer ';
+  grid-template-rows: 3fr 3fr 5fr;
+  grid-template-columns: 1fr;
+}
+
+.canselBtn {
+  grid-area: cansel;
+  background-position: center;
+  background-color: rgb(189 198 44);
+  background-repeat: no-repeat;
+  height: 20%;
+  border: none;
+  border-radius: 50%;
+  max-width: 50px;
+  background-image: url('./icons/delete.svg');
+  width: 4%;
+
+  margin: 15% 0% 0% 48%;
+  &:active {
+    background-color: rgb(247 236 129);
+    height: 6%;
+  }
+}
+
+.FilterTable {
+  grid-area: table;
+  overflow: auto;
+  margin: 0% 30% 0% 30%;
+  padding: 1% 1% 1% 1%;
+  border: 1px black solid;
+  border-radius: 10%;
+  background-color: yellow;
+}
+
+.TableHeader {
+  display: grid;
+  grid-template-areas: ' empty  name1 name2 name3';
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  border-bottom: 1px solid black;
+
+}
+
+.empty {
+  display: block;
+  grid-area: empty;
+  border-right: 1px solid black;
+}
+.nameOfColumn {
+  text-align: center;
+  font-size: large;
+
+  &.nameOfColum_basic {
+    display: block;
+    grid-area: name1;
+    border-right: 1px solid black;
+  }
+  &.nameOfColum_vegFrut {
+    display: block;
+    grid-area: name2;
+    border-right: 1px solid black;
+  }
+  &.nameOfColum_freezer {
+    display: block;
+    grid-area: name3;
+  }
+}
+
+.RowOfTable {
+  display: grid;
+  grid-template-areas: ' nameOfGood  basic vegFrut freezer';
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  height: 15%;
+  border-bottom: 1px solid black;
+}
+
+.nameOfGood {
+  grid-area: nameOfGood;
+
+  display: block;
+  border-right: 1px solid black;
+  padding-left: 5%;
+  font-weight: 700;
+  font-size: large;
+
+}
+
+.checkbox {
+  text-align: center;
+  height: 70%;
+  margin-top: 3%;
+
+  &.checkbox_basic::before {
+    display: block;
+    grid-area: basic;
+  }
+  &.checkbox_vegFrut::after {
+    display: block;
+    grid-area: vegFrut;
+  }
+  &.checkbox_freezer {
+    display: block;
+    grid-area: freezer;
+  }
+}
+
+.transferBtn {
+  display: block;
+  grid-area: transfer;
+  background-position: center;
+  background-color: rgb(9, 255, 0);
+  background-repeat: no-repeat;
+  height: 12%;
+  border: none;
+  border-radius: 50%;
+  max-width: 50px;
+  background-image: url('../../../FreezerContents/backImg/mark.svg');
+  width: 4%;
+
+  margin: 1% 0% 0% 48%;
+
+  &:active {
+    background-color: rgb(90, 206, 24);
+    height: 6%;
+  }
 }
