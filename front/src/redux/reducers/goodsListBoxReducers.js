@@ -7,10 +7,16 @@ import {
   KEEP_GOOD,
   INIT_GOODS,
   DELETE_ALL,
+  INSERT,
+  INSERT_CLOSE,
+  CREATE_FREEZ_CONTENT,
+  DELETE_FREEZ_CONTENT
 } from '../types'
 
 const initialState = {
-  goods: [] 
+  goods: [],
+  insert: false,
+  freezContent: []
 }
 
 export const createGoodReducer = (state = initialState, action) => {
@@ -128,10 +134,58 @@ export const createGoodReducer = (state = initialState, action) => {
       }
 
     case DELETE_ALL:
-     
+
       return {
         ...state,
         goods: []
+      }
+
+    case INSERT:
+      return {
+        ...state,
+        insert: true
+      }
+    case INSERT_CLOSE:
+      return {
+        ...state,
+        insert: false
+      }
+
+    case CREATE_FREEZ_CONTENT:
+      const typedGood = state.freezContent.find((good) => good.id === action.data.id)
+
+      if (typedGood) {
+        const typedGoodIndex = state.freezContent
+          .findIndex(good => good.id === action.data.id)
+
+        const copyTypedGood = { ...typedGood }
+
+        copyTypedGood.typeOfGood = action.data.typeOfGood
+
+        const goodsWithTypedEl = [...state.freezContent]
+        goodsWithTypedEl.splice(typedGoodIndex, 1, copyTypedGood)
+
+        return {
+          ...state,
+          freezContent: goodsWithTypedEl
+        }
+      }
+      return {
+        ...state,
+        freezContent: [...state.freezContent, {
+          goodName: action.data.goodName,
+          goodNumber: action.data.goodNumber,
+          goodUnit: action.data.goodUnit,
+          typeOfGood: action.data.typeOfGood,
+          id: action.data.id
+        }]
+      }
+
+    case DELETE_FREEZ_CONTENT:
+
+      return {
+        ...state,
+        freezContent: []
       }
 
     default:

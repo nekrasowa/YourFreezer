@@ -7,6 +7,10 @@ import {
   KEEP_GOOD,
   INIT_GOODS,
   DELETE_ALL,
+  INSERT,
+  INSERT_CLOSE,
+  CREATE_FREEZ_CONTENT,
+  DELETE_FREEZ_CONTENT
 } from "../types.js"
 
 export function createGoodAction(data) {
@@ -56,6 +60,27 @@ export function initGoods(data) {
 export function deleteAllGoodsAction() {
   return {
     type: DELETE_ALL
+  }
+}
+export function insertAction() {
+  return {
+    type: INSERT,
+  }
+}
+export function insertCloseAction() {
+  return {
+    type: INSERT_CLOSE
+  }
+}
+export function createFreezContentAction(data) {
+  return {
+    type: CREATE_FREEZ_CONTENT,
+    data
+  }
+}
+export function deleteFreezContentAction() {
+  return {
+    type: DELETE_FREEZ_CONTENT
   }
 }
 

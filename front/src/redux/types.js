@@ -6,6 +6,10 @@ export const KEEP_GOOD = 'KEEP_GOOD'
 export const COPY_ALL_GOODS = 'COPY_ALL_GOODS'
 export const DELETE_ALL = 'DELETE-ALL'
 export const INSERT = 'INSERT'
+export const CREATE_FREEZ_CONTENT = 'CREATE_FREEZ_CONTENT'
+export const DELETE_FREEZ_CONTENT = 'DELETE_FREEZ_CONTENT'
+export const INSERT_CLOSE = 'INSERT_CLOSE'
+
 
 export const CREATE_GOOD = 'CREATE_GOOD'
 export const LOADING_GOODS = 'LOADING_GOODS'
