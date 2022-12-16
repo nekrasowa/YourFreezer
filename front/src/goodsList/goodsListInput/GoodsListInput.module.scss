@@ -26,6 +26,7 @@
   font-size: 2rem;
   font-weight: bold;
   padding: 0 20% 0 5%;
+  margin: 5% 0% 0% 0%;
 }
 .warning {
   background: rgba(138, 24, 24, 0.534);
@@ -67,6 +68,8 @@
   font-size: 2rem;
   font-weight: bold;
   padding: 0 20% 0 5%;
+  margin: 15% 0% 0% 0%;
+  
 }
 
 #inputNumber {
@@ -162,9 +165,9 @@ label {
 .ErrorMessage {
   grid-area: ErrorMessage;
   border: none;
-  height: 1.5rem;
+  height: 1.8rem;
   outline: none;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: bold;
   padding: 0 0% 0 5%;
   margin: -7% 0 0 0;

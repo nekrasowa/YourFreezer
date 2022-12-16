@@ -6,8 +6,8 @@
                        'Contents  Contents  Contents  GoodsListBox   GoodsListBox   GoodsListBox'
                        'Contents  Contents  Contents  GoodsListBox   GoodsListBox   GoodsListBox'
                        'Contents  Contents  Contents  GoodsListBox   GoodsListBox   GoodsListBox';
-  grid-template-rows:  repeat(6, 1fr);
+  grid-template-rows: 15% 15% repeat(4, 15%);
   grid-template-columns: repeat(6, 1fr);
-  height: 95vh;
-  margin-left: 2%;
+  height: 100vh;
+  margin: 0% 2% 2% 2%;
 }

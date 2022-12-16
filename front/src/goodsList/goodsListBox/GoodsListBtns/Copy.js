@@ -1,14 +1,23 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import styles from './GoodsListBtns.module.scss'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { connect } from 'react-redux'
 import { onCopyFuncHandler } from './handlerFunc/onCopyFuncHandler'
+import { hideError, showError } from '../../../redux/actions/actionsError'
 
 function Copy(props) {
+  const dispatch = useDispatch()
+
   const goodsList = useSelector((state) => state.createGood.goods)
 
   const onCopyHandler = () => {
+    console.log(goodsList.lenght )
+    if(!goodsList.lenght) {
+      dispatch(showError('Your list is empty'))
+      return
+    }
+    dispatch(hideError())
     return onCopyFuncHandler(goodsList)
   }
 
