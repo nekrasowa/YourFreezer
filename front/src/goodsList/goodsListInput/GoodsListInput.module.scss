@@ -6,6 +6,7 @@
   max-height: 40%;
 
   display: grid;
+  align-items: end;
   grid-template-areas:  'ErrorMessage ErrorMessage ErrorMessage ErrorMessage'
                         'InputText InputNumber InputRadioBtns InputAddBtn';
   grid-template-rows: 1fr 2fr;
