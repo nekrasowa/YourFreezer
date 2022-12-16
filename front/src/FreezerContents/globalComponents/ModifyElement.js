@@ -23,13 +23,16 @@ function ModifyElement(props) {
 
   const [goodNumber, setGoodNumber] = useState('')
   const inputNumberHandler = (e) => {
-    const userInput = Number(e.target.value)
-    if(isNaN(userInput) && userInput !== '.') {
+  
+  if(isNaN(e.target.value) && e.target.value !== '.') {
+
       const errorMessage = 'Input number!'
       dispatch(showError(errorMessage)) 
       return
     }
-    setGoodNumber(userInput)
+    const newInput = Number(e.target.value)
+
+    setGoodNumber(newInput)
     dispatch(hideError())
   }
 

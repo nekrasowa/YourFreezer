@@ -13,6 +13,16 @@ export const getAllFreezerGoods = () => {
       
       const res = await getAllFreezerGoodsFromServ()
       if (res.status === 200) {
+        res.data.sort((a, b) => {  
+          if (a.goodName > b.goodName) {
+            return 1;
+          }
+          if (a.goodName < b.goodName) {
+            return -1;
+          }
+          return 0;
+        })
+
         dispatch(getGoods(res.data))
       }
 

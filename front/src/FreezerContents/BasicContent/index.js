@@ -25,6 +25,7 @@ function BasicContent() {
 
   const goods = useSelector((state) => state.content.freezGoods)
   const basicGoods = goods.filter((good) => good.typeOfGood === 'basic')
+  
   const basicGoodsList = basicGoods.map((good) => {
     if(good.editState) {
       return <EditingElement  goodInfo={good} key={good.id}/>

@@ -25,10 +25,12 @@ function EditingElement(props) {
   const [ newGoodNumber, setNewGoodNumber ] = useState(goodNumber)
   const onChangeNumber = (e) => {
     if(isNaN(e.target.value) && e.target.value !== '.') {
+
       const errorMessage = 'Input number!'
       dispatch(showError(errorMessage)) 
       return
     }
+    console.log(e.target.value)
     
     setNewGoodNumber(e.target.value)
     dispatch(hideError())
