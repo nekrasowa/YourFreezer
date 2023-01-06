@@ -1,10 +1,10 @@
 const { Sequelize } = require('sequelize')
 
 const user = 'ludochka'
-const host = 'localhost'
+const host = 'postgres'
 const database = 'freezer'
 const password = '12345678'
-const port = '5442'
+const port = '5432'
 
 const sequelize = new Sequelize(database, user, password, {
   host,

@@ -11,6 +11,7 @@ const { checkJWTAddId } = require('./helpFunc/checkJWTAddId')
 
 const app = express()
 const port = 5000
+const host = '0.0.0.0'
 
 app.use(cors())
 app.use(express.json())
@@ -38,7 +39,7 @@ async function assertDatabaseConnectionOk() {
 async function init() {
 	await assertDatabaseConnectionOk()
 	console.log(`Starting Sequelize + Express example on port ${port}...`)
-	app.listen(port, () => {
+	app.listen(port, host,() => {
 		console.log(`Express server started on port ${port}.`)
 	})
 	User.hasMany(GoodsList, {
